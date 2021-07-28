@@ -302,22 +302,22 @@ function custom_login_css() {
 	    	
 	    }
 	    .login h1 a {
-		    background-image: url(/wp-content/uploads/2021/06/um-logo.png);
-		    height: 62px;
-		    width: 282px;
-		    background-size: 282px;
+		    background-image: url(/wp-content/uploads/2021/07/McMinnville-School-District-Branding-03.svg);
+		    height: 70px;
+		    width: 230px;
+		    background-size: 230px;
 		}   
 	    .login .message {
 		    margin-top: 1em;
 		    background-color: #EFEFEF;
-		    border-left-color: #0C2B23;
+		    border-left-color: #004a7c;
 		}
 		.login form {
 			border-color: #dee2e6;
 			background-color: #EFEFEF;	
 		}
 		#user_login, #user_login:focus {
-			border-color: #dee2e6;	
+			border-color: #004a7c;	
 			box-shadow: none;
 		}	
 		#login #nav {
@@ -330,9 +330,9 @@ function custom_login_css() {
 			margin-bottom: .5em;	
 		}
 		.wp-core-ui .button-group.button-large .button, .wp-core-ui .button.button-large {
-			background-color: #0C2B23;
+			background-color: #004a7c;
 			width: 100%;
-			border-color: #0C2B23;
+			border-color: #004a7c;
 			font-size: 1.25rem;
 			line-height: 1.5;
 			border-radius: .3rem;
@@ -347,9 +347,9 @@ function custom_login_css() {
 			
 		}
 		.login #login_error {
-			border-top: 1px solid #dee2e6;
-			border-right: 1px solid #dee2e6;
-			border-bottom: 1px solid #dee2e6;
+			border-top: 1px solid #004a7c;
+			border-right: 1px solid #004a7c;
+			border-bottom: 1px solid #004a7c;
 		}
 		</style>';
 }
