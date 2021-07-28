@@ -1,0 +1,63 @@
+body {
+	.block-editor-inserter__preview-container, #tab-panel-0-patterns, .block-editor-inserter__tips, .edit-post-post-link__preview-label, .editor-post-link p, .editor-page-attributes__order, .block-editor-post-preview__dropdown, .table-of-contents, .components-editor-notices__dismissible,.components-editor-notices__dismissible .components-notice, .components-editor-notices__pinned .components-notice, input[id^="block-editor-inserter__search-"]:placeholder-shown+.block-editor-inserter__results .components-panel__body:first-of-type, .block-editor-inserter__menu-help-panel, .bws_shortcode_button_tooltip, .mce-bws_shortcode_button{
+		display: none !important;
+	}
+	.container-hero {
+		z-index: 1 !important;
+	}
+	.block-editor-block-navigation__item-button:focus:not(:disabled):not([aria-disabled=true]), .bws_shortcode_button_tooltip {
+		outline: none;
+	}
+	
+	.block-editor-inserter__menu.has-help-panel {
+		width: 400px;
+	}
+	
+	.components-panel__body-toggle.components-button:focus:not(:disabled):not([aria-disabled=true]) {
+		outline: none;
+	}
+	.wp-block {
+		max-width: 100%;
+	}
+	.editor-styles-wrapper [data-block] {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	
+	.block-editor-block-toolbar {
+		.block-editor-block-toolbar {
+			button[aria-label='Align'] {
+				display: none; 
+			}
+		}
+	}
+	.acf-checkbox-list {
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+	.block-editor-block-list__layout.is-root-container .acf-block-preview {
+
+		@import "theme"; 
+		
+		font-family: $font-family-base;
+		
+		& {
+			font-size: 1rem;
+		}
+		.edit-post-visual-editor {
+			padding-top: 30px;
+		}
+		
+	}
+	
+	// Tribe Events Calendar
+	.tribe-editor__subtitle__footer-upsell {
+		display: none;
+	}
+	
+	.hero-banner-single {
+		.hero-heading {
+			display: none;
+		}
+	}
+}

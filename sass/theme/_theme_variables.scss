@@ -1,0 +1,38 @@
+$blue:			#0078C9;
+$blue-dark: 	#004A7C;
+$blue-dark-alt: #103662;
+$orange:		#C36713;
+$green: 		#12B568;
+$red:			#C43B3B;
+$gray:			#EEEEEE;
+$light:			#EEEEEE;
+$dark:			$blue-dark;
+$primary: 		$blue;
+$secondary:		$blue-dark;
+
+$font-family-sans-serif: 'Lato', sans-serif;
+$font-family-base: $font-family-sans-serif; 
+$headings-font-family: $font-family-sans-serif;
+
+$spacer: 2.8rem;
+
+$font-size-base: 1rem;
+$font-size-xs: .75rem;
+$font-size-sm: .875rem;
+
+$headings-font-weight: 700;
+$h1-font-size: 56px;
+$h1-font-size-sm: 36px;
+$h1-font-weight: 700;
+$h1-line-height: 1.138888889;
+$h3-font-size: 24px;
+$h4-font-size: 20px;
+$h5-font-size: 16px;
+$font-size-xl: 30px;
+
+$container-max-widths: (
+  sm: 100%,
+  md: 720px,
+  lg: 960px,
+  xl: 1350px
+)
