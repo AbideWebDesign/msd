@@ -85,6 +85,16 @@ function msd_acf_init() {
 			'icon'				=> 'welcome-write-blog',
 			'mode'				=> 'edit',
 		) );
+		
+		acf_register_block( array (
+			'name'				=> 'staff',
+			'title'				=> __('Staff'),
+			'description'		=> __(''),
+			'render_callback'	=> 'msd_acf_block_render_callback',
+			'category'			=> 'formatting',
+			'icon'				=> 'businesswomen',
+			'mode'				=> 'edit',
+		) );
 				
 	}
 }
@@ -113,6 +123,7 @@ function msd_allowed_block_types( $allowed_blocks ) {
 		'acf/call-out',
 		'acf/gallery',
 		'acf/text',
+		'acf/staff',
 	);
  
 }

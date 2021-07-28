@@ -17,6 +17,7 @@ $msd_includes = array(
 	'/page-blocks.php',						// Load ACF page blocks.
 	'/plugins.php',
 	'/calendar.php',
+	'/post-types.php',
 );
 
 foreach ( $msd_includes as $file ) {
