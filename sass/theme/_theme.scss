@@ -68,6 +68,11 @@ button, .btn {
 		border-right: 1px solid $primary;
 	}
 }
+@include media-breakpoint-down(md) {
+	.border-md-top {
+		border-top: 1px solid $border-color;
+	}
+}
 h1.large {
 	font-size: 80px;
 }

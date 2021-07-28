@@ -106,7 +106,7 @@
 												
 												<div class="d-xl-none h-100 w-100 slide-image" style="background-image: url('<?php echo $img_src[0]; ?>');"></div>
 												
-												<?php echo wp_get_attachment_image( get_sub_field('slide_image'), 'slide', false, array('alt'=> get_the_title(get_sub_field('slide_image')), 'class'=>'w-100 img-fluid d-none d-xl-block') ); ?>
+												<?php echo wp_get_attachment_image( get_sub_field('slide_image'), 'slide', false, array('alt'=>get_the_title(get_sub_field('slide_image')), 'class'=>'w-100 img-fluid d-none d-xl-block') ); ?>
 												
 											</div>
 										

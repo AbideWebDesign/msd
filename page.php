@@ -31,7 +31,7 @@ global $post;
 			
 		<?php else: ?>
 		
-			<div class="mb-3"></div>
+			<div class="mb-lg-3"></div>
 		
 		<?php endif; ?>
 			
@@ -39,13 +39,63 @@ global $post;
 			
 			<div class="row">
 				
-				<div class="col-lg-3 col-xl-3 d-none d-lg-block">
+				<div class="col-lg-3 col-xl-3 order-2 order-lg-1">
 					
-					<?php get_sidebar(); ?>
+					<div class="d-none d-lg-block">
+						
+						<?php get_sidebar(); ?>
+						
+					</div>
+					
+					<?php if ( get_field('include_callout') ): ?>
+						
+						<div class="mb-3 pt-3 border-md-top">
+							
+							<div class="row">
+								
+								<?php if ( get_field('callout_image') ): ?>
+								
+									<div class="col-lg-12 col-md-4 align-self-center">
+										
+										<?php echo wp_get_attachment_image( get_field('callout_image'), 'card-sm', false, array('alt'=>get_the_title( get_field('callout_image') ), 'class'=>'img-fluid w-100 mb-1') ); ?>
+										
+									</div>
+								
+								<?php endif; ?>
+								
+								<div class="<?php echo ( get_field('callout_image') ? 'col-md-8' : '' ); ?> col-lg-12 align-self-center">
+									
+									<?php if ( get_field('callout_title') ): ?>
+									
+										<div class="text-dark font-weight-bold mb-1"><?php the_field('callout_title'); ?></div>
+									
+									<?php endif; ?>
+									
+									<?php if ( get_field('callout_text') ): ?>
+			
+										<div class="text-sm mb-1"><?php the_field('callout_text'); ?></div>
+			
+									<?php endif; ?>
+			
+									<?php if ( get_field('callout_button') ): ?>
+									
+										<?php $link = get_field('callout_button'); ?>
+			
+										<a class="btn btn-secondary btn-sm" href="<?php echo $link['url']; ?>" target="<?php $link['target']; ?>" title="Click to view <?php echo $link['title']; ?>"><?php echo $link['title']; ?></a>
+			
+									<?php endif; ?>
+									
+								</div>
+								
+							</div>
+	
+						</div>
+					
+					<?php endif; ?>
 					
 				</div>
 				
-				<div class="col-lg-8">
+				<div class="col-lg-8 order-1 order-lg-2">
 					
 					<?php if ( get_field('include_breadcrumbs') ): ?>
 					

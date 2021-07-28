@@ -2,7 +2,7 @@
 
 <?php if ( $staff ): ?>
 	
-	<div class="pb-2 <?php echo ( get_field('staff_include_border') ? 'border-top pt-3' : '' ); ?>">
+	<div class="mb-2 pb-1 <?php echo ( get_field('staff_include_border') ? 'border-top pt-3' : '' ); ?>">
 		
 		<div class="row">
 			

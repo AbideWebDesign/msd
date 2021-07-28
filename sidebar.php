@@ -53,7 +53,7 @@ if ( $post->post_parent ) {
 
 <?php if ( $children ): ?>
 								
-	<div class="wrapper-sidebar-links bg-light mb-3">
+	<div class="wrapper-sidebar-links bg-light">
 		
 		<div class="bg-blue-dark text-white p-2">
 			
