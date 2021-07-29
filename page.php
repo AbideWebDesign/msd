@@ -39,7 +39,7 @@ global $post;
 			
 			<div class="row">
 				
-				<div class="col-lg-3 col-xl-3 order-2 order-lg-1">
+				<div class="col-lg-3 col-xl-3 order-2 order-lg-1 mb-3">
 					
 					<div class="d-none d-lg-block">
 						
@@ -49,7 +49,7 @@ global $post;
 					
 					<?php if ( get_field('include_callout') ): ?>
 						
-						<div class="mb-3 pt-3 border-md-top">
+						<div class="pt-3 border-md-top">
 							
 							<div class="row">
 								
