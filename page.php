@@ -25,104 +25,104 @@ global $post;
 		
 	<?php if ( $blocks[0]['blockName'] == 'acf/gallery' ): ?>
 		
-		<div class="bg-light mb-3">
+		<div class="bg-light <?php echo ( get_field('include_sidebar', $post) ? '' : 'mb-3'); ?>">
 			
 			<?php echo render_block( $blocks[0] ); ?>
 			
 		</div>
-		
-	<?php elseif ( ! is_home() && ! is_front_page() && ! 'staff' == get_post_type() && ! is_single() ) : ?>
-	
-		<div class="mb-lg-3"></div>
 	
 	<?php endif; ?>
 
 	<?php if ( get_field('include_sidebar', $post) ): ?>
-				
-		<div class="container">
-			
-			<div class="row">
-				
-				<div class="col-lg-3 col-xl-3 order-2 order-lg-1 mb-3">
+		
+		<div class="py-3">
 					
-					<div class="d-none d-lg-block">
+			<div class="container">
+				
+				<div class="row">
+					
+					<div class="col-lg-3 col-xl-3 order-2 order-lg-1">
 						
-						<?php get_sidebar(); ?>
+						<div class="d-none d-lg-block">
+							
+							<?php get_sidebar(); ?>
+							
+						</div>
+						
+						<?php if ( get_field('include_callout') ): ?>
+							
+							<div class="pt-3 border-md-top">
+								
+								<div class="row">
+									
+									<?php if ( get_field('callout_image') ): ?>
+									
+										<div class="col-lg-12 col-md-4 align-self-center">
+											
+											<?php echo wp_get_attachment_image( get_field('callout_image'), 'card-sm', false, array('alt'=>get_the_title( get_field('callout_image') ), 'class'=>'img-fluid w-100 mb-1') ); ?>
+											
+										</div>
+									
+									<?php endif; ?>
+									
+									<div class="<?php echo ( get_field('callout_image') ? 'col-md-8' : '' ); ?> col-lg-12 align-self-center">
+										
+										<?php if ( get_field('callout_title') ): ?>
+										
+											<div class="text-dark font-weight-bold mb-1"><?php the_field('callout_title'); ?></div>
+										
+										<?php endif; ?>
+										
+										<?php if ( get_field('callout_text') ): ?>
+				
+											<div class="text-sm mb-1"><?php the_field('callout_text'); ?></div>
+				
+										<?php endif; ?>
+				
+										<?php if ( get_field('callout_button') ): ?>
+										
+											<?php $link = get_field('callout_button'); ?>
+				
+											<a class="btn btn-secondary btn-sm" href="<?php echo $link['url']; ?>" target="<?php $link['target']; ?>" title="Click to view <?php echo $link['title']; ?>"><?php echo $link['title']; ?></a>
+				
+										<?php endif; ?>
+										
+									</div>
+									
+								</div>
+		
+							</div>
+						
+						<?php endif; ?>
 						
 					</div>
 					
-					<?php if ( get_field('include_callout') ): ?>
+					<div class="col-lg-8 col-xl-9 order-1 order-lg-2">
 						
-						<div class="pt-3 border-md-top">
-							
-							<div class="row">
+						<?php if ( get_field('include_breadcrumbs') ): ?>
+						
+							<?php get_template_part('template-parts/blocks/content', 'breadcrumbs'); ?>
+						
+						<?php endif; ?>
+						
+						<?php $x = 0; ?>
+						
+						<?php foreach ( $blocks as $block ): ?>
+						
+							<?php if ( $x != 0 || $x == 0 && 'acf/gallery' != $block['blockName'] ): ?>
+													
+								<?php echo render_block( $block ); ?>
 								
-								<?php if ( get_field('callout_image') ): ?>
-								
-									<div class="col-lg-12 col-md-4 align-self-center">
-										
-										<?php echo wp_get_attachment_image( get_field('callout_image'), 'card-sm', false, array('alt'=>get_the_title( get_field('callout_image') ), 'class'=>'img-fluid w-100 mb-1') ); ?>
-										
-									</div>
-								
-								<?php endif; ?>
-								
-								<div class="<?php echo ( get_field('callout_image') ? 'col-md-8' : '' ); ?> col-lg-12 align-self-center">
-									
-									<?php if ( get_field('callout_title') ): ?>
-									
-										<div class="text-dark font-weight-bold mb-1"><?php the_field('callout_title'); ?></div>
-									
-									<?php endif; ?>
-									
-									<?php if ( get_field('callout_text') ): ?>
-			
-										<div class="text-sm mb-1"><?php the_field('callout_text'); ?></div>
-			
-									<?php endif; ?>
-			
-									<?php if ( get_field('callout_button') ): ?>
-									
-										<?php $link = get_field('callout_button'); ?>
-			
-										<a class="btn btn-secondary btn-sm" href="<?php echo $link['url']; ?>" target="<?php $link['target']; ?>" title="Click to view <?php echo $link['title']; ?>"><?php echo $link['title']; ?></a>
-			
-									<?php endif; ?>
-									
-								</div>
-								
-							</div>
-	
-						</div>
-					
-					<?php endif; ?>
-					
+							<?php endif; ?>
+						
+							<?php $x ++; ?>
+						
+						<?php endforeach; ?>
+						
+					</div>
+				
 				</div>
 				
-				<div class="col-lg-8 col-xl-9 order-1 order-lg-2">
-					
-					<?php if ( get_field('include_breadcrumbs') ): ?>
-					
-						<?php get_template_part('template-parts/blocks/content', 'breadcrumbs'); ?>
-					
-					<?php endif; ?>
-					
-					<?php $x = 0; ?>
-					
-					<?php foreach ( $blocks as $block ): ?>
-					
-						<?php if ( $x != 0 || $x == 0 && 'acf/gallery' != $block['blockName'] ): ?>
-												
-							<?php echo render_block( $block ); ?>
-							
-						<?php endif; ?>
-					
-						<?php $x ++; ?>
-					
-					<?php endforeach; ?>
-					
-				</div>
-			
 			</div>
 			
 		</div>
