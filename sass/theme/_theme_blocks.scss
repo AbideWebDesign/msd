@@ -128,10 +128,15 @@
 			
 			&.current_page_item {
 				background-color: darken($light, 10); 
+				
+				& > a {
+					font-weight: bold;
+				}
 			}
 			.children {
 				list-style: none;
 				padding: 0;
+				margin-top: .75em;
 				
 				li {
 					padding: .35em 1.25em;
