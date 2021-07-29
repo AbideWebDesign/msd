@@ -2,15 +2,37 @@
 
 <?php $count = count( get_field('cards') ); ?>
 
-<?php $col_class = ( $count == 4 ? 'col-md-6 col-lg-5 col-xl-3 mb-2 mb-xl-0' : 'col-lg-4 mb-2 mb-lg-0' ); ?>
+<?php if ( $count <= 3 ): ?>
+
+	<?php $col_class = 'col-md-6 col-lg-4 mb-2 mb-xl-0'; ?>
+
+<?php elseif ( $count >= 4 ): ?>
+
+	<?php $col_class = 'col-md-6 col-lg-3 mb-2 mb-xl-0'; ?>
+
+<?php endif; ?>
 
 <?php $colors = array( 'bg-primary', 'bg-orange', 'bg-green', 'bg-red' ); ?>
 
 <?php $x = 0; ?>
 
-<div class="wrapper wrapper-cards <?php echo ( get_field('include_sidebar', $post) ? 'wrapper-cards-sub' : ''); ?>">
+<div class="wrapper wrapper-cards <?php echo ( get_field('include_sidebar', $post) || ! get_field('cards_inlude_background') ? 'wrapper-cards-sub' : ''); ?>">
 	
 	<div class="container">
+		
+		<?php if ( get_field('cards_title') ): ?>
+		
+			<div class="row <?php echo ( get_field('include_sidebar', $post) ? '' : 'justify-content-center'); ?>">
+				
+				<div class="col-auto">
+					
+					<h2 class="text-dark mb-3"><?php the_field('cards_title'); ?></h2>
+					
+				</div>
+				
+			</div>
+		
+		<?php endif; ?>
 	
 		<div class="row <?php echo ( get_field('include_sidebar', $post) ? '' : 'justify-content-center'); ?>">
 			

@@ -166,11 +166,12 @@
 		width: 100%;
 	}
 }
-.wrapper-cards-sub {
+.wrapper.wrapper-cards-sub {
 	&:before {
 		display: none;
 	}
 	
+	padding: 3em 0 3em 0 !important;
 }
 .quick-link-wrap {
 	min-height: 300px;

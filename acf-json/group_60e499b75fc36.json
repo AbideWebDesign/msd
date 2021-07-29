@@ -3,6 +3,26 @@
     "title": "Block - Cards",
     "fields": [
         {
+            "key": "field_61030e4b971a2",
+            "label": "Include Background",
+            "name": "cards_include_background",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_rest": 0,
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_60e499ba76619",
             "label": "Title",
             "name": "cards_title",
@@ -38,7 +58,7 @@
             "show_in_rest": 0,
             "collapsed": "field_60e499d07661b",
             "min": 0,
-            "max": 4,
+            "max": 0,
             "layout": "block",
             "button_label": "Add Card",
             "sub_fields": [
@@ -143,5 +163,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1625594402
+    "modified": 1627590241
 }
