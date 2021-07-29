@@ -1,17 +1,19 @@
 <?php $includes = get_field('text_settings'); ?>
 
-<div class="wrapper-text <?php echo ( in_array('lead', $includes) && ! get_field('text_content') ? '' : 'pb-3'); ?>  <?php echo ( in_array('border', $includes) ? 'border-bottom mb-3' : ''); ?>">
+<div class="wrapper-text <?php echo ( in_array('lead', $includes) && ! get_field('text_content') ? '' : 'pb-3'); ?>">
 	
 	<div class="container">
 		
 		<?php if ( in_array( 'lead', $includes ) ): ?>
 		
-			<h1 class="text-blue-dark mb-2"><?php the_field('text_heading'); ?></h1> 
+			<div class="row">
+				
+				<div class="col-12">
 			
-		<?php endif; ?>
-		
-		<?php if ( in_array( 'image', $includes ) ): ?>
-		
+					<h1 class="text-blue-dark mb-2"><?php the_field('text_heading'); ?></h1> 
+				
+		<?php elseif ( in_array( 'image', $includes ) ): ?>
+
 			<?php $type_lg = ( get_field('text_image_type') == 'Full' ? 'full' : 'card-alt' ); ?>
 			
 			<?php $type = ( get_field('text_image_type') == 'Full' ? 'full' : 'slide-lg' ); ?>		
@@ -27,7 +29,7 @@
 				</div>
 				
 				<div class="col-lg-8">
-					
+		
 		<?php else: ?>
 		
 			<div class="row">
@@ -38,7 +40,7 @@
 		
 		<?php if ( get_field('text_heading') && ! in_array( 'lead', $includes ) ): ?>
 			
-				<h2 class="text-primary mb-2"><?php the_field('text_heading'); ?></h2>
+			<h2 class="text-primary mb-2"><?php the_field('text_heading'); ?></h2>
 					
 		<?php endif; ?>
 		
@@ -113,3 +115,25 @@
 	</div>
 				
 </div>
+
+<?php if ( in_array('border', $includes) ): ?>
+
+	<div class="wrapper-border-bottom">
+		
+		<div class="container">
+			
+			<div class="row">
+				
+				<div class="col-12">
+					
+					<div class="border-bottom"></div>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</div>
+	
+<?php endif; ?>

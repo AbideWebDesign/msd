@@ -83,6 +83,11 @@
                         "field": "field_60fad8b99a612",
                         "operator": "==",
                         "value": "image"
+                    },
+                    {
+                        "field": "field_60fad8b99a612",
+                        "operator": "!=",
+                        "value": "lead"
                     }
                 ]
             ],
@@ -116,6 +121,11 @@
                         "field": "field_60fad8b99a612",
                         "operator": "==",
                         "value": "image"
+                    },
+                    {
+                        "field": "field_60fad8b99a612",
+                        "operator": "!=",
+                        "value": "lead"
                     }
                 ]
             ],
@@ -356,5 +366,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1627332488
+    "modified": 1627591571
 }

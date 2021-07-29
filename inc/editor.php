@@ -110,3 +110,13 @@ function get_button( $group_content ) {
 	return $button_html;
 	
 }
+
+function get_school_image_id() {
+	
+	global $post;
+	
+	$school = get_the_terms($post, 'building');
+
+	return ( get_field('building_image', $school[0]) ); 
+
+}

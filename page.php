@@ -21,20 +21,24 @@ global $post;
 
 <div id="page-wrapper">
 	
-	<?php if ( get_field('include_sidebar', $post) ): ?>
-	
-		<?php $blocks = parse_blocks( $post->post_content ); ?>
+	<?php $blocks = parse_blocks( $post->post_content ); ?>
 		
-		<?php if ( $blocks[0]['blockName'] == 'acf/gallery' ): ?>
-	
+	<?php if ( $blocks[0]['blockName'] == 'acf/gallery' ): ?>
+		
+		<div class="bg-light mb-3">
+			
 			<?php echo render_block( $blocks[0] ); ?>
 			
-		<?php else: ?>
+		</div>
 		
-			<div class="mb-lg-3"></div>
-		
-		<?php endif; ?>
-			
+	<?php elseif ( ! is_home() && ! is_front_page() && ! 'staff' == get_post_type() && ! is_single() ) : ?>
+	
+		<div class="mb-lg-3"></div>
+	
+	<?php endif; ?>
+
+	<?php if ( get_field('include_sidebar', $post) ): ?>
+				
 		<div class="container">
 			
 			<div class="row">
@@ -125,12 +129,20 @@ global $post;
 		
 	<?php else: ?>
 		
-		<?php while ( have_posts() ) : the_post(); ?>
-	
-			<?php the_content(); ?>
-			
-		<?php endwhile; ?>
-			
+		<?php $x = 0; ?>
+					
+		<?php foreach ( $blocks as $block ): ?>
+		
+			<?php if ( $x != 0 || $x == 0 && 'acf/gallery' != $block['blockName'] ): ?>
+									
+				<?php echo render_block( $block ); ?>
+				
+			<?php endif; ?>
+		
+			<?php $x ++; ?>
+		
+		<?php endforeach; ?>
+
 	<?php endif; ?>
 
 </div>

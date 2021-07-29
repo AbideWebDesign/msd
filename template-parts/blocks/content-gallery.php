@@ -1,6 +1,6 @@
 <?php if ( $images = get_field('gallery') ): ?>
 
-	<div class="wrapper-gallery pb-3">
+	<div class="wrapper-gallery">
 		
 		<div class="container">
 			

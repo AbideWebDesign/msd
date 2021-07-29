@@ -160,7 +160,7 @@
 												
 												<div class="d-xl-none h-100 w-100 slide-image" style="background-image: url('<?php echo $img_src; ?>');"></div>
 												
-												<?php echo get_the_post_thumbnail( get_sub_field('slide_image'), 'slide', array('alt'=> get_the_title(get_sub_field('slide_image')), 'class'=>'w-100 img-fluid d-none d-xl-block') ); ?>
+												<?php echo get_the_post_thumbnail( get_sub_field('slide_image'), 'slide', array( 'alt'=> get_the_title( get_sub_field('slide_image') ), 'class'=>'w-100 img-fluid d-none d-xl-block' ) ); ?>
 												
 											</div>
 										
@@ -174,7 +174,7 @@
 								
 								<?php wp_reset_query(); ?>	
 								
-							<?php elseif ( is_single() && ! 'staff' == get_post_type() ): ?>
+							<?php elseif ( is_single() && get_post_type( get_the_ID() ) != 'staff' ): ?>
 							
 								<div class="carousel-item active">
 															  		
@@ -226,7 +226,7 @@
 								
 							<?php elseif ( 'staff' == get_post_type() ): ?>
 							
-								<?php $building = get_term( get_field('staff_building') ); ?>
+								<?php $building = get_the_terms( $post, 'building' ); ?>
 								
 								<div class="carousel-item active">
 															  		
@@ -258,7 +258,7 @@
 														
 														<?php if ( $building ): ?>
 														
-															<div class="text-sm mb-1"><i class="fa fa-school mr-1"></i><?php echo $building->name; ?></div>
+															<div class="text-sm mb-1"><i class="fa fa-school mr-1"></i><?php echo ucwords( strtolower( $building[0]->name ) ); ?></div>
 															
 														<?php endif; ?>
 														
@@ -280,11 +280,27 @@
 										
 										<div class="col-md-7 order-1 order-md-2 align-self-xl-center">
 											
-											<?php $img_src = wp_get_attachment_image_src( get_field('staff_image'), 'slide', false ); ?>
+											<?php if ( get_field('staff_image') ): ?>
+											
+												<?php $img_src = wp_get_attachment_image_src( get_field('staff_image'), 'slide', false ); ?>
+												
+											<?php else: ?>
+											
+												<?php $img_src = wp_get_attachment_image_src( get_school_image_id(), 'slide', false ); ?>
+												
+											<?php endif; ?>
 											
 											<div class="d-xl-none h-100 w-100 slide-image" style="background-image: url('<?php echo $img_src[0]; ?>');"></div>
 											
-											<?php echo wp_get_attachment_image( get_field('staff_image'), 'slide', false, array('alt'=> get_the_title(get_field('staff_image')), 'class'=>'w-100 img-fluid d-none d-xl-block') ); ?>
+											<?php if ( get_field('staff_image') ): ?>
+											
+												<?php echo wp_get_attachment_image( get_field('staff_image'), 'slide', false, array('alt'=> get_the_title(get_field('staff_image')), 'class'=>'w-100 img-fluid d-none d-xl-block') ); ?>
+										
+											<?php else: ?>
+											
+												<?php echo wp_get_attachment_image( get_school_image_id(), 'slide', false, array('alt'=> get_the_title(get_field('staff_image')), 'class'=>'w-100 img-fluid d-none d-xl-block') ); ?>
+											
+											<?php endif; ?>
 											
 										</div>
 									
