@@ -223,6 +223,11 @@
 			font-weight: normal;
 		}
 	}
+	strong {
+		a {
+			font-weight: normal;
+		}
+	}
 }
 .wrapper-buttons {
 	@include media-breakpoint-down(sm) {
