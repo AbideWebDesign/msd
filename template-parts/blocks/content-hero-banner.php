@@ -174,7 +174,7 @@
 								
 								<?php wp_reset_query(); ?>	
 								
-							<?php elseif ( is_single() ): ?>
+							<?php elseif ( is_single() && ! 'staff' == get_post_type() ): ?>
 							
 								<div class="carousel-item active">
 															  		
@@ -222,7 +222,77 @@
 								
 									<?php $x ++; ?>
 									
-								</div>									
+								</div>	
+								
+							<?php elseif ( 'staff' == get_post_type() ): ?>
+							
+								<?php $building = get_term( get_field('staff_building') ); ?>
+								
+								<div class="carousel-item active">
+															  		
+									<div class="row no-gutters h-100">
+										
+										<div class="col-md-5 order-2 order-md-1">
+											
+											<div class="bg-secondary d-flex h-100 pl-xl-4">
+											
+												<div class="slide-content slide-content-single bg-white shadow align-self-center">
+													
+													<div class="p-2 p-xl-3">
+												
+														<h1 class="text-secondary mb-1"><?php the_title(); ?></h1>
+														
+														<div class="text-sm mb-1"><?php the_field('staff_position_description'); ?></div>
+														
+														<?php if ( get_field('staff_work_phone') ): ?>
+								
+															<div class="text-sm"><i class="fa fa-phone-square-alt mr-1"></i> <?php the_field('staff_work_phone'); ?></div>
+														
+														<?php endif; ?>
+														
+														<?php if ( get_field('staff_email_address') ): ?>
+									
+															<div class="text-sm"><a href="mailto:<?php the_field('staff_email_address'); ?>" class="text-decoration-none text-body"><i class="fa fa-envelope mr-1"></i> <?php the_field('staff_email_address'); ?></a></div>
+														
+														<?php endif; ?>
+														
+														<?php if ( $building ): ?>
+														
+															<div class="text-sm mb-1"><i class="fa fa-school mr-1"></i><?php echo $building->name; ?></div>
+															
+														<?php endif; ?>
+														
+														<div class="d-flex text-lg">
+															
+															<div class="mr-1"><a class="text-primary" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"><i class="fab fa-facebook"></i></a></div>
+															
+															<div class="mr-1"><a class="text-primary" target="_blank" href="https://twitter.com/intent/tweet?url=<?php the_permalink(); ?>&text=<?php echo strip_tags( get_the_excerpt() ); ?>"><i class="fab fa-twitter"></i></a></div>
+
+														</div>
+
+													</div>
+															
+												</div>
+																  							  	
+											</div>
+											
+										</div>
+										
+										<div class="col-md-7 order-1 order-md-2 align-self-xl-center">
+											
+											<?php $img_src = wp_get_attachment_image_src( get_field('staff_image'), 'slide', false ); ?>
+											
+											<div class="d-xl-none h-100 w-100 slide-image" style="background-image: url('<?php echo $img_src[0]; ?>');"></div>
+											
+											<?php echo wp_get_attachment_image( get_field('staff_image'), 'slide', false, array('alt'=> get_the_title(get_field('staff_image')), 'class'=>'w-100 img-fluid d-none d-xl-block') ); ?>
+											
+										</div>
+									
+									</div>
+								
+									<?php $x ++; ?>
+									
+								</div>																
 							
 							<?php endif; ?>
 								

@@ -168,37 +168,39 @@
 		    @extend .d-flex;
 		    @extend .align-items-stretch;
 		    
-		    li {
+		    li > a {
+				color: white;
+// 				padding: 15px 25px;
+				text-align: center;
+				
+				@include media-breakpoint-down(lg) {
+					text-align: left;
+				}
+			}
+			.ubermenu-item-level-0 {
 			    @extend .d-flex;
 			    @extend .flex-fill;
 			    
 			    a {
 				    width: 100%;
 			    }
+			    & > .ubermenu-target {
+					border-left: 1px solid #fff;
+				}
+				&:last-child > .ubermenu-target {
+					border-right: 1px solid #fff;
+				}
+				&.ubermenu-current-menu-item {
+					background-color: $blue-dark;
+			
+					.ubermenu-target {
+						border-bottom: none;
+					}
+				}
 		    }
-		}
-		.ubermenu-item-level-0 > .ubermenu-target {
-			border-left: 1px solid #fff;
-		}
-		.ubermenu-item-level-0:last-child > .ubermenu-target {
-			border-right: 1px solid #fff;
-		}
-		.ubermenu-current-menu-item {
-			background-color: $blue-dark;
-			
-			.ubermenu-target {
-				border-bottom: none;
-			}
-		}
-		li > a {
-			color: white;
-			padding: 15px 25px;
-			text-align: center;
-			
-			@include media-breakpoint-down(lg) {
-				text-align: left;
-			}
-		}
+		}		
+		
+		
 		.ubermenu-item-level-0:hover > .ubermenu-target, .ubermenu-item-level-0.ubermenu-active > .ubermenu-target {
 			background-color: $gray-200;
 			color: $primary;
