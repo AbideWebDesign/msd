@@ -218,6 +218,11 @@
 	ul:not(.fa-ul) {
 		margin-bottom: 1.75em;
 	}
+	a {
+		strong {
+			font-weight: normal;
+		}
+	}
 }
 .wrapper-buttons {
 	@include media-breakpoint-down(sm) {
