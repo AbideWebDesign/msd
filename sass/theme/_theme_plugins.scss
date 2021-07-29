@@ -202,6 +202,17 @@
 			    color: $primary;
 			    font-weight: bold;
 			    font-size: $font-size-lg;
+			    line-height: 26px;
+		    }
+		    .btn-nav {
+			    .ubermenu-target {
+				    .ubermenu-target-title {
+					    @extend .btn;
+					    @extend .btn-secondary;
+					    @extend .btn-block;
+					    border: none;
+				    }
+			    }
 		    }
 		}				
 		.ubermenu-item-level-0:hover > .ubermenu-target, .ubermenu-item-level-0.ubermenu-active > .ubermenu-target {
