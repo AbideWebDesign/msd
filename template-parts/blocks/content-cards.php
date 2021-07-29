@@ -42,7 +42,7 @@
 					
 					<?php if ( get_sub_field('card_link') ): ?>
 					
-						<?php $link = get_sub_field('link'); ?>
+						<?php $link = get_sub_field('card_link'); ?>
 						
 						<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
 							
