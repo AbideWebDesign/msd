@@ -138,7 +138,7 @@
 			padding-left: 0;
 		}
 		.ubermenu-submenu.ubermenu-submenu-drop  {
-			background-color: $secondary;
+			background-color: $dark;
 			border: none;
 			width: auto;
 			
@@ -152,7 +152,7 @@
 }
 #menu-global {
 	.ubermenu-primary-menu.ubermenu-transition-fade .ubermenu-item .ubermenu-submenu-drop {
-		background-color: $primary;
+		background-color: $dark;
 		margin-top: 50px;
 		box-shadow: $box-shadow;
 		
@@ -191,11 +191,10 @@
 				}
 		    }
 		    .ubermenu-submenu .ubermenu-item-header.ubermenu-has-submenu-stack > .ubermenu-target {
-			    background-color: $dark;
-			    color: white;
 			    font-weight: bold;
 			    font-size: $font-size-lg;
 			    line-height: 26px;
+			    border-bottom: 1px solid white;
 		    }
 		    .btn-nav {
 			    .ubermenu-target {
