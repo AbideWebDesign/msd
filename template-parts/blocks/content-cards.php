@@ -4,15 +4,15 @@
 
 <?php if ( $count <= 3 ): ?>
 
-	<?php $col_class = 'col-md-6 col-lg-4 mb-2 mb-xl-0'; ?>
+	<?php $col_class = 'col-md-6 col-lg-4 mb-2'; ?>
 
 <?php elseif ( $count >= 4 ): ?>
 
-	<?php $col_class = 'col-md-6 col-lg-3 mb-2 mb-xl-0'; ?>
+	<?php $col_class = 'col-md-6 col-lg-3 mb-2'; ?>
 
 <?php endif; ?>
 
-<?php $colors = array( 'bg-primary', 'bg-orange', 'bg-green', 'bg-red' ); ?>
+<?php $colors = array( 'bg-primary', 'bg-orange', 'bg-green', 'bg-red', 'bg-green', 'bg-dark', 'bg-primary', 'bg-orange' ); ?>
 
 <?php $x = 0; ?>
 
