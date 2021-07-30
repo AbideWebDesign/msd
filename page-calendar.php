@@ -60,12 +60,19 @@
 					<li class="mb-1"><span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span><a title="Download calendar" href="<?php the_field('calendar_download_current', 'options'); ?>" target="_blank"><?php the_field('calendar_current_year_label', 'options'); ?> <?php _e('Calendar'); ?></a>
 					
 					<li class="mb-1"><span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span><a title="Download calendar" href="<?php the_field('calendar_download_current_sp', 'options'); ?>" target="_blank"><?php the_field('calendar_current_year_label', 'options'); ?> <?php _e('Calendar (SP)'); ?></a>
-
-					<li class="mb-1"><span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span><a title="Download calendar" href="<?php the_field('calendar_download_next', 'options'); ?>" target="_blank"><?php the_field('calendar_next_year_label', 'options'); ?> <?php _e('Calendar'); ?></a>
-
-					<li class="mb-1"><span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span><a title="Download calendar" href="<?php the_field('calendar_download_next_sp', 'options'); ?>" target="_blank"><?php the_field('calendar_next_year_label', 'options'); ?> <?php _e('Calendar (SP)'); ?></a>
 					
+					<?php if ( get_field('calendar_download_next', 'options') ): ?>
 					
+						<li class="mb-1"><span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span><a title="Download calendar" href="<?php the_field('calendar_download_next', 'options'); ?>" target="_blank"><?php the_field('calendar_next_year_label', 'options'); ?> <?php _e('Calendar'); ?></a>
+					
+					<?php endif; ?>
+					
+					<?php if ( get_field('calendar_download_next_sp', 'options') ): ?>
+					
+						<li class="mb-1"><span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span><a title="Download calendar" href="<?php the_field('calendar_download_next_sp', 'options'); ?>" target="_blank"><?php the_field('calendar_next_year_label', 'options'); ?> <?php _e('Calendar (SP)'); ?></a>
+					
+					<?php endif; ?>
+				
 				</ul>
 									
 			</div>
