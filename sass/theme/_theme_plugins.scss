@@ -189,17 +189,10 @@
 				&:last-child > .ubermenu-target {
 					border-right: 1px solid #fff;
 				}
-				&.ubermenu-current-menu-item {
-					background-color: $dark;
-			
-					.ubermenu-target {
-						border-bottom: none;
-					}
-				}
 		    }
 		    .ubermenu-submenu .ubermenu-item-header.ubermenu-has-submenu-stack > .ubermenu-target {
-			    background-color: white;
-			    color: $dark;
+			    background-color: $dark;
+			    color: white;
 			    font-weight: bold;
 			    font-size: $font-size-lg;
 			    line-height: 26px;
@@ -242,7 +235,6 @@
 		.ubermenu-item-type-column>.ubermenu-has-submenu-stack {
 		    border-right: 1px solid $gray-200;
 		}
-
     }
     .ubermenu-submenu-type-flyout>.ubermenu-item-normal>.ubermenu-target {
 	    padding: 10px 20px;
