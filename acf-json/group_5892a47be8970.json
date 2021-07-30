@@ -42,23 +42,8 @@
         },
         {
             "key": "field_5b687c2db3bea",
-            "label": "Calendar_Dates",
+            "label": "Calendar Dates",
             "name": "calendar_dates",
-            "type": "table",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "use_header": 0
-        },
-        {
-            "key": "field_5b687c4fb3beb",
-            "label": "Calendar Downloads",
-            "name": "calendar_downloads",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -68,26 +53,27 @@
                 "class": "",
                 "id": ""
             },
-            "show_in_rest": 1,
-            "collapsed": "field_5b687c68b3bec",
+            "show_in_rest": 0,
+            "collapsed": "field_610435fad4fd6",
             "min": 0,
             "max": 0,
-            "layout": "block",
-            "button_label": "Add Calendar Download",
+            "layout": "row",
+            "button_label": "Add Entry",
             "sub_fields": [
                 {
-                    "key": "field_5b687c68b3bec",
-                    "label": "Calendar Name",
-                    "name": "calendar_name",
+                    "key": "field_610435fad4fd6",
+                    "label": "Entry Title",
+                    "name": "entry_title",
                     "type": "text",
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
+                    "show_in_rest": 0,
                     "default_value": "",
                     "placeholder": "",
                     "prepend": "",
@@ -95,51 +81,24 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5b687c6eb3bed",
-                    "label": "Calendar File",
-                    "name": "calendar_file",
-                    "type": "file",
+                    "key": "field_6104361dd4fd7",
+                    "label": "Entry Date",
+                    "name": "entry_date",
+                    "type": "text",
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "url",
-                    "library": "all",
-                    "min_size": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
-                {
-                    "key": "field_5ee6ae5a2ec30",
-                    "label": "Grade Level",
-                    "name": "grade_level",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 1,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "show_in_rest": 1,
-                    "choices": {
-                        "All Grades": "All Grades",
-                        "High School": "High School",
-                        "Middle School": "Middle School",
-                        "Elementary": "Elementary"
-                    },
-                    "default_value": false,
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 1,
-                    "ajax": 0,
-                    "return_format": "value",
-                    "placeholder": ""
+                    "show_in_rest": 0,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         },
@@ -259,6 +218,126 @@
                     "maxlength": ""
                 }
             ]
+        },
+        {
+            "key": "field_61042ba8e7f43",
+            "label": "Current Year Label",
+            "name": "calendar_current_year_label",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_rest": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61042b366716b",
+            "label": "Calendar Download - Current Year",
+            "name": "calendar_download_current",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_rest": 0,
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_61042b6d6716d",
+            "label": "Calendar Download - Current Year SP",
+            "name": "calendar_download_current_sp",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_rest": 0,
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_61042bb1e7f44",
+            "label": "Next Year Label",
+            "name": "calendar_next_year_label",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_rest": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61042b576716c",
+            "label": "Calendar Download - Next Year",
+            "name": "calendar_download_next",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_rest": 0,
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_61042b936716e",
+            "label": "Calendar Download - Next Year SP",
+            "name": "calendar_download_next_copy",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_rest": 0,
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
         }
     ],
     "location": [
@@ -278,5 +357,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1625244788
+    "modified": 1627665980
 }

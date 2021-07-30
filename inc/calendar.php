@@ -6,7 +6,7 @@ function render_calendar() {
 ?>
 	<div class="row">
 	
-		<div class="col-lg-4 d-none d-lg-flex">
+		<div class="col-lg-4 d-none d-lg-flex align-self-center">
 	
 			<div class="calendar-dropdown">
 	
@@ -106,7 +106,7 @@ function render_calendar() {
 	
 		</div>
 	
-		<div id="calendar-buttons" class="col-12 col-md-5 col-lg-4 text-center text-md-right">
+		<div id="calendar-buttons" class="col-12 col-md-5 col-lg-4 text-center text-md-right align-self-center">
 	
 			<button id="prev" class="btn btn-primary btn-sm"><i class="fa fa-caret-left"></i> <?php _e('Prev'); ?></button>
 	
@@ -118,7 +118,7 @@ function render_calendar() {
 	
 	<div class="row">
 	
-		<div class="col-12 mt-1 mt-lg-0">
+		<div class="col-12 mt-2">
 	
 			<div id="calendar"></div>
 	

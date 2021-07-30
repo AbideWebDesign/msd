@@ -118,7 +118,7 @@
 
 <?php if ( in_array('border', $includes) ): ?>
 
-	<div class="wrapper-border-bottom">
+	<div class="wrapper-border-bottom mb-3">
 		
 		<div class="container">
 			

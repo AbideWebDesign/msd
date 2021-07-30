@@ -15,7 +15,7 @@
 
 			<div class="col-12">
 
-				<h1 class="mb-0"><?php the_field('calendar_title', 'options'); ?></h1>
+				<h1 class="mb-0 text-lg"><?php the_field('calendar_title', 'options'); ?></h1>
 
 			</div>
 
@@ -25,38 +25,55 @@
 
 </div>
 
-<div class="bg-light py-3">
+<div class="py-3 bg-light border-bottom">
 
 	<div class="container">
 
-		<div class="row justify-content-center">
+		<div class="row">
+			
+			<?php if ( have_rows('calendar_dates', 'options') ): ?>
+			
+				<div class="col-lg-7 col-xl-9">
 
-			<div class="col-md-12 col-lg-12 mb-2">
+					<h2 class="text-dark"><?php _e('Important Dates'); ?></h2>
+				
+					<ul class="fa-ul mb-0 text-lg">
+						
+						<?php while ( have_rows('calendar_dates', 'options') ): the_row(); ?>
+						
+							<li class="mb-1"><span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span> <span class="font-weight-bold text-primary"><?php the_sub_field('entry_title'); ?></span> - <?php the_sub_field('entry_date'); ?></li>
 
-				<div class="lead"><?php the_field('calendar_text', 'options'); ?></div>
+						<?php endwhile; ?>
+							
+					</ul>
+				
+				</div>
+				
+			<?php endif; ?>
+				
+			<div class="col-lg-5 col-xl-3 mt-2 mt-lg-0">
+				
+				<h2 class="text-dark"><?php _e('Calendar Downloads'); ?></h2>
+				
+				<ul class="fa-ul mb-0 text-lg">
+					
+					<li class="mb-1"><span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span><a title="Download calendar" href="<?php the_field('calendar_download_current', 'options'); ?>" target="_blank"><?php the_field('calendar_current_year_label', 'options'); ?> <?php _e('Calendar'); ?></a>
+					
+					<li class="mb-1"><span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span><a title="Download calendar" href="<?php the_field('calendar_download_current_sp', 'options'); ?>" target="_blank"><?php the_field('calendar_current_year_label', 'options'); ?> <?php _e('Calendar (SP)'); ?></a>
 
+					<li class="mb-1"><span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span><a title="Download calendar" href="<?php the_field('calendar_download_next', 'options'); ?>" target="_blank"><?php the_field('calendar_next_year_label', 'options'); ?> <?php _e('Calendar'); ?></a>
+
+					<li class="mb-1"><span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span><a title="Download calendar" href="<?php the_field('calendar_download_next_sp', 'options'); ?>" target="_blank"><?php the_field('calendar_next_year_label', 'options'); ?> <?php _e('Calendar (SP)'); ?></a>
+					
+					
+				</ul>
+									
 			</div>
 
 		</div>
-
-		<div class="row justify-content-center">
-
-			<div class="col-md-6 col-lg-8">
-
-				<?php get_template_part('template-parts/page-block', 'table-dates'); ?>
-
-			</div>
-
-			<div class="col-md-6 col-lg-4 mt-2 mt-md-0">
-
-				<?php get_template_part('template-parts/page-block', 'table-calendar-downloads'); ?>
-
-			</div>
-
-		</div>
-
+		
 	</div>
-
+	
 </div>
 
 <div class="py-3">

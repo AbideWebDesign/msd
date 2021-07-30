@@ -272,6 +272,9 @@ body .shiftnav-toggle-button, body .shiftnav-toggle-button:hover {
 }
 
 //Full Calendar
+h1#month {
+	color: $dark;
+}
 #calendar-list-district {
 	.fc-header-toolbar {
 		display: none;
@@ -286,5 +289,18 @@ body .shiftnav-toggle-button, body .shiftnav-toggle-button:hover {
 #calendar {
 	.fc-content {
 		color: white;
+	}
+}
+#calendar-dropdown-view {
+	margin-left: .4em;
+}
+.calendar-dropdown {
+	.dropdown-menu {
+		padding: .5rem;
+		font-size: $font-size-sm;
+		
+		.label-text {
+			padding-left: .4em;
+		}
 	}
 }
