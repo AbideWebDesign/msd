@@ -26,9 +26,9 @@
 	
 							<div class="col-12">
 								
-								<div class="text-dark font-weight-bold"><?php echo get_the_title($s); ?></div>
+								<div class="text-dark font-weight-bold"><?php echo ucwords( strtolower( get_the_title($s) ) ); ?></div>
 	
-								<div class="text-sm"><?php the_field('staff_position_description', $s); ?></div>
+								<div class="text-sm"><?php echo ucwords( strtolower( get_field('staff_position_description', $s) ) ); ?></div>
 								
 								<?php if ( get_field('staff_work_phone', $s) ): ?>
 								
