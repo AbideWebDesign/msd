@@ -16,7 +16,7 @@
 
 <?php $x = 0; ?>
 
-<div class="wrapper wrapper-cards <?php echo ( get_field('include_sidebar', $post) || ! get_field('cards_inlude_background') ? 'wrapper-cards-sub' : ''); ?>">
+<div class="wrapper wrapper-cards <?php echo ( get_field('include_sidebar', $post) || ! get_field('cards_include_background') ? 'wrapper-cards-sub' : ''); ?>">
 	
 	<div class="container">
 		
