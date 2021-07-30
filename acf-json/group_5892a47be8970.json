@@ -22,25 +22,6 @@
             "append": ""
         },
         {
-            "key": "field_5892a490750f8",
-            "label": "Calendar Text",
-            "name": "calendar_text",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "tabs": "all",
-            "toolbar": "basic",
-            "media_upload": 0,
-            "default_value": "",
-            "delay": 0
-        },
-        {
             "key": "field_5b687c2db3bea",
             "label": "Calendar Dates",
             "name": "calendar_dates",
@@ -357,5 +338,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1627665980
+    "modified": 1627668059
 }
