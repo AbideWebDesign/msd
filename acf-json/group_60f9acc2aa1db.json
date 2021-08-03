@@ -3,6 +3,32 @@
     "title": "Block - Image Gallery",
     "fields": [
         {
+            "key": "field_61098fbc03de9",
+            "label": "Gallery Type",
+            "name": "gallery_type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_rest": 0,
+            "choices": {
+                "header": "Page Header",
+                "content-single": "Inline Content Single"
+            },
+            "default_value": "Page Header",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
             "key": "field_60f9acd01a576",
             "label": "Gallery",
             "name": "gallery",
@@ -22,8 +48,8 @@
             "library": "all",
             "min": "",
             "max": "",
-            "min_width": 1318,
-            "min_height": 500,
+            "min_width": 982,
+            "min_height": "",
             "min_size": "",
             "max_width": "",
             "max_height": "",
@@ -48,5 +74,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1626976438
+    "modified": 1628016855
 }

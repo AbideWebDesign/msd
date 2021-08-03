@@ -1,5 +1,15 @@
 <?php if ( $images = get_field('gallery') ): ?>
 
+	<?php if ( get_field('gallery_type') == 'content-single' ): ?>
+	
+		<?php $type = 'slide-sm'; ?>
+	
+	<?php else: ?>
+	
+		<?php $type = 'slide-lg'; ?>
+		
+	<?php endif; ?>
+
 	<div class="wrapper-gallery">
 		
 		<div class="container">
@@ -32,7 +42,7 @@
 									
 								<div class="carousel-item <?php echo ( $x == 0 ? 'active' : '' ); ?>">
 									
-									<?php echo wp_get_attachment_image( $image, 'slide-lg', false, array( 'class' => 'img-fluid' ) ); ?>
+									<?php echo wp_get_attachment_image( $image, $type, false, array( 'class' => 'img-fluid' ) ); ?>
 									
 								</div>
 								
