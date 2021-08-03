@@ -14,9 +14,9 @@
 				
 		<?php elseif ( in_array( 'image', $includes ) ): ?>
 
-			<?php $type_lg = ( get_field('text_image_type') == 'Full' ? 'large' : 'card-alt' ); ?>
+			<?php $type_lg = ( get_field('text_image_style') == 'Full' ? 'card-full' : 'card-alt' ); ?>
 			
-			<?php $type = ( get_field('text_image_type') == 'Full' ? 'large' : 'slide-lg' ); ?>		
+			<?php $type = ( get_field('text_image_style') == 'Full' ? 'card-full' : 'slide-lg' ); ?>		
 				
 			<div class="row">
 				
