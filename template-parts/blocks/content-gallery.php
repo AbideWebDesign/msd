@@ -1,12 +1,12 @@
 <?php if ( get_field('gallery_type') == 'content-single' ): ?>
 	
-	<?php $images = get_field('gallery'); ?>
+	<?php $images = get_field('gallery_inline_text'); ?>
 	
 	<?php $type = 'slide-sm'; ?>
 
 <?php else: ?>
 
-	<?php $images = get_field('gallery_inline_text'); ?>
+	<?php $images = get_field('gallery'); ?>
 
 	<?php $type = 'slide-lg'; ?>
 	
