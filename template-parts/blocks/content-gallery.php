@@ -42,7 +42,7 @@
 									
 								<div class="carousel-item <?php echo ( $x == 0 ? 'active' : '' ); ?>">
 									
-									<?php echo wp_get_attachment_image( $image, $type, false, array( 'class' => 'img-fluid' ) ); ?>
+									<?php echo wp_get_attachment_image( $image, $type, false, array( 'class' => 'img-fluid w-100' ) ); ?>
 									
 								</div>
 								
