@@ -10,7 +10,7 @@
 		
 	<?php endif; ?>
 
-	<div class="wrapper-gallery">
+	<div class="wrapper-gallery <?php echo ( get_field('gallery_type') == 'content-single' ? 'pb-3' : ''); ?>">
 		
 		<div class="container">
 			
