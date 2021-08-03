@@ -2,13 +2,9 @@
 	
 	<?php $images = get_field('gallery_inline_text'); ?>
 	
-	<?php $type = 'slide-sm'; ?>
-
 <?php else: ?>
 
 	<?php $images = get_field('gallery'); ?>
-
-	<?php $type = 'slide-lg'; ?>
 	
 <?php endif; ?>
 
@@ -44,7 +40,7 @@
 								
 							<div class="carousel-item <?php echo ( $x == 0 ? 'active' : '' ); ?>">
 								
-								<?php echo wp_get_attachment_image( $image, $type, false, array( 'class' => 'img-fluid w-100' ) ); ?>
+								<?php echo wp_get_attachment_image( $image, 'slide-lg', false, array( 'class' => 'img-fluid w-100' ) ); ?>
 								
 							</div>
 							
