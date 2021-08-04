@@ -244,6 +244,12 @@
 														
 														<div class="text-sm mb-1"><?php the_field('staff_position_description'); ?></div>
 														
+														<?php if ( get_field('staff_secondary_description') ): ?>
+														
+															<div class="text-sm mb-1"><?php the_field('staff_secondary_description'); ?></div>
+														
+														<?php endif; ?>
+														
 														<?php if ( get_field('staff_work_phone') ): ?>
 								
 															<div class="text-sm"><i class="fa fa-phone-square-alt mr-1"></i> <?php the_field('staff_work_phone'); ?></div>

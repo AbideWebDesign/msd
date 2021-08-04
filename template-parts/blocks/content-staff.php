@@ -30,6 +30,12 @@
 	
 								<div class="text-sm"><?php echo ucwords( strtolower( get_field('staff_position_description', $s) ) ); ?></div>
 								
+								<?php if ( get_field('staff_secondary_description') ): ?>
+								
+									<div class="text-sm"><?php the_field('staff_secondary_description', $s); ?></div>
+								
+								<?php endif; ?>
+								
 								<?php if ( get_field('staff_work_phone', $s) ): ?>
 								
 									<div class="text-sm"><i class="fa fa-phone-square-alt mr-1"></i> <?php the_field('staff_work_phone', $s); ?></div>
