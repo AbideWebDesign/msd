@@ -133,6 +133,17 @@
 					font-weight: bold;
 				}
 			}
+			&.current_page_parent {
+				background-color: darken($light, 10);
+				
+				.children {
+					.current_page_item {
+						& > a {
+							font-weight: bold;
+						}
+					}
+				}
+			}
 			.children {
 				list-style: none;
 				padding: 0;
