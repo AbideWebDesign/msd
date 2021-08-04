@@ -10,7 +10,11 @@
 				
 				<div class="col-12">
 			
-					<h1 class="text-blue-dark mb-2"><?php the_field('text_heading'); ?></h1> 
+					<?php if ( is_array( 'heading', $includes ) && get_field('text_heading') ): ?>
+					
+						<h1 class="text-blue-dark mb-2"><?php the_field('text_heading'); ?></h1> 
+						
+					<?php endif; ?>
 				
 		<?php elseif ( in_array( 'image', $includes ) ): ?>
 
@@ -38,13 +42,13 @@
 					
 		<?php endif; ?>
 		
-		<?php if ( get_field('text_heading') && ! in_array( 'lead', $includes ) ): ?>
+		<?php if ( in_array( 'heading', $includes ) && get_field('text_heading') && ! in_array( 'lead', $includes ) ): ?>
 			
 			<h2 class="text-primary mb-2"><?php the_field('text_heading'); ?></h2>
 					
 		<?php endif; ?>
 		
-		<?php if ( get_field('text_content') ): ?>
+		<?php if ( in_array( 'content', $includes ) && get_field('text_content') ): ?>
 		
 			<?php the_field('text_content'); ?>
 		
