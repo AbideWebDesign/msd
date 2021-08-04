@@ -31,10 +31,12 @@
 						<?php if ( is_array( $images ) ): ?>	
 							
 							<?php foreach ( $images as $image ): ?>
-									
+								
+								<?php $image_size = wp_get_attachment_image_src($image, 'slide-lg', false); ?>
+								
 								<div class="carousel-item <?php echo ( $x == 0 ? 'active' : '' ); ?>">
 									
-									<?php echo wp_get_attachment_image( $image, 'slide-lg', false, array( 'class' => 'img-fluid w-100' ) ); ?>
+									<?php echo ( $image_size[1] == 1318 ? '<img src="' . $image_size[0] . '" class="img-fluid w-100" />' : wp_get_attachment_image( $image, 'slide-sm', false, array('class'=>'img-fluid w-100') ) ); ?>
 									
 								</div>
 								
