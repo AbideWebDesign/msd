@@ -1,14 +1,6 @@
-<?php if ( get_field('gallery_type') == 'content-single' ): ?>
-	
-	<?php $images = get_field('gallery_inline_text'); ?>
-	
-<?php else: ?>
+<?php $images = get_field('gallery'); ?>
 
-	<?php $images = get_field('gallery'); ?>
-	
-<?php endif; ?>
-
-<div class="wrapper-gallery <?php echo ( get_field('gallery_type') == 'content-single' ? 'pb-3' : ''); ?>">
+<div class="wrapper-gallery mb-3">
 	
 	<div class="container">
 		

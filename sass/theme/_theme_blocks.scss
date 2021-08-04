@@ -111,6 +111,13 @@
 }
 
 // Gallery 
+.gallery-header {
+	@extend .mb-3;
+	
+	.wrapper-gallery {
+		margin-bottom: 0 !important;
+	}
+}
 .wrapper-gallery {
 	.carousel-indicators {
 		bottom: 0px;

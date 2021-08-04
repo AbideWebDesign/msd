@@ -25,7 +25,7 @@ global $post;
 		
 	<?php if ( $blocks[0]['blockName'] == 'acf/gallery' ): ?>
 		
-		<div class="bg-light <?php echo ( get_field('include_sidebar', $post) ? '' : 'mb-3'); ?>">
+		<div class="bg-light gallery-header">
 			
 			<?php echo render_block( $blocks[0] ); ?>
 			
