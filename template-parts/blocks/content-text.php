@@ -10,7 +10,7 @@
 				
 				<div class="col-12">
 			
-					<?php if ( is_array( 'heading', $includes ) && get_field('text_heading') ): ?>
+					<?php if ( in_array( 'heading', $includes ) && get_field('text_heading') ): ?>
 					
 						<h1 class="text-blue-dark mb-2"><?php the_field('text_heading'); ?></h1> 
 						
