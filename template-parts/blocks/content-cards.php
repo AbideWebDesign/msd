@@ -12,7 +12,7 @@
 
 <?php endif; ?>
 
-<?php $colors = array( 'bg-primary', 'bg-orange', 'bg-green', 'bg-red', 'bg-green', 'bg-dark', 'bg-primary', 'bg-orange', 'bg-green', 'bg-red', 'bg-green', 'bg-dark', 'bg-primary', 'bg-orange' ); ?>
+<?php $colors = array( 'bg-primary', 'bg-orange', 'bg-green', 'bg-red', 'bg-green', 'bg-dark', 'bg-primary', 'bg-orange', 'bg-red', 'bg-green', 'bg-dark', 'bg-primary', 'bg-orange' ); ?>
 
 <?php $x = 0; ?>
 
