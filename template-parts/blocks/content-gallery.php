@@ -18,7 +18,7 @@
 				
 				<div id="carousel" class="carousel slide d-flex" data-ride="carousel">
 					
-					<?php if ( count( $images ) > 1 ): ?>
+					<?php if ( is_array( $images ) && count( $images ) > 1 ): ?>
 						
 						<ol class="carousel-indicators">
 							
@@ -35,18 +35,30 @@
 					<div class="carousel-inner" role="listbox">
 								
 						<?php $x = 0; ?>
+						
+						<?php if ( is_array( $images ) ): ?>	
 							
-						<?php foreach ( $images as $image ): ?>
+							<?php foreach ( $images as $image ): ?>
+									
+								<div class="carousel-item <?php echo ( $x == 0 ? 'active' : '' ); ?>">
+									
+									<?php echo wp_get_attachment_image( $image, 'slide-lg', false, array( 'class' => 'img-fluid w-100' ) ); ?>
+									
+								</div>
 								
+								<?php $x ++; ?>
+								
+							<?php endforeach; ?>
+						
+						<?php else: ?>
+						
 							<div class="carousel-item <?php echo ( $x == 0 ? 'active' : '' ); ?>">
-								
-								<?php echo wp_get_attachment_image( $image, 'slide-lg', false, array( 'class' => 'img-fluid w-100' ) ); ?>
-								
+									
+								<?php echo wp_get_attachment_image( $images, 'slide-lg', false, array( 'class' => 'img-fluid w-100' ) ); ?>
+									
 							</div>
-							
-							<?php $x ++; ?>
-							
-						<?php endforeach; ?>
+						
+						<?php endif; ?>
 						
 					</div>
 					

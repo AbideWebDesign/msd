@@ -109,7 +109,7 @@ global $post;
 						
 						<?php foreach ( $blocks as $block ): ?>
 						
-							<?php if ( $x != 0 || $x == 0 && 'acf/gallery' != $block['blockName'] ): ?>
+							<?php if ( ( $x != 0 || $x == 0 && 'acf/gallery' != $block['blockName'] ) && 'acf/cta' != $block['blockName'] ): ?>
 													
 								<?php echo render_block( $block ); ?>
 								
@@ -133,7 +133,7 @@ global $post;
 					
 		<?php foreach ( $blocks as $block ): ?>
 		
-			<?php if ( $x != 0 || $x == 0 && 'acf/gallery' != $block['blockName'] ): ?>
+			<?php if ( $x != 0 || $x == 0 && 'acf/gallery' != $block['blockName'] ):?>
 									
 				<?php echo render_block( $block ); ?>
 				
@@ -146,5 +146,19 @@ global $post;
 	<?php endif; ?>
 
 </div>
+
+<?php if ( has_block('acf/cta') ): ?>
+
+	<?php foreach ( $blocks as $block ): ?>
+	
+		<?php if ( 'acf/cta' == $block['blockName'] ): ?>
+		
+			<?php echo render_block( $block ); ?>
+		
+		<?php endif; ?>
+	
+	<?php endforeach; ?>
+
+<?php endif; ?>
 
 <?php get_footer();
