@@ -97,7 +97,7 @@ global $post;
 						
 					</div>
 					
-					<div class="col-lg-8 col-xl-9 order-1 order-lg-2">
+					<div class="col-lg-8 col-xl-9 order-1 order-lg-2 wrapper-content">
 						
 						<?php if ( get_field('include_breadcrumbs') ): ?>
 						

@@ -193,6 +193,15 @@
 .quick-link-wrap {
 	min-height: 300px;
 }	
+.wrapper-content {
+	.wrapper-cards {
+		padding-top: 0 !important;
+		
+		.container {
+			padding: 0;
+		}
+	}
+}
 
 // Text
 .wrapper-text {
