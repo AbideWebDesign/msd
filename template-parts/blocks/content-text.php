@@ -44,7 +44,7 @@
 		
 		<?php if ( in_array( 'heading', $includes ) && get_field('text_heading') && ! in_array( 'lead', $includes ) ): ?>
 			
-			<h2 class="text-primary mb-2"><?php the_field('text_heading'); ?></h2>
+			<h2 class="text-primary text-capitalize mb-2"><?php the_field('text_heading'); ?></h2>
 					
 		<?php endif; ?>
 		
