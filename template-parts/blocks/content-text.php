@@ -80,7 +80,7 @@
 						
 							<?php $link = get_sub_field('item_link'); ?>
 							
-							<p class="mt-2"><a title="Click to visit <?php echo $link['url']; ?>"  href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>"><?php echo $link['title']; ?> <i class="fas fa-chevron-right text-xs"></i></a></p>
+							<p class="mt-1 ml-2 mb-2"><a class="btn btn-primary btn-sm" title="Click to visit <?php echo $link['url']; ?>"  href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>"><?php echo $link['title']; ?> <i class="fas fa-chevron-right text-xs"></i></a></p>
 						
 						<?php endif; ?>
 						

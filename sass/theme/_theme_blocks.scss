@@ -1,7 +1,7 @@
 /* Blocks */
 
 .wrapper-content {
-	.wrapper-border-bottom, .wrapper-gallery{
+	.wrapper-border-bottom, .wrapper-gallery {
 		.container {
 			padding: 0;
 		}
@@ -247,6 +247,10 @@
 		}
 		li:last-child p:last-child {
 			margin-bottom: 0;
+		}
+		ul {
+			margin-top: .75em;
+			margin-bottom: .75em;
 		}
 	}
 	ul:not(.fa-ul) {
