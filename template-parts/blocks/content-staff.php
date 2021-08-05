@@ -8,7 +8,7 @@
 			
 			<div class="col-12">
 				
-				<h2 class="text-dark"><?php the_field('staff_title'); ?></h2>
+				<h2 class="text-primary text-capitalize mb-2"><?php the_field('staff_title'); ?></h2>
 				
 			</div>
 			
