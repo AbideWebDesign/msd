@@ -40,51 +40,55 @@
 			
 				<div class="<?php echo $col_class; ?>">
 					
-					<?php if ( get_sub_field('card_link') ): ?>
+					<div class="h-100 <?php echo $colors[$x]; ?>">
 					
-						<?php $link = get_sub_field('card_link'); ?>
+						<?php if ( get_sub_field('card_link') ): ?>
 						
-						<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
+							<?php $link = get_sub_field('card_link'); ?>
 							
-					<?php endif; ?>
-				
-					<?php if ( get_sub_field('card_content') ): ?>
+							<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
+								
+						<?php endif; ?>
 					
-						<?php echo wp_get_attachment_image( get_sub_field('card_image'), 'card-sm', false, array('class'=>'img-fluid w-100') ); ?>
+						<?php if ( get_sub_field('card_content') ): ?>
 						
-						<div class="<?php echo $colors[$x]; ?> text-white text-center p-2">
-						
-							<h4><?php the_sub_field('card_title'); ?></h4>
+							<?php echo wp_get_attachment_image( get_sub_field('card_image'), 'card-sm', false, array('class'=>'img-fluid w-100') ); ?>
 							
-							<?php if ( get_sub_field('card_content') ): ?>
+							<div class="<?php echo $colors[$x]; ?> text-white text-center p-2">
 							
-								<?php the_sub_field('card_content'); ?>
-							
-							<?php endif; ?>
-							
-						</div>
-					
-					<?php else: ?>
-						
-						<?php $img_src = wp_get_attachment_image_src( get_sub_field('card_image'), 'card', false ); ?>
-												
-						<div class="d-flex h-100 quick-link-wrap" style="background: url(<?php echo $img_src[0]; ?>) center center no-repeat; background-size: cover">
-						
-							<div class="<?php echo $colors[$x]; ?> text-white text-center p-2 d-flex justify-content-center align-self-end w-100">
-						
-								<h4 class="mb-0"><?php the_sub_field('card_title'); ?></h4>
-						
+								<h4><?php the_sub_field('card_title'); ?></h4>
+								
+								<?php if ( get_sub_field('card_content') ): ?>
+								
+									<?php the_sub_field('card_content'); ?>
+								
+								<?php endif; ?>
+								
 							</div>
 						
-						</div>
-												
-					<?php endif; ?>
+						<?php else: ?>
+							
+							<?php $img_src = wp_get_attachment_image_src( get_sub_field('card_image'), 'card', false ); ?>
+													
+							<div class="d-flex h-100 quick-link-wrap" style="background: url(<?php echo $img_src[0]; ?>) center center no-repeat; background-size: cover">
+							
+								<div class="<?php echo $colors[$x]; ?> text-white text-center p-2 d-flex justify-content-center align-self-end w-100">
+							
+									<h4 class="mb-0"><?php the_sub_field('card_title'); ?></h4>
+							
+								</div>
+							
+							</div>
+													
+						<?php endif; ?>
+						
+						<?php if ( get_sub_field('card_link') ): ?>
 					
-					<?php if ( get_sub_field('card_link') ): ?>
-				
-						</a>
-				
-					<?php endif; ?>
+							</a>
+					
+						<?php endif; ?>
+						
+					</div>
 										
 				</div>
 			
