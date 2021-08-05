@@ -145,6 +145,8 @@ h1 {
 	}
 }
 h2 {
+	font-size: 28px;
+	font-weight: 500;
 	@include media-breakpoint-down(md) {
 		font-size: $h2-font-size;
 	}
