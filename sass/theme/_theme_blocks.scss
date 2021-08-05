@@ -188,7 +188,7 @@
 		display: none;
 	}
 	
-	padding: 3em 0 3em 0 !important;
+	padding: 3em 0 1em 0 !important;
 }
 .quick-link-wrap {
 	min-height: 300px;
@@ -253,6 +253,13 @@
 	strong {
 		a {
 			font-weight: normal;
+		}
+	}
+}
+.wrapper-content {
+	.wrapper-text {
+		.container {
+			padding: 0;
 		}
 	}
 }
