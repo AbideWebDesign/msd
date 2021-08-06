@@ -4,7 +4,7 @@
 	
 	<div class="container-lg-full container-xl">
 		
-		<div class="row">
+		<div class="row no-gutters">
 			
 			<div class="col-12">
 				
