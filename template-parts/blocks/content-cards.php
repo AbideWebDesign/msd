@@ -8,7 +8,7 @@
 
 <?php elseif ( $count >= 4 ): ?>
 
-	<?php $col_class = 'col-md-6 col-lg-3 mb-2'; ?>
+	<?php $col_class = 'col-md-6 col-lg-4 col-xl-3 mb-2'; ?>
 
 <?php endif; ?>
 

@@ -41,7 +41,7 @@ global $post;
 				
 				<div class="row">
 					
-					<div class="col-lg-3 col-xl-3 order-2 order-lg-1">
+					<div class="col-lg-3 order-2 order-lg-1">
 						
 						<div class="d-none d-lg-block">
 							
@@ -97,7 +97,7 @@ global $post;
 						
 					</div>
 					
-					<div class="col-lg-8 col-xl-9 order-1 order-lg-2 wrapper-content">
+					<div class="col-lg-9 order-1 order-lg-2 wrapper-content">
 						
 						<?php if ( get_field('include_breadcrumbs') ): ?>
 						
