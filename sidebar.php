@@ -11,8 +11,6 @@ if ( $post->post_parent ) {
   	if ( empty( $parents ) || count( $parents ) == 1 ) {
 	  	
   		$root_page_id = $post->post_parent;
-
-  		$titlenamer = get_the_title( $post->ID );
   		
   	} else {
 	  	
@@ -21,8 +19,6 @@ if ( $post->post_parent ) {
   		end( $x );
 
   		$root_page_id = prev( $x );
-
-  		$titlenamer = get_the_title( $root_page_id );
   		
   	}
   		
@@ -36,6 +32,8 @@ if ( $post->post_parent ) {
 	    'depth' => 1,
 	    'exclude' => $exclude,
 	) );
+	
+	$titlenamer = get_the_title( $root_page_id );
 
 } elseif ( ! empty( get_pages( [ 'child_of' => get_queried_object_id() ] ) ) ) {
 	
@@ -49,7 +47,7 @@ if ( $post->post_parent ) {
 	
 	$root_page_id = $post->ID;
 	
-	$titlenamer = get_the_title( $post->ID );
+	$titlenamer = get_the_title( $root_page_id );
 
 } else {
 	
@@ -61,6 +59,8 @@ if ( $post->post_parent ) {
 	);
 	
 	$children = wp_list_pages( $query_args );
+	
+	$titlenamer = "Explore More";
 	
 }
 
@@ -78,7 +78,7 @@ if ( $post->post_parent ) {
 					
 					<?php if ( ! is_admin() ): ?>
 					
-						<a href="<?php the_permalink( $root_page_id ); ?>"><div class="font-weight-bold text-lg"><?php echo get_the_title( $root_page_id ); ?></div></a>
+						<a href="<?php the_permalink( $root_page_id ); ?>"><div class="font-weight-bold text-lg"><?php echo $titlenamer; ?></div></a>
 						
 					<?php else: ?>
 					
