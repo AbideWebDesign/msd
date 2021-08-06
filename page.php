@@ -41,7 +41,7 @@ global $post;
 				
 				<div class="row">
 					
-					<div class="col-lg-3">
+					<div class="col-lg-3 mb-2 mb-lg-0">
 						
 						<?php get_sidebar(); ?>
 													
