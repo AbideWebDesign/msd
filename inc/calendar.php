@@ -409,7 +409,7 @@ function render_list_view_district() {
 				events: {
 					googleCalendarId: 'msd.oregonk-12.net_pahhc93bihmeglb881ofdqen5g@group.calendar.google.com',
  				},
- 				duration: { days: 7 },
+ 				duration: { days: 30 },
 
 			} );
 			
