@@ -68,9 +68,9 @@
 															  		
 										<div class="row no-gutters h-100">
 											
-											<div class="col-md-4 order-2 order-md-1">
+											<div class="col-md-4 bg-blue-dark order-2 order-md-1">
 												
-												<div class="bg-blue-dark d-flex h-100 pl-xl-4">
+												<div class="slide-content-wrap d-flex pl-xl-4">
 												
 													<div class="slide-content bg-white shadow align-self-center">
 														
@@ -80,19 +80,15 @@
 														
 															<?php the_sub_field('slide_content'); ?>
 															
-														</div>
-															
-														<?php if ( get_sub_field('slide_button') ): ?>
+															<?php if ( get_sub_field('slide_button') ): ?>
 														
-															<?php $button = get_sub_field('slide_button'); ?>
-															
-															<div class="slide-button px-2">
-																
+																<?php $button = get_sub_field('slide_button'); ?>
+																																	
 																<a href="<?php echo $button['url']; ?>" class="btn btn-primary btn-lg btn-block" target="<?php echo $button['target']; ?>"><?php echo $button['title']; ?></a>
-														
-															</div>
-																
-														<?php endif; ?>	
+																															
+															<?php endif; ?>	
+															
+														</div>														
 															
 													</div>
 																	  							  	
@@ -106,7 +102,7 @@
 												
 												<div class="d-xl-none h-100 w-100 slide-image" style="background-image: url('<?php echo $img_src[0]; ?>');"></div>
 												
-												<?php echo wp_get_attachment_image( get_sub_field('slide_image'), 'slide', false, array('alt'=>get_the_title(get_sub_field('slide_image')), 'class'=>'w-100 img-fluid d-none d-xl-block') ); ?>
+												<?php echo wp_get_attachment_image( get_sub_field('slide_image'), 'slide', false, array( 'alt' => get_the_title( get_sub_field('slide_image') ), 'class'=>'w-100 img-fluid d-none d-xl-block' ) ); ?>
 												
 											</div>
 										
@@ -118,7 +114,7 @@
 									
 								<?php endwhile; ?>
 								
-							<?php elseif ( is_home() ): ?>
+							<?php elseif ( is_home() ): // News Page ?>
 							
 								<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 								
@@ -128,9 +124,9 @@
 
 										<div class="row no-gutters h-100">
 											
-											<div class="col-md-4 order-2 order-md-1">
+											<div class="col-md-4 order-2 order-md-1 bg-<?php echo $colors[$x]; ?>">
 												
-												<div class="bg-<?php echo $colors[$x]; ?> d-flex h-100 pl-xl-4">
+												<div class="slide-content-wrap d-flex pl-xl-4">
 												
 													<div class="slide-content bg-white shadow align-self-center">
 														
@@ -139,10 +135,6 @@
 															<h1 class="text-<?php echo $colors[$x]; ?> mb-2"><?php the_title(); ?></h1>
 														
 															<?php the_excerpt(); ?>
-															
-														</div>
-																														
-														<div class="slide-button px-2">
 															
 															<a href="<?php the_permalink(); ?>" class="btn btn-<?php echo $colors[$x]; ?> btn-lg btn-block"><?php _e('View Post'); ?></a>
 													
@@ -180,11 +172,11 @@
 															  		
 									<div class="row no-gutters h-100">
 										
-										<div class="col-md-4 order-2 order-md-1">
+										<div class="col-md-4 order-2 order-md-1 bg-dark">
 											
-											<div class="bg-secondary d-flex h-100 pl-xl-4">
-											
-												<div class="slide-content slide-content-single bg-white shadow align-self-center">
+											<div class="slide-content-wrap d-flex pl-xl-4">
+												
+												<div class="slide-content slide-content-sm bg-white shadow align-self-center">
 													
 													<div class="p-2 p-xl-3">
 												
@@ -232,11 +224,11 @@
 															  		
 									<div class="row no-gutters h-100">
 										
-										<div class="col-md-4 order-2 order-md-1">
+										<div class="col-md-4 order-2 order-md-1 bg-dark">
 											
-											<div class="bg-secondary d-flex h-100 pl-xl-4">
-											
-												<div class="slide-content slide-content-single bg-white shadow align-self-center">
+											<div class="slide-content-wrap d-flex pl-xl-4">
+												
+												<div class="slide-content slide-content-sm bg-white shadow align-self-center">
 													
 													<div class="p-2 p-xl-3">
 												
