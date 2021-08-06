@@ -72,9 +72,9 @@
 							
 					<?php render_list_view_district(); ?>
 		
-					<div class="mt-1">
+					<div class="">
 			
-						<a class="text-sm" href="<?php home_url(); ?>/calendar"><?php _e('More Events'); ?></a>
+						<a class="btn btn-primary btn-sm" href="<?php home_url(); ?>/calendar"><?php _e('More Events'); ?> <i class="fa fa-chevron-right text-xs ml-1"></i></a>
 			
 					</div>
 					

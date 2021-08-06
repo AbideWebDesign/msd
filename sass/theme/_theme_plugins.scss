@@ -285,11 +285,14 @@ h1#month {
 	color: $dark;
 }
 #calendar-list-district {
-	.fc-header-toolbar {
+	&.fc-theme-standard .fc-list {
+		border: none;
+	}
+	.fc-header-toolbar, .fc-list-event-graphic {
 		display: none;
 	}	
-	.fc-view-harness {
-		height: auto !important;
+	.fc-list-day-text {
+		color: $dark;
 	}
 	.custom-view {
 		position: relative;

@@ -328,7 +328,8 @@ function render_list_view_district() {
 	<div id='calendar-list-district'></div>
 	
 	<script>
-		
+				
+			
 		document.addEventListener('DOMContentLoaded', function() {
 
 			var allEventSources = [];
@@ -361,24 +362,27 @@ function render_list_view_district() {
 			
 			const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 			
-			let options = { timeStyle: 'short', timeZone: 'America/Los_Angeles'  };
-			
 			const { sliceEvents, createPlugin, Calendar } = FullCalendar
 			
 			const CustomViewConfig = {
-			
+		
 				classNames: [ 'custom-view' ],
+				
+				timeZone: 'America/Los_Angeles',
 				
 				content: function( props ) {
 					
+					let options = { timeStyle: 'short', timeZone: 'America/Los_Angeles'  };
+					
 					let segs = sliceEvents( props, true ); // allDay=true
 
-					 let html =
-					 '<div class="view-events">' +				
+					let html =
+						'<div class="view-events">' +				
 				 		segs.map( function( seg ) { 
+					 		console.log(seg.range.start);
 					 		return '<div class="row no-gutters mb-1"><div class="col-4 col-md-2 col-lg-3"><div class="d-flex bg-primary text-white p-1 h-100 text-center"><div class="d-flex align-self-center flex-column w-100"><div class="text-sm">' + months[seg.range.start.getMonth()] + '</div><div class="text-xl line-height-1">' + seg.range.start.getDate() + '</div></div></div></div><div class="col-8 col-md-10 col-lg-9 d-flex align-self-stretch bg-light"><div class="align-self-center p-2 text-blue-dark text-sm"><a class="stretched-link" target="_blank" href="' + seg.def.url + '">' + seg.def.title + '</a><br>' + seg.range.start.toLocaleString( 'en-US', options ) + '</div></div></div>'             				
         				} ).join('') +
-					'</div>';
+						'</div>';
 					
 					return { html: html }
 					
@@ -395,16 +399,19 @@ function render_list_view_district() {
 				},
 				
 			} );
-		
+
+
 			let calendarEl = document.getElementById( 'calendar-list-district' );
 		
 			let calendar = new FullCalendar.Calendar( calendarEl, {
 				
-				plugins: [ CustomViewPlugin ],
+// 				plugins: [ listPlugin ],
 				
 				googleCalendarApiKey: 'AIzaSyCtn4VYI0llZ2sEGiMgezxWyBDTVuKaHds',
 				
-				initialView: 'custom',
+				initialView: 'list',
+				
+				timeZone: 'local',
 				
 				events: {
 					googleCalendarId: 'msd.oregonk-12.net_pahhc93bihmeglb881ofdqen5g@group.calendar.google.com',
