@@ -156,6 +156,9 @@
 		margin-top: 50px;
 		box-shadow: $box-shadow;
 		
+		@include media-breakpoint-down(lg) {
+			margin-top: 70px;
+		}
 		li > a {
 			text-align: left;
 		}
