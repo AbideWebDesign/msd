@@ -173,16 +173,16 @@
 		    
 		    li > a {
 				color: white;
-				text-align: center;
-				
-				@include media-breakpoint-down(lg) {
-					text-align: left;
-				}
+				text-align: left;
 			}
 			.ubermenu-item-level-0 {
 			    @extend .d-flex;
 			    @extend .flex-fill;
-			    
+				
+				.ubermenu-target {
+					padding: 18px 10px;
+					text-align: center;
+				}	
 			    a {
 				    width: 100%;
 			    }
@@ -230,7 +230,7 @@
 		li ul li:first-child {
 		    border-left: none;
 		}
-		 li ul li span.ubermenu-target {
+		li ul li span.ubermenu-target {
 		    font-size: 16px;
 		    margin-bottom: 0;
 		    font-weight: 600;
@@ -249,7 +249,7 @@
 	    text-transform: uppercase;
 	    color: white;
 	    text-align: right
-	}	
+	}
 }
 
 // Shiftnav
