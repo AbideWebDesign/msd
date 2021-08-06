@@ -202,8 +202,8 @@
 	&:before {
 		display: none;
 	}
-	
-	padding: 3em 0 1em 0 !important;
+	margin: 3em 0 1em 0;
+	padding: 0 !important;
 }
 .quick-link-wrap {
 	min-height: 300px;
