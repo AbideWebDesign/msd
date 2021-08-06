@@ -34,24 +34,20 @@ global $post;
 	<?php endif; ?>
 
 	<?php if ( get_field('include_sidebar', $post) ): ?>
-		
-		<div class="py-3">
+				
+		<div class="py-lg-3">
 					
 			<div class="container-fluid container-xl">
 				
 				<div class="row">
 					
-					<div class="col-lg-3 order-2 order-lg-1">
+					<div class="col-lg-3">
 						
-						<div class="d-none d-lg-block">
-							
-							<?php get_sidebar(); ?>
-							
-						</div>
-						
+						<?php get_sidebar(); ?>
+													
 						<?php if ( get_field('include_callout') ): ?>
-							
-							<div class="pt-3 border-md-top">
+																
+							<div class="pt-3 border-md-top d-none d-lg-block">
 								
 								<div class="row">
 									
@@ -92,7 +88,7 @@ global $post;
 								</div>
 		
 							</div>
-						
+															
 						<?php endif; ?>
 						
 					</div>

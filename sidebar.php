@@ -53,35 +53,59 @@ if ( $post->post_parent ) {
 
 <?php if ( $children ): ?>
 								
-	<div class="wrapper-sidebar-links bg-light">
+	<div class="wrapper-sidebar-links bg-light navbar-expand-lg">
 		
 		<div class="bg-blue-dark text-white p-2">
 			
-			<?php if ( ! is_admin() ): ?>
-			
-				<a href="<?php the_permalink( $root_page_id ); ?>"><div class="font-weight-bold text-lg"><?php echo get_the_title( $root_page_id ); ?></div></a>
+			<div class="d-flex justify-content-between">
 				
-			<?php else: ?>
-			
-				<?php _e('Parent Name Will Go Here'); ?>
+				<div>
+					
+					<?php if ( ! is_admin() ): ?>
+					
+						<a href="<?php the_permalink( $root_page_id ); ?>"><div class="font-weight-bold text-lg"><?php echo get_the_title( $root_page_id ); ?></div></a>
+						
+					<?php else: ?>
+					
+						<?php _e('Parent Name Will Go Here'); ?>
+						
+					<?php endif; ?>
+					
+				</div>
 				
-			<?php endif; ?>
+				<div class="d-lg-none">
+					
+					<button type="button" class="navbar-toggle btn-plain text-white" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+			
+						<span class="sr-only">Toggle navigation</span>
+				
+						<i class="fa fa-1x fa-chevron-down"></i>
+								
+					</button>
+					
+				</div>
+				
+			</div>
 			
 		</div>
 		
-		<ul class="list-unstyled text-sm mb-0">
+		<div class="navbar-collapse collapse sidebar-navbar-collapse">
 			
-			<?php if ( ! is_admin() ): ?>
-			
-				<?php echo $children; ?>
+			<ul class="nav navbar-nav list-unstyled text-sm mb-0">
 				
-			<?php else: ?>
-			
-				<?php _e('Links will go here'); ?>
+				<?php if ( ! is_admin() ): ?>
 				
-			<?php endif; ?>
+					<?php echo $children; ?>
+					
+				<?php else: ?>
+				
+					<?php _e('Links will go here'); ?>
+					
+				<?php endif; ?>
+				
+			</ul>
 			
-		</ul>
+		</div>
 		
 	</div>
 					

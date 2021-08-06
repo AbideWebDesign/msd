@@ -1,9 +1,10 @@
 /* Blocks */
 
 .wrapper-content {
-	.wrapper-border-bottom, .wrapper-gallery {
+	.wrapper-border-bottom, .wrapper-gallery, .wrapper-cards, .wrapper-text {
 		.container {
 			padding: 0;
+			max-width: 100%;
 		}
 	}
 }
@@ -139,6 +140,7 @@
 	ul {
 		li {
 			padding: .75em 1.5em;
+			width: 100%;
 			
 			&.current_page_item {
 				background-color: darken($light, 10); 
@@ -168,6 +170,9 @@
 				}
 			}
 		}
+	}
+	@include media-breakpoint-down(md) {
+		margin: 0 -15px;
 	}
 }
 
@@ -201,15 +206,6 @@
 .quick-link-wrap {
 	min-height: 300px;
 }	
-.wrapper-content {
-	.wrapper-cards {
-		padding-top: 0 !important;
-		
-		.container {
-			padding: 0;
-		}
-	}
-}
 
 // Text
 .wrapper-text {
@@ -267,13 +263,7 @@
 		}
 	}
 }
-.wrapper-content {
-	.wrapper-text {
-		.container {
-			padding: 0;
-		}
-	}
-}
+
 .wrapper-buttons {
 	@include media-breakpoint-down(sm) {
 		.btn {
