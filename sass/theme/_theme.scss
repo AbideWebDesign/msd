@@ -166,7 +166,7 @@ h2 {
 }
 @include media-breakpoint-up(xl) {
 	.container-xl {
-		max-width: container-max-widths(xl);
+		max-width: 1350px;
 	}
 }
 @include media-breakpoint-down(lg) {
