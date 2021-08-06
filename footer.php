@@ -26,7 +26,7 @@ defined( 'ABSPATH' ) || exit;
 						
 						<div class="row justify-content-center justify-content-md-start">
 							
-							<div class="col-12 col-md-3 col-lg-3 col-xl-3 border-lg-right border-light mt-2 mt-md-0">
+							<div class="col-12 col-lg-3 col-xl-3 border-lg-right border-light mt-2 mt-md-0">
 								
 								<div class="pr-lg-3">
 									
@@ -64,9 +64,9 @@ defined( 'ABSPATH' ) || exit;
 								
 							</div>
 							
-							<div class="col-12 col-md-9 col-lg-9 col-xl-9 border-light mt-4 mt-md-0">
+							<div class="col-12 col-lg-9 col-xl-9 border-light mt-4 mt-md-0">
 								
-								<div class="d-flex px-lg-2 flex-column flex-md-row justify-content-center">
+								<div class="d-flex px-lg-2 flex-column flex-lg-row justify-content-center">
 									
 									<div class="pr-md-3 mb-1 mb-md-0">
 										
