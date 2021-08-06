@@ -34,7 +34,7 @@ if ( $post->post_parent ) {
 	    'depth' => 1
 	) );
 
-} else {
+} elseif ( ! empty( get_pages( [ 'child_of' => get_queried_object_id() ] ) ) ) {
 	
 	$children = wp_list_pages( array (
 		'title_li' => '',
@@ -47,6 +47,19 @@ if ( $post->post_parent ) {
 	
 	$titlenamer = get_the_title( $post->ID );
 
+} else {
+	
+	$exclude = implode(', ', get_field('excluded_pages', 'options') );
+	
+	$query_args = array(
+	    'title_li' => '',
+	    'parent' => 0,
+	    'echo' => 0,
+	    'exclude' => $exclude,
+	);
+	
+	$children = wp_list_pages( $query_args );
+	
 }
 
 ?>
