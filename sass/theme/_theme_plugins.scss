@@ -194,10 +194,6 @@
 			    .ubermenu-item {
 				    a.ubermenu-target {
 						padding: 8px 10px;
-
-					    &.ubermenu-item-layout-text_only {
-						    padding: 15px 10px;
-					    }
 				    }
 			    }
 		    }
@@ -207,6 +203,7 @@
 			    font-size: $font-size-lg;
 			    line-height: 26px;
 			    border-bottom: 1px solid white;
+			    padding: 15px 10px;
 		    }
 		    .btn-nav {
 			    .ubermenu-target {
