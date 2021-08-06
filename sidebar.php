@@ -2,6 +2,8 @@
 
 global $post;
 
+$exclude = implode(', ', get_field('excluded_pages', 'options') );
+
 if ( $post->post_parent ) {
 
 	$parents = get_post_ancestors( $post->ID );
@@ -31,7 +33,8 @@ if ( $post->post_parent ) {
 	    'child_of' => $root_page_id,
 	    'walker' => $walker,
 	    'echo'	=> 0,
-	    'depth' => 1
+	    'depth' => 1,
+	    'exclude' => $exclude,
 	) );
 
 } elseif ( ! empty( get_pages( [ 'child_of' => get_queried_object_id() ] ) ) ) {
@@ -41,6 +44,7 @@ if ( $post->post_parent ) {
 		'depth' => 1,
 		'child_of' => $post->ID,
 		'echo' => 0,
+		'exclude' => $exclude,
 	) );
 	
 	$root_page_id = $post->ID;
@@ -48,8 +52,6 @@ if ( $post->post_parent ) {
 	$titlenamer = get_the_title( $post->ID );
 
 } else {
-	
-	$exclude = implode(', ', get_field('excluded_pages', 'options') );
 	
 	$query_args = array(
 	    'title_li' => '',
