@@ -153,7 +153,7 @@
 #menu-global {
 	.ubermenu-primary-menu.ubermenu-transition-fade .ubermenu-item .ubermenu-submenu-drop {
 		background-color: $dark;
-		margin-top: 50px;
+		margin-top: 56px;
 		box-shadow: $box-shadow;
 		
 		li > a {
@@ -189,6 +189,16 @@
 				&:last-child > .ubermenu-target {
 					border-right: 1px solid #fff;
 				}
+		    }
+		    .ubermenu-submenu {
+			    .ubermenu-item {
+				    .ubermenu-target {
+					    &.ubermenu-item-layout-text_only {
+						    padding: 15px 10px;
+					    }
+					    padding: 8px 10px;
+				    }
+			    }
 		    }
 		    .ubermenu-submenu .ubermenu-item-header.ubermenu-has-submenu-stack > .ubermenu-target {
 			    color: white;
