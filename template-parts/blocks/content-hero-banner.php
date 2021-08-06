@@ -45,14 +45,6 @@
 								<?php endfor; ?>
 							
 							</ol>
-						
-							<a class="carousel-control-prev align-self-center" href="#carousel" role="button" data-slide="prev">
-							    
-							    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-							    
-							    <span class="sr-only"><?php _e('Previous'); ?></span>
-							
-							</a>
 							
 						<?php endif; ?>
 						
@@ -68,7 +60,7 @@
 															  		
 										<div class="row no-gutters h-100">
 											
-											<div class="col-md-4 bg-blue-dark order-2 order-md-1">
+											<div class="col-md-4 order-2 order-md-1 bg-dark">
 												
 												<div class="slide-content-wrap d-flex pl-xl-4">
 												
@@ -311,19 +303,7 @@
 							<?php endif; ?>
 								
 						</div>
-						
-						<?php if ( $num_slides > 1 ): ?>
-											
-							<a class="carousel-control-next align-self-center" href="#carousel" role="button" data-slide="next">
-				
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				
-								<span class="sr-only"><?php _e('Next'); ?></span>
-				
-							</a>
-							
-						<?php endif; ?>
-						
+												
 					</div>
 											
 				</div>
