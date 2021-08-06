@@ -279,6 +279,9 @@ body .shiftnav-toggle-button, body .shiftnav-toggle-button:hover {
 	color: white !important;
 	background-color: $primary !important;
 }
+body .shiftnav.shiftnav-skin-light ul.shiftnav-menu ul.sub-menu li.menu-item > .shiftnav-target {
+	color: $dark;
+}
 
 //Full Calendar
 h1#month {
