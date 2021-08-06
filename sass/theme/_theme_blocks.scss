@@ -1,8 +1,8 @@
 /* Blocks */
 
 .wrapper-content {
-	.wrapper-border-bottom, .wrapper-gallery, .wrapper-cards, .wrapper-text, .container-xl {
-		.container {
+	.wrapper-border-bottom, .wrapper-gallery, .wrapper-cards, .wrapper-text {
+		.container, .container-xl {
 			padding: 0;
 			max-width: 100%;
 		}
