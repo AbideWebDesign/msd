@@ -192,11 +192,12 @@
 		    }
 		    .ubermenu-submenu {
 			    .ubermenu-item {
-				    .ubermenu-target {
+				    a.ubermenu-target {
+						padding: 8px 10px;
+
 					    &.ubermenu-item-layout-text_only {
 						    padding: 15px 10px;
 					    }
-					    padding: 8px 10px;
 				    }
 			    }
 		    }
