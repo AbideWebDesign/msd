@@ -79,8 +79,7 @@
 			display: none;
 		}
 		.slide-content {
-			margin: 2em -8em 4em 2em;
-			min-height: 425px;
+			margin-left: 2em;
 		}
 		.slide-content-single {
 			min-height: auto;
@@ -90,9 +89,11 @@
 		}
 	}
 	@include media-breakpoint-down(xs) {
+		.slide-content-wrap {
+			height: auto;
+		}
 		.slide-content {
 			margin: -3em 1em 3em 1em;
-			min-height: 375px;
 			width: 100%;
 			box-shadow: $box-shadow;
 			
