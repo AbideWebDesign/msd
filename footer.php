@@ -24,11 +24,11 @@ defined( 'ABSPATH' ) || exit;
 
 					<div class="site-info">
 						
-						<div class="row justify-content-center justify-content-md-start">
+						<div class="row justify-content-center justify-content-lg-start">
 							
-							<div class="col-12 col-lg-3 col-xl-3 border-lg-right border-light mt-2 mt-md-0">
+							<div class="col-auto border-lg-right border-light mt-2 mt-md-0 mr-lg-2 mr-xl-3 order-2 order-lg-1 text-center text-lg-left">
 								
-								<div class="pr-lg-3">
+								<div class="pr-lg-2 pr-xl-3">
 									
 									<div class="text-center text-md-left mb-3 mb-md-0">
 										
@@ -64,11 +64,11 @@ defined( 'ABSPATH' ) || exit;
 								
 							</div>
 							
-							<div class="col-12 col-lg-9 col-xl-9 border-light mt-4 mt-md-0">
+							<div class="col-12 col-lg-8 col-xl-9 border-light mb-4 mb-lg-0 order-1 order-lg-2">
 								
-								<div class="d-flex px-lg-2 flex-column flex-lg-row justify-content-center">
+								<div class="row justify-content-center">
 									
-									<div class="pr-md-3 mb-1 mb-md-0">
+									<div class="col-md-6 col-xl-3 mb-2 mb-xl-0">
 										
 										<h5 class="text-primary text-uppercase font-weight-normal mb-1"><?php _e('Schools'); ?></h5>
 										
@@ -92,7 +92,7 @@ defined( 'ABSPATH' ) || exit;
 										
 									</div>
 									
-									<div class="pr-md-3 mb-1 mb-md-0">
+									<div class="col-md-6 col-xl-3 mb-2 mb-xl-0">
 										
 										<h5 class="text-primary text-uppercase font-weight-normal mb-1"><?php _e('About Us'); ?></h5>
 										
@@ -116,7 +116,7 @@ defined( 'ABSPATH' ) || exit;
 										
 									</div>
 									
-									<div class="pr-md-3 mb-1 mb-md-0">
+									<div class="col-md-6 col-xl-3 mb-2 mb-md-0">
 										
 										<h5 class="text-primary text-uppercase font-weight-normal mb-1"><?php _e('Departments'); ?></h5>
 										
@@ -140,7 +140,7 @@ defined( 'ABSPATH' ) || exit;
 										
 									</div>		
 									
-									<div class="mb-1 mb-md-0">
+									<div class="col-md-6 col-xl-3">
 										
 										<h5 class="text-primary text-uppercase font-weight-normal mb-1"><?php _e('Parents & Students'); ?></h5>
 										

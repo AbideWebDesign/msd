@@ -456,12 +456,17 @@ h2 {
 	.footer-logo {
 		width: 155px;
 	}
-	@include media-breakpoint-down(sm) {
-		.footer-logo {
-			width: 220px;
+	@include media-breakpoint-down(lg) {
+		h5 {
+			font-size: $font-size-lg;
 		}
+	}
+	@include media-breakpoint-down(md) {
 		h5 {
 			font-size: $font-size-xl;
+		}
+				.footer-logo {
+			width: 220px;
 		}
 	}
 }
