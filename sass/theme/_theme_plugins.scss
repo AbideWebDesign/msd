@@ -285,7 +285,13 @@ h1#month {
 	color: $dark;
 }
 #calendar-list-district {
-	&.fc-theme-standard .fc-list {
+	.fc-view-harness {
+		height: auto !important;
+	}
+	.fc-view {
+		position: relative !important;
+	}
+	.fc-list {
 		border: none;
 	}
 	.fc-header-toolbar, .fc-list-event-graphic {

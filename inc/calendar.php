@@ -412,7 +412,7 @@ function render_list_view_district() {
 				initialView: 'list',
 				
 				timeZone: 'local',
-				
+				themeSystem: 'bootstrap',
 				events: {
 					googleCalendarId: 'msd.oregonk-12.net_pahhc93bihmeglb881ofdqen5g@group.calendar.google.com',
  				},
