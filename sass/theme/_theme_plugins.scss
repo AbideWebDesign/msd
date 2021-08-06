@@ -156,9 +156,6 @@
 		margin-top: 50px;
 		box-shadow: $box-shadow;
 		
-		@include media-breakpoint-down(lg) {
-			margin-top: 70px;
-		}
 		li > a {
 			text-align: left;
 		}
@@ -175,7 +172,7 @@
 				color: white;
 				text-align: left;
 			}
-			.ubermenu-has-submenu-drop, .ubermenu-item-336 {
+			& > .ubermenu-item {
 			    @extend .d-flex;
 			    @extend .flex-fill;
 				
