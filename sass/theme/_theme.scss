@@ -164,6 +164,11 @@ h2 {
 	font-weight: normal;
 	background-color: transparent;
 }
+@include media-breakpoint-up(xl) {
+	.container-xl {
+		max-width: container-max-widths(xl);
+	}
+}
 @include media-breakpoint-down(lg) {
 	.container-lg-full {
 		max-width: 100%;
