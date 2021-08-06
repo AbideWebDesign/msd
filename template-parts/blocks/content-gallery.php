@@ -2,7 +2,7 @@
 
 <div class="wrapper-gallery mb-3">
 	
-	<div class="container-fluid container-xl">
+	<div class="container-lg-full container-xl">
 		
 		<div class="row">
 			

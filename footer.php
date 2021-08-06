@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
 
 <div id="wrapper-footer" class="wrapper-sm bg-dark">
 
-	<div class="container">
+	<div class="container-fluid container-xl">
 
 		<div class="row">
 
@@ -184,7 +184,7 @@ defined( 'ABSPATH' ) || exit;
 
 <div class="py-1 bg-primary text-white text-xs text-center text-md-left">
 	
-	<div class="container">
+	<div class="container-fluid container-xl">
 		
 		<div class="row justify-content-between">
 			
