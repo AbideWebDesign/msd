@@ -25,7 +25,7 @@ defined( 'ABSPATH' ) || exit;
 
 <div id="header-top" class="bg-blue-dark d-none d-md-block">
 	
-	<div class="container">
+	<div class="container-fluid container-xl">
 		
 		<div class="row">
 			
@@ -45,7 +45,7 @@ defined( 'ABSPATH' ) || exit;
 
 	<div class="search-bar-inner">
 
-		<div class="container">
+		<div class="container-fluid container-xl">
 
 			<div class="row">
 
@@ -75,7 +75,7 @@ defined( 'ABSPATH' ) || exit;
 		
 	<div id="header-global">
 
-		<div class="container">
+		<div class="container-fluid container-xl">
 
 			<div class="row justify-content-center justify-content-sm-between">
 
