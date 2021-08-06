@@ -263,28 +263,9 @@ body .shiftnav-toggle-button, body .shiftnav-toggle-button:hover {
 	background-color: transparent;		
 	font-size: $font-size-lg;
 }
-.shiftnav.shiftnav-skin-light ul.shiftnav-menu li.menu-item.shiftnav-active > .shiftnav-target, .shiftnav.shiftnav-skin-light ul.shiftnav-menu li.menu-item.shiftnav-in-transition > .shiftnav-target,.shiftnav.shiftnav-skin-light ul.shiftnav-menu li.menu-item.current-menu-item > .shiftnav-target, .shiftnav.shiftnav-skin-light ul.shiftnav-menu li.menu-item ul.sub-menu .current-menu-item > .shiftnav-target {
-	background-color: $primary !important;
-}
-.shiftnav.shiftnav-skin-light ul.shiftnav-menu ul.sub-menu {
-	background-color: white !important;
-}
 .shiftnav ul.shiftnav-menu li.menu-item>.shiftnav-target, .shiftnav ul.shiftnav-menu li.shiftnav-retract>.shiftnav-target {
 	padding: 10px 25px !important;
 }
-.shiftnav.shiftnav-skin-light ul.shiftnav-menu li.shiftnav-retract .shiftnav-target {
-	color: $primary !important;
-}
-.shiftnav.shiftnav-skin-light ul.shiftnav-menu li.menu-item .shiftnav-submenu-activation {
-	color: white !important;
-	background-color: $primary !important;
-}
-body {
-	.shiftnav.shiftnav-skin-light ul.shiftnav-menu ul.sub-menu li.menu-item > .shiftnav-target {
-		color: $dark;
-	}
-}
-
 //Full Calendar
 h1#month {
 	color: $dark;
