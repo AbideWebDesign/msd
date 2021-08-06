@@ -37,7 +37,7 @@ global $post;
 		
 		<div class="py-3">
 					
-			<div class="container">
+			<div class="container-lg-full container">
 				
 				<div class="row">
 					
