@@ -68,7 +68,7 @@
 															  		
 										<div class="row no-gutters h-100">
 											
-											<div class="col-md-5 order-2 order-md-1">
+											<div class="col-md-4 order-2 order-md-1">
 												
 												<div class="bg-blue-dark d-flex h-100 pl-xl-4">
 												
@@ -78,7 +78,7 @@
 													
 															<h1 class="text-primary mb-2"><?php the_sub_field('slide_title'); ?></h1>
 														
-															<div class="text-xl-sm"><?php the_sub_field('slide_content'); ?></div>
+															<?php the_sub_field('slide_content'); ?>
 															
 														</div>
 															
@@ -100,7 +100,7 @@
 												
 											</div>
 											
-											<div class="col-md-7 order-1 order-md-2 align-self-xl-center">
+											<div class="col-md-8 order-1 order-md-2 align-self-xl-center">
 												
 												<?php $img_src = wp_get_attachment_image_src( get_sub_field('slide_image'), 'slide', false ); ?>
 												
@@ -125,10 +125,10 @@
 									<?php $colors = array( 'blue-dark', 'green', 'orange' ); ?>
 										
 									<div class="carousel-item <?php echo ( $x == 0 ? 'active' : '' ); ?>">
-															  		
+
 										<div class="row no-gutters h-100">
 											
-											<div class="col-md-5 order-2 order-md-1">
+											<div class="col-md-4 order-2 order-md-1">
 												
 												<div class="bg-<?php echo $colors[$x]; ?> d-flex h-100 pl-xl-4">
 												
@@ -138,7 +138,7 @@
 													
 															<h1 class="text-<?php echo $colors[$x]; ?> mb-2"><?php the_title(); ?></h1>
 														
-															<div class="text-xl-sm"><?php the_excerpt(); ?></div>
+															<?php the_excerpt(); ?>
 															
 														</div>
 																														
@@ -154,7 +154,7 @@
 												
 											</div>
 											
-											<div class="col-md-7 order-1 order-md-2 align-self-xl-center">
+											<div class="col-md-8 order-1 order-md-2 align-self-xl-center">
 												
 												<?php $img_src = get_the_post_thumbnail_url( $post->ID, 'slide' ); ?>
 												
@@ -180,7 +180,7 @@
 															  		
 									<div class="row no-gutters h-100">
 										
-										<div class="col-md-5 order-2 order-md-1">
+										<div class="col-md-4 order-2 order-md-1">
 											
 											<div class="bg-secondary d-flex h-100 pl-xl-4">
 											
@@ -208,7 +208,7 @@
 											
 										</div>
 										
-										<div class="col-md-7 order-1 order-md-2 align-self-xl-center">
+										<div class="col-md-8 order-1 order-md-2 align-self-xl-center">
 											
 											<?php $img_src = get_the_post_thumbnail_url( $post->ID, 'slide' ); ?>
 											
@@ -232,7 +232,7 @@
 															  		
 									<div class="row no-gutters h-100">
 										
-										<div class="col-md-5 order-2 order-md-1">
+										<div class="col-md-4 order-2 order-md-1">
 											
 											<div class="bg-secondary d-flex h-100 pl-xl-4">
 											
@@ -284,7 +284,7 @@
 											
 										</div>
 										
-										<div class="col-md-7 order-1 order-md-2 align-self-xl-center">
+										<div class="col-md-8 order-1 order-md-2 align-self-xl-center">
 											
 											<?php if ( get_field('staff_image') ): ?>
 											
