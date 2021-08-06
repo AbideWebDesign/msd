@@ -114,7 +114,9 @@ if ( ! function_exists( 'msd_custom_excerpt_more' ) ) {
 		
 		if ( ! is_admin() ) {
 			
-			$more = '';
+			global $post;
+			
+			$more = '...<a href="' . get_the_permalink($post) .'">Read More <i class="fa fa-chevron-right text-xs"></i></a>';
 		
 		}
 		

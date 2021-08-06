@@ -16,14 +16,52 @@
 			
 					<div class="mb-1 mb-md-0">
 			
-						<a class="btn btn-primary btn-sm" href="https://www.parentsquare.com/schools/<?php the_field('parentsquare_id', 'options'); ?>/feeds"><?php _e('More Updates'); ?></a>
+						<a class="btn btn-primary btn-sm" href="<?php echo home_url('/news'); ?>"><?php _e('More Updates'); ?></a>
 			
 					</div>
 			
 				</div>
 				
-				<iframe src="https://www.parentsquare.com/schools/<?php the_field('parentsquare_id', 'options'); ?>/rss_widget" title="New School Posts From ParentSquare" height="441px" scrolling="no" frameborder="0" width="100%" style="border:none;overflow:hidden;"></iframe>			
-			
+				<div class="row">
+									
+					<?php $args = array( 'post_type' => 'post', 'posts_per_page' => '3' ); ?>
+	
+					<?php $loop = new WP_Query( $args ); ?>
+	
+	 				<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+									
+						<div class="col-12">
+						
+							<div class="row">
+								
+								<div class="col-3 col-md-3 mb-2">
+								
+									<a href="<?php the_permalink(); ?>">
+								
+										<?php echo get_the_post_thumbnail( get_the_id(), 'card', array('alt'=> esc_html( get_the_title() ), 'class' => 'img-fluid w-100') ); ?>
+								
+									</a>
+								
+								</div>
+								
+								<div class="col-9 col-md-9">
+								
+									<a class="text-dark stretched-link text-lg font-weight-bold text-decoration-none mb-2" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								
+									<div class="text-sm"><?php the_excerpt(); ?></div>
+									
+								</div>
+						
+							</div>
+						
+						</div> 
+						
+					<?php endwhile; ?>
+		 			
+					<?php wp_reset_query(); ?>
+	 									
+				</div>
+				
 			</div>
 			
 			<div class="col-12 col-lg-4">

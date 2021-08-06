@@ -46,32 +46,28 @@ get_header();
 	
 <?php endif; ?>
 
-<div class="wrapper-sm">
+<div class="wrapper-sm bg-light">
 
 	<div class="container" tabindex="-1">
 
-		<div class="row">
+		<?php if ( have_posts() ) : ?>
 
-			<?php if ( have_posts() ) : ?>
+			<?php /* Start the Loop */ ?>
 
-				<?php /* Start the Loop */ ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php while ( have_posts() ) : the_post(); ?>
+				<?php get_template_part( 'loop-templates/content', 'single-archive' ); ?>
 
-					<?php get_template_part( 'loop-templates/content', 'single-archive' ); ?>
+			<?php endwhile; ?>
 
-				<?php endwhile; ?>
+		<?php else : ?>
 
-			<?php else : ?>
+			<?php get_template_part( 'loop-templates/content', 'none' ); ?>
 
-				<?php get_template_part( 'loop-templates/content', 'none' ); ?>
+		<?php endif; ?>
 
-			<?php endif; ?>
-
-			<!-- The pagination component -->
-			<?php msd_pagination(); ?>
-
-		</div><!-- .row -->
+		<!-- The pagination component -->
+		<?php msd_pagination(); ?>
 
 	</div><!-- #content -->
 
