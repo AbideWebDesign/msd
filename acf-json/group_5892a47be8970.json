@@ -254,7 +254,7 @@
                 "id": ""
             },
             "show_in_rest": 0,
-            "return_format": "array",
+            "return_format": "url",
             "library": "all",
             "min_size": "",
             "max_size": "",
@@ -314,7 +314,7 @@
                 "id": ""
             },
             "show_in_rest": 0,
-            "return_format": "array",
+            "return_format": "url",
             "library": "all",
             "min_size": "",
             "max_size": "",
@@ -338,5 +338,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1627668059
+    "modified": 1628546980
 }
