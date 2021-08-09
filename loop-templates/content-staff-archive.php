@@ -2,7 +2,7 @@
 
 <tr id="post-<?php the_ID(); ?>">
 	
-	<td><?php echo ucwords( strtolower( $building[0]->name ) ); ?></td>
+	<td><?php echo ( is_array( $building ) ? ucwords( strtolower( $building[0]->name ) ) : '' ); ?></td>
 	
 	<td><?php echo ucwords( strtolower ( get_field('staff_first_name') ) ); ?></td>
 	
