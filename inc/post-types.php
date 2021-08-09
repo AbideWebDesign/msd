@@ -1,5 +1,26 @@
 <?php 
+
+add_action( 'pre_get_posts', 'staff_sort_order', 1 );
+
+function staff_sort_order( $query ) {
+
+	if ( is_admin() || ! $query->is_main_query() )
 	
+		return;
+
+	if ( ( isset( $query->query_vars['post_type'] ) && $query->query_vars['post_type'] == 'staff' ) || is_tax( 'building' ) ) {
+	
+		$query->set( 'orderby', 'meta_value' );	
+		$query->set( 'meta_key', 'staff_last_name' );	 
+		$query->set( 'order', 'ASC' );
+		$query->set( 'posts_per_page', 100 );
+	
+	}
+		
+	return $query;
+
+}
+
 function msd_register_my_cpts() {
 
 	/**
@@ -57,7 +78,7 @@ function msd_register_my_cpts() {
 		"show_in_rest" => true,
 		"rest_base" => "",
 		"rest_controller_class" => "WP_REST_Posts_Controller",
-		"has_archive" => false,
+		"has_archive" => true,
 		"show_in_menu" => true,
 		"show_in_nav_menus" => true,
 		"delete_with_user" => false,

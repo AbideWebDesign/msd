@@ -252,14 +252,6 @@
 															
 														<?php endif; ?>
 														
-														<div class="d-flex text-lg">
-															
-															<div class="mr-1"><a class="text-primary" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"><i class="fab fa-facebook"></i></a></div>
-															
-															<div class="mr-1"><a class="text-primary" target="_blank" href="https://twitter.com/intent/tweet?url=<?php the_permalink(); ?>&text=<?php echo strip_tags( get_the_excerpt() ); ?>"><i class="fab fa-twitter"></i></a></div>
-
-														</div>
-
 													</div>
 															
 												</div>
