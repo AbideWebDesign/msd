@@ -70,7 +70,7 @@ defined( 'ABSPATH' ) || exit;
 									
 									<div class="col-md-6 col-xl-3 mb-2 mb-xl-0">
 										
-										<h5 class="text-primary text-uppercase font-weight-normal mb-1"><?php _e('Schools'); ?></h5>
+										<h5 class="text-white text-uppercase font-weight-bold mb-1"><?php _e('Schools'); ?></h5>
 										
 										<div class="text-lg-sm text-white">
 											
@@ -94,7 +94,7 @@ defined( 'ABSPATH' ) || exit;
 									
 									<div class="col-md-6 col-xl-3 mb-2 mb-xl-0">
 										
-										<h5 class="text-primary text-uppercase font-weight-normal mb-1"><?php _e('About Us'); ?></h5>
+										<h5 class="text-white text-uppercase font-weight-bold mb-1"><?php _e('About Us'); ?></h5>
 										
 										<div class="text-lg-sm text-white">
 											
@@ -118,7 +118,7 @@ defined( 'ABSPATH' ) || exit;
 									
 									<div class="col-md-6 col-xl-3 mb-2 mb-md-0">
 										
-										<h5 class="text-primary text-uppercase font-weight-normal mb-1"><?php _e('Departments'); ?></h5>
+										<h5 class="text-white text-uppercase font-weight-bold mb-1"><?php _e('Departments'); ?></h5>
 										
 										<div class="text-lg-sm text-white">
 											
@@ -142,7 +142,7 @@ defined( 'ABSPATH' ) || exit;
 									
 									<div class="col-md-6 col-xl-3">
 										
-										<h5 class="text-primary text-uppercase font-weight-normal mb-1"><?php _e('Parents & Students'); ?></h5>
+										<h5 class="text-white text-uppercase font-weight-bold mb-1"><?php _e('Parents & Students'); ?></h5>
 										
 										<div class="text-lg-sm text-white">
 											
