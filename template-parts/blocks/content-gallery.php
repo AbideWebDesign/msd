@@ -36,10 +36,9 @@
 								
 								<div class="carousel-item <?php echo ( $x == 0 ? 'active' : '' ); ?>">
 									
-									<?php echo ( $image_size[1] == 1318 ? '<img src="' . $image_size[0] . '" class="img-fluid w-100 d-none d-md-block" />' : wp_get_attachment_image( $image, 'slide-sm', false, array('class'=>'img-fluid w-100') ) ); ?>
+									<?php echo ( $image_size[1] == 1318 ? '<img src="' . $image_size[0] . '" class="img-fluid w-100 d-none d-md-block" />' : wp_get_attachment_image( $image, 'slide-sm', false, array('class'=>'img-fluid w-100 d-none d-md-block') ) ); ?>
 									
 									<?php echo wp_get_attachment_image( $image, 'card', false, array( 'class'=>'img-fluid w-100 d-md-none' ) ); ?>
-
 									
 								</div>
 								
