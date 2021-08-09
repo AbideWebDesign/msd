@@ -50,7 +50,7 @@
 								
 								<?php if ( get_field('staff_bio', $s) ): ?>
 								
-									<div class="mt-1"><a href="<?php get_the_permalink($s); ?>" class="btn btn-secondary btn-sm"><?php _e('View Bio'); ?></a></div>
+									<div class="mt-1"><a href="<?php echo get_the_permalink( $s ); ?>" class="btn btn-secondary btn-sm"><?php _e('View Bio'); ?></a></div>
 								
 								<?php endif; ?>
 								
