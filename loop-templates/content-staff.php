@@ -29,7 +29,7 @@ if ( function_exists( 'yoast_breadcrumb' ) ) {
 
 	<div class="post-content">
 
-		<?php the_filed('staff_bio'); ?>
+		<?php the_field('staff_bio'); ?>
 
 	</div><!-- .entry-content -->
 
