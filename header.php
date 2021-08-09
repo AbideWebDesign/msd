@@ -23,15 +23,21 @@ defined( 'ABSPATH' ) || exit;
 
 <?php get_template_part('template-parts/blocks/content','alert'); ?>
 
-<div id="header-top" class="bg-blue-dark d-none d-md-block">
+<div id="header-top" class="bg-blue-dark">
 	
 	<div class="container-fluid container-xl">
 		
-		<div class="row">
+		<div class="row justify-content-center justify-content-md-between">
 			
-			<div class="col-auto">
+			<div class="col-auto d-none d-md-block align-self-center">
 				
 				<?php ubermenu( 'school-menu' , array( 'menu' => 23 ) ); ?>
+				
+			</div>
+			
+			<div class="col-auto align-self-center py-1">
+				
+				<a href="<?php the_field('covid_19_page', 'options'); ?>" class="text-sm"><i class="fa fa-user-shield text-xs"></i> <?php _e('COVID-19'); ?></a>
 				
 			</div>
 			

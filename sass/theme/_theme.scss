@@ -393,6 +393,15 @@ h2 {
 	.ubermenu {
 		z-index: 101;
 	}
+	.fa {
+		margin-right: .5em;
+	}
+	a:hover {
+		color: darken($light, 10);
+	}
+	.ubermenu-responsive-toggle {
+		padding: 0 !important;
+	}
 }
 #header-global {
 	padding: 1.5em 0;
