@@ -109,7 +109,7 @@
             "key": "field_61145c7eca27f",
             "label": "Secondary Description",
             "name": "staff_secondary_description",
-            "type": "textarea",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -121,9 +121,9 @@
             "show_in_rest": 1,
             "default_value": "",
             "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": ""
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_6101c875538e8",
@@ -210,5 +210,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1628724371
+    "modified": 1628724574
 }
