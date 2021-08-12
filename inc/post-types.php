@@ -1,5 +1,13 @@
 <?php 
 
+add_filter( 'rest_staff_collection_params', function( $params ) {
+    
+    $params['per_page']['maximum'] = 200;
+    
+    return $params;
+
+} );
+
 add_action( 'pre_get_posts', 'staff_sort_order', 1 );
 
 function staff_sort_order( $query ) {
