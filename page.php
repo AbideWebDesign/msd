@@ -143,7 +143,7 @@ global $post;
 
 </div>
 
-<?php if ( has_block('acf/cta') ): ?>
+<?php if ( has_block('acf/cta') && get_field('include_sidebar', $post) ): ?>
 
 	<?php foreach ( $blocks as $block ): ?>
 	
