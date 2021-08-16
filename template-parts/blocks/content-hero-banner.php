@@ -263,13 +263,15 @@
 										<div class="col-md-8 order-1 order-md-2 align-self-xl-center">
 											
 											<?php if ( get_field('staff_image') ): ?>
-											
+
 												<?php $img_src = wp_get_attachment_image_src( get_field('staff_image'), 'slide', false ); ?>
 
 												<?php if ( $img_src[1] < 900 ): ?>
-												
+													
+													<?php $to_small = true; ?>
+																								
 													<?php $img_src = wp_get_attachment_image_src( get_school_image_id(), 'slide', false ); ?>
-												
+																										
 												<?php endif; ?>
 												
 											<?php else: ?>
@@ -281,12 +283,20 @@
 											<div class="d-xl-none h-100 w-100 slide-image" style="background-image: url('<?php echo $img_src[0]; ?>');"></div>
 											
 											<?php if ( get_field('staff_image') ): ?>
-											
-												<?php echo wp_get_attachment_image( get_field('staff_image'), 'slide', false, array('alt'=> get_the_title(get_field('staff_image')), 'class'=>'w-100 img-fluid d-none d-xl-block') ); ?>
+
+												<?php if ( ! $to_small ): ?>
+												
+													<?php echo wp_get_attachment_image( get_field('staff_image'), 'slide', false, array('alt'=> get_the_title( get_field('staff_image') ), 'class'=>'w-100 img-fluid d-none d-xl-block') ); ?>
 										
+												<?php else: ?>
+												
+													<?php echo wp_get_attachment_image( get_school_image_id(), 'slide', false, array('alt'=> get_the_title( get_field('staff_image') ), 'class'=>'w-100 img-fluid d-none d-xl-block') ); ?>
+												
+												<?php endif; ?>
+												
 											<?php else: ?>
 											
-												<?php echo wp_get_attachment_image( get_school_image_id(), 'slide', false, array('alt'=> get_the_title(get_field('staff_image')), 'class'=>'w-100 img-fluid d-none d-xl-block') ); ?>
+												<?php echo wp_get_attachment_image( get_school_image_id(), 'slide', false, array('alt'=> get_the_title( get_field('staff_image') ), 'class'=>'w-100 img-fluid d-none d-xl-block') ); ?>
 											
 											<?php endif; ?>
 											
