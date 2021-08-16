@@ -265,6 +265,12 @@
 											<?php if ( get_field('staff_image') ): ?>
 											
 												<?php $img_src = wp_get_attachment_image_src( get_field('staff_image'), 'slide', false ); ?>
+
+												<?php if ( $img_src[1] < 900 ): ?>
+												
+													<?php $img_src = wp_get_attachment_image_src( get_school_image_id(), 'slide', false ); ?>
+												
+												<?php endif; ?>
 												
 											<?php else: ?>
 											
