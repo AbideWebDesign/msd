@@ -18,7 +18,7 @@
 		
 			<?php foreach ( $staff as $s ): ?>
 			
-				<div class="<?php echo ( count( $staff ) < 2 ? 'col-lg-6 mb-1' : 'col-md-6 col-lg-4 mb-1'); ?> align-self-stretch">
+				<div class="<?php echo ( count( $staff ) <= 2 ? 'col-lg-6 mb-1' : 'col-md-6 col-lg-4 mb-1'); ?> align-self-stretch">
 					
 					<div class="border rounded px-2 py-1 h-100">
 						
