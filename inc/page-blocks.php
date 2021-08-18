@@ -92,7 +92,7 @@ function msd_acf_init() {
 			'description'		=> __(''),
 			'render_callback'	=> 'msd_acf_block_render_callback',
 			'category'			=> 'formatting',
-			'icon'				=> 'businesswomen',
+			'icon'				=> 'admin-users',
 			'mode'				=> 'edit',
 		) );
 				

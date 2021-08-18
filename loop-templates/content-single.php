@@ -27,7 +27,7 @@ if ( function_exists( 'yoast_breadcrumb' ) ) {
 		
 	</header><!-- .entry-header -->
 
-	<div class="post-content">
+	<div class="wrapper-content post-content">
 
 		<?php the_content(); ?>
 
