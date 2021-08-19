@@ -1,28 +1,46 @@
-<?php if ( get_field('carousel_images') || is_home() || is_single() ): ?>
+<?php 
 
-	<?php
-	
-		if ( get_field('carousel_images') ) {
-			
-			$slides = get_field('carousel_images');
-			
-			$num_slides = count( $slides );
-			
-		} elseif ( is_home() ) {
-			
-			$args = array( 'post_type' => 'post', 'posts_per_page' => '3' );
+if ( get_field('carousel_images') || is_home() || is_single() || is_front_page() ): 
 
-			$query = new WP_Query( $args );
-			
-			$num_slides = 3;
+	if ( get_field('carousel_images') ) {
+		
+		$slides = get_field('carousel_images');
+		
+		$num_slides = count( $slides );
+		
+	} elseif ( is_home() ) { // News Archive
+		
+		$args = array( 'post_type' => 'post', 'posts_per_page' => '3' );
 
-		} elseif ( is_single() ) {
-			
-			$num_slides = 1;
+		$query = new WP_Query( $args );
+		
+		$num_slides = 3;
+
+	} elseif ( is_single() ) {
+		
+		$num_slides = 1;
+		
+	} elseif ( is_front_page() ) {
+		
+		$all_slides = get_field('slides', 'options');
+		
+		$num_slides = 0;
+		
+		foreach ( $all_slides as $slide ) {
+
+			if ( in_array( 'All', $slide['schools'] ) || in_array( 'McMinnville School District', $slide['schools'] ) ) {
+				
+				$slides[] = $slide;
+				
+				$num_slides ++;
+				
+			}
 			
 		}
 		
-	?>
+	}
+		
+?>
 	
 	<section class="wrapper-hero-banner bg-light">
 	
@@ -306,7 +324,57 @@
 								
 									<?php $x ++; ?>
 									
-								</div>																
+								</div>		
+								
+							<?php elseif ( is_front_page() ): ?>	
+
+								<?php foreach( $slides as $slide ): ?>
+							
+									<div class="carousel-item <?php echo ( $x == 0 ? 'active' : '' ); ?>">
+															  		
+										<div class="row no-gutters h-100">
+											
+											<div class="col-md-4 order-2 order-md-1 bg-dark">
+												
+												<div class="slide-content-wrap d-flex pl-xl-4">
+												
+													<div class="slide-content bg-white shadow align-self-center">
+														
+														<div class="p-2 p-xl-3">
+													
+															<h1 class="text-primary mb-2"><?php echo $slide['slide_title']; ?></h1>
+														
+															<?php echo $slide['slide_content']; ?>
+															
+															<?php if ( isset( $slide['slide_button'] ) ): ?>
+																																															
+																<a href="<?php echo $slide['slide_button']['url']; ?>" class="btn btn-primary btn-lg btn-block" target="<?php echo $slide['slide_button']['target']; ?>"><?php echo $slide['slide_button']['title']; ?></a>
+																															
+															<?php endif; ?>	
+															
+														</div>														
+															
+													</div>
+																	  							  	
+												</div>
+												
+											</div>
+											
+											<div class="col-md-8 order-1 order-md-2 align-self-xl-center">
+																								
+												<div class="d-xl-none h-100 w-100 slide-image" style="background-image: url('<?php echo $slide["slide_image"]["sizes"]["slide"]; ?>');"></div>
+																								
+												<img src="<?php echo $slide['slide_image']['sizes']['slide']; ?>" alt="<?php echo $slide['slide_title']; ?>" class="w-100 img-fluid d-none d-xl-block" />
+												
+											</div>
+										
+										</div>
+									
+										<?php $x ++; ?>
+										
+									</div>	
+																			
+								<?php endforeach; ?>											
 							
 							<?php endif; ?>
 								
