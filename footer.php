@@ -190,7 +190,7 @@ defined( 'ABSPATH' ) || exit;
 			
 			<div class="col-md-auto mb-1 mb-md-0">
 				
-				<a href="<?php echo home_url('/web-accessibility'); ?>" class="text-white"><?php _e('Web Accessibility'); ?></a> | <a href="<?php echo home_url('/about_us/public_notices/'); ?>" class="text-white"> <?php _e('Non-Discrimination Policy'); ?></a> | <a href="<?php echo home_url('/about_us/complaint_process/'); ?>" class="text-white"><?php _e('Complaint Process'); ?></a>
+				<a href="<?php echo home_url('/web-accessibility'); ?>" class="text-white"><?php _e('Web Accessibility'); ?></a> | <a href="<?php echo home_url('/login'); ?>" class="text-white"> <?php _e('Website Login'); ?></a>
 				
 			</div>
 			
