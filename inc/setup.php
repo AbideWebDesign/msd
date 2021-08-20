@@ -118,7 +118,7 @@ if ( ! function_exists( 'msd_custom_excerpt_more' ) ) {
 			
 			global $post;
 			
-			$more = '...<a href="' . get_the_permalink($post) .'">Read More <i class="fa fa-chevron-right text-xs"></i></a>';
+			$more = '...';
 		
 		}
 		
