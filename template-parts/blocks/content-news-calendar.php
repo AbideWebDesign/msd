@@ -22,7 +22,7 @@
 			
 				</div>
 				
-				<div class="row">
+				<ul class="list-group">
 									
 					<?php $args = array( 'post_type' => 'post', 'posts_per_page' => '3' ); ?>
 	
@@ -30,11 +30,11 @@
 	
 	 				<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 									
-						<div class="col-12">
+						<li class="list-group-item news-list-item">
 						
 							<div class="row">
 								
-								<div class="col-3 col-md-3 mb-2">
+								<div class="col-3 col-md-3 mb-0 align-self-center">
 								
 									<a href="<?php the_permalink(); ?>">
 								
@@ -44,23 +44,25 @@
 								
 								</div>
 								
-								<div class="col-9 col-md-9">
+								<div class="col-9 col-md-9 news-list-content">
 								
 									<a class="text-dark stretched-link text-lg font-weight-bold text-decoration-none mb-2" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 								
-									<div class="text-sm"><?php the_excerpt(); ?></div>
+									<div class="text-sm mb-1"><?php the_excerpt(); ?></div>
+									
+									<div class="text-muted"><?php echo date( 'l, M d Y', strtotime( get_the_date() ) ); ?></div>
 									
 								</div>
 						
 							</div>
 						
-						</div> 
+						</li> 
 						
 					<?php endwhile; ?>
 		 			
 					<?php wp_reset_query(); ?>
 	 									
-				</div>
+				</ul>
 				
 			</div>
 			
