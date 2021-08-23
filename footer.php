@@ -182,7 +182,7 @@ defined( 'ABSPATH' ) || exit;
 
 </div>
 
-<div class="py-1 bg-primary text-white text-xs text-center text-md-left">
+<div class="bg-primary py-1 text-white text-xs text-center text-md-left">
 	
 	<div class="container-fluid container-xl">
 		
