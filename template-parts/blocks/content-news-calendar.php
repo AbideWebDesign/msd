@@ -24,7 +24,7 @@
 				
 				<ul class="list-group">
 									
-					<?php $args = array( 'post_type' => 'post', 'posts_per_page' => '3', 'meta_query' => array ( array ( 'key' => 'hide_on_home_page', 'value' => '1', 'compare' => '!=' ) ) ); ?>
+					<?php $args = array( 'post_type' => 'post', 'posts_per_page' => '3' ); ?>
 	
 					<?php $loop = new WP_Query( $args ); ?>
 	
