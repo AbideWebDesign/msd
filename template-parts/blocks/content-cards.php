@@ -44,9 +44,9 @@
 			
 				<div class="<?php echo $col_class; ?>">
 					
-					<div class="h-100 <?php echo ( get_sub_field('card_type') != 'Text Only' ? $colors[$x] : 'card-text border rounded p-1' ); ?>">
+					<div class="h-100 <?php echo ( get_sub_field('card_type') != 'Text Focus' ? $colors[$x] : 'card-text border rounded p-1' ); ?>">
 					
-						<?php if ( get_sub_field('card_link') && ! get_sub_field('card_type') == 'Text Only' ): ?>
+						<?php if ( get_sub_field('card_link') && ! get_sub_field('card_type') == 'Text Focus' ): ?>
 						
 							<?php $link = get_sub_field('card_link'); ?>
 							
@@ -70,11 +70,11 @@
 								
 							<?php endif; ?>
 							
-							<div class="<?php echo ( get_sub_field('card_type') != 'Text Only' ? $colors[$x] . 'text-white' : '' ); ?> text-center p-2">
+							<div class="<?php echo ( get_sub_field('card_type') != 'Text Focus' ? $colors[$x] . 'text-white' : '' ); ?> text-center p-2">
 							
 								<h4><?php the_sub_field('card_title'); ?></h4>
 								
-								<?php if ( get_sub_field('card_type') == 'Text Only' ): ?>
+								<?php if ( get_sub_field('card_type') == 'Text Focus' ): ?>
 								
 									<?php the_sub_field('card_text_content'); ?>
 								
@@ -88,7 +88,7 @@
 									
 								<?php endif; ?>
 								
-								<?php if ( get_sub_field('card_link') && get_sub_field('card_type') == 'Text Only' ): ?>
+								<?php if ( get_sub_field('card_link') && get_sub_field('card_type') == 'Text Focus' ): ?>
 								
 									<?php $link = get_sub_field('card_link'); ?>
 									
@@ -118,7 +118,7 @@
 													
 						<?php endif; ?>
 						
-						<?php if ( get_sub_field('card_link') && ! get_sub_field('card_type') == 'Text Only' ): ?>
+						<?php if ( get_sub_field('card_link') && ! get_sub_field('card_type') == 'Text Focus' ): ?>
 					
 							</a>
 					
