@@ -63,6 +63,32 @@
             "button_label": "Add Card",
             "sub_fields": [
                 {
+                    "key": "field_612fb453997b7",
+                    "label": "Type",
+                    "name": "card_type",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_rest": 0,
+                    "choices": {
+                        "Default": "Default",
+                        "Text Only": "Text Only"
+                    },
+                    "default_value": "Default",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
                     "key": "field_60e499d07661b",
                     "label": "Title",
                     "name": "card_title",
@@ -89,7 +115,15 @@
                     "type": "textarea",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_612fb453997b7",
+                                "operator": "==",
+                                "value": "Default"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -101,6 +135,34 @@
                     "maxlength": "",
                     "rows": "",
                     "new_lines": ""
+                },
+                {
+                    "key": "field_612fb4f48dec5",
+                    "label": "Content",
+                    "name": "card_text_content",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_612fb453997b7",
+                                "operator": "==",
+                                "value": "Text Only"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_rest": 0,
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0
                 },
                 {
                     "key": "field_60e499f77661d",
@@ -126,6 +188,39 @@
                     "max_height": "",
                     "max_size": "",
                     "mime_types": ""
+                },
+                {
+                    "key": "field_612fb5d1b9122",
+                    "label": "Image Style",
+                    "name": "card_image_style",
+                    "type": "select",
+                    "instructions": "Use \"Full\" for graphics and logos that shouldn't be cropped.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_60e499f77661d",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_rest": 0,
+                    "choices": {
+                        "Default": "Default",
+                        "Full": "Full"
+                    },
+                    "default_value": "Default",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
                 },
                 {
                     "key": "field_60e49a027661e",
@@ -163,5 +258,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1627590241
+    "modified": 1630516729
 }

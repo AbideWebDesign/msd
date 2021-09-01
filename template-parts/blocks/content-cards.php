@@ -2,7 +2,11 @@
 
 <?php $count = count( get_field('cards') ); ?>
 
-<?php if ( $count <= 3 ): ?>
+<?php if ( $count <= 2 ): ?>
+
+	<?php $col_class = 'col-md-6 mb-2'; ?>
+
+<?php elseif ( $count == 3 ): ?>
 
 	<?php $col_class = 'col-md-6 col-lg-4 mb-2'; ?>
 
@@ -40,9 +44,9 @@
 			
 				<div class="<?php echo $col_class; ?>">
 					
-					<div class="h-100 <?php echo $colors[$x]; ?>">
+					<div class="h-100 <?php echo ( get_sub_field('card_type') != 'Text Only' ? $colors[$x] : 'card-text border rounded p-1' ); ?>">
 					
-						<?php if ( get_sub_field('card_link') ): ?>
+						<?php if ( get_sub_field('card_link') && ! get_sub_field('card_type') == 'Text Only' ): ?>
 						
 							<?php $link = get_sub_field('card_link'); ?>
 							
@@ -50,17 +54,49 @@
 								
 						<?php endif; ?>
 					
-						<?php if ( get_sub_field('card_content') ): ?>
+						<?php if ( get_sub_field('card_content') || get_sub_field('card_text_content') ): ?>
 						
-							<?php echo wp_get_attachment_image( get_sub_field('card_image'), 'card-sm', false, array('class'=>'img-fluid w-100') ); ?>
+							<?php if ( get_sub_field('card_image_style') == 'Full' ): ?>
+								
+								<div class="text-center mb-3">
+									
+									<?php echo wp_get_attachment_image( get_sub_field('card_image'), 'small', false, array('class'=>'img-fluid') ); ?>
+									
+								</div>
+
+							<?php else: ?>
 							
-							<div class="<?php echo $colors[$x]; ?> text-white text-center p-2">
+								<?php echo wp_get_attachment_image( get_sub_field('card_image'), 'card-sm', false, array('class'=>'img-fluid w-100') ); ?>
+								
+							<?php endif; ?>
+							
+							<div class="<?php echo ( get_sub_field('card_type') != 'Text Only' ? $colors[$x] . 'text-white' : '' ); ?> text-center p-2">
 							
 								<h4><?php the_sub_field('card_title'); ?></h4>
 								
-								<?php if ( get_sub_field('card_content') ): ?>
+								<?php if ( get_sub_field('card_type') == 'Text Only' ): ?>
 								
-									<?php the_sub_field('card_content'); ?>
+									<?php the_sub_field('card_text_content'); ?>
+								
+								<?php else: ?>
+								
+									<?php if ( get_sub_field('card_content') ): ?>
+									
+										<?php the_sub_field('card_content'); ?>
+									
+									<?php endif; ?>
+									
+								<?php endif; ?>
+								
+								<?php if ( get_sub_field('card_link') && get_sub_field('card_type') == 'Text Only' ): ?>
+								
+									<?php $link = get_sub_field('card_link'); ?>
+									
+									<div class="mt-2">
+										
+										<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="btn btn-primary btn-block"><?php echo $link['title']; ?></a>
+										
+									</div>
 								
 								<?php endif; ?>
 								
@@ -82,7 +118,7 @@
 													
 						<?php endif; ?>
 						
-						<?php if ( get_sub_field('card_link') ): ?>
+						<?php if ( get_sub_field('card_link') && ! get_sub_field('card_type') == 'Text Only' ): ?>
 					
 							</a>
 					

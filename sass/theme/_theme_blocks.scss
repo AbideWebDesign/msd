@@ -194,6 +194,15 @@
 		background: $blue-dark;
 		width: 100%;
 	}
+	.card-text {
+		h4 {
+			font-size: $h3-font-size;
+			color: $primary;
+		}
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
 }
 .wrapper.wrapper-cards-sub {
 	&:before {
