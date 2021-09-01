@@ -12,7 +12,11 @@ get_header();
 
 ?>
 
-<?php get_template_part( 'template-parts/blocks/content', 'hero-banner' ); ?>
+<?php if ( get_field('include_hero') ): ?>
+
+	<?php get_template_part( 'template-parts/blocks/content', 'hero-banner' ); ?>
+
+<?php endif; ?>
 
 <div class="wrapper-sm">
 

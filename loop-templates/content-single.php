@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 
 if ( function_exists( 'yoast_breadcrumb' ) ) {
 	
-	yoast_breadcrumb( '<div class="wrapper-breadcrumbs pb-xl-2 mb-2 mb-xl-0 text-sm">','</div>' );
+	yoast_breadcrumb( '<div class="wrapper-breadcrumbs pb-xl-2 mb-2 mb-xl-0">','</div>' );
 
 }
 
@@ -23,7 +23,7 @@ if ( function_exists( 'yoast_breadcrumb' ) ) {
 
 	<header class="post-header">
 
-		<h2 class="text-dark"><?php the_title(); ?>
+		<h1 class="text-dark"><?php the_title(); ?></h1>
 		
 	</header><!-- .entry-header -->
 

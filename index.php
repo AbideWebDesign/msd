@@ -26,7 +26,7 @@ get_header();
 	
 <?php else: ?>
 
-	<div class="bg-light wrapper-sm">
+	<div class="bg-red py-3">
 		
 		<div class="container">
 			
@@ -34,7 +34,7 @@ get_header();
 				
 				<div class="col">
 					
-					<h1 class="text-dark mb-0"><?php _e('District News'); ?></h1>
+					<h2 class="text-white mb-0"><?php _e('District News'); ?></h2>
 					
 				</div>
 				

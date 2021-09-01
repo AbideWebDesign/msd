@@ -20,16 +20,12 @@
 		<div class="sidebar-post-link">
 			
 			<div class="row no-gutters">
-				
-				<div class="col-md-4 col-lg-3 col-xl-5 mb-1 mb-lg-0 align-self-center">
 					
-					<a class="streteched-link" href="<?php the_permalink(); ?>"><?php echo get_the_post_thumbnail( $post->ID, 'thumbnail', array('alt' => esc_html ( get_the_title() ), 'class' => 'img-fluid w-100') ); ?></a>
-					
-				</div>
-				
-				<div class="col-md-8 col-lg-9 col-xl-7 align-self-center pl-md-2 pt-1 pb-1 pr-md-1 pb-md-1 pb-lg-0 pt-lg-0">
+				<div class="col-12 py-1">
 		
 					<a class="streteched-link text-lg-sm text-center text-md-left" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+					
+					<div class="text-xs text-muted"><?php echo get_the_date(); ?></div>
 					
 					<div class="d-sm-block d-md-none text-sm mt-1 p-m-0">
 						

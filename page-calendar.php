@@ -7,7 +7,7 @@
  get_header();
 ?>
 
-<div class="bg-orange py-3">
+<div class="bg-green py-3">
 
 	<div class="container">
 

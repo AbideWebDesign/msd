@@ -128,7 +128,7 @@ if ( get_field('carousel_images') || is_home() || is_single() || is_front_page()
 							
 								<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 								
-									<?php $colors = array( 'blue-dark', 'green', 'orange' ); ?>
+									<?php $colors = array( 'blue-dark', 'green', 'red' ); ?>
 										
 									<div class="carousel-item <?php echo ( $x == 0 ? 'active' : '' ); ?>">
 

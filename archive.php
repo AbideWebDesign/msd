@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 
 ?>
-<div class="bg-orange py-3">
+<div class="bg-red py-3">
 
 	<div class="container">
 
@@ -34,28 +34,32 @@ get_header();
 
 </div>
 
-<div id="archive-wrapper" class="wrapper-sm">
-
-	<div class="container" tabindex="-1">
-
-		<?php if ( have_posts() ) : ?>
-
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php get_template_part( 'loop-templates/content', 'single-archive' ); ?>
-
-			<?php endwhile; ?>
-
-		<?php else : ?>
-
-			<?php get_template_part( 'loop-templates/content', 'none' ); ?>
-
-		<?php endif; ?>
-
-		<?php msd_pagination(); ?>
-
+<div class="wrapper-sm bg-light">
+	
+	<div id="archive-wrapper">
+	
+		<div class="container" tabindex="-1">
+	
+			<?php if ( have_posts() ) : ?>
+	
+				<?php while ( have_posts() ) : the_post(); ?>
+	
+					<?php get_template_part( 'loop-templates/content', 'single-archive' ); ?>
+	
+				<?php endwhile; ?>
+	
+			<?php else : ?>
+	
+				<?php get_template_part( 'loop-templates/content', 'none' ); ?>
+	
+			<?php endif; ?>
+	
+			<?php msd_pagination(); ?>
+	
+		</div>
+	
 	</div>
-
+	
 </div>
 
 <?php get_footer();

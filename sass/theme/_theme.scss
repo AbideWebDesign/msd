@@ -47,7 +47,10 @@ button, .btn {
 .btn-green {
 	background-color: $green;
 }
-.btn-blue-dark, .btn-orange, .btn-green {
+.btn-red {
+	background-color: $red;
+}
+.btn-blue-dark, .btn-orange, .btn-green, .btn-red {
 	&:hover, &:active, &:focus {
 		color: white;
 	}
@@ -128,6 +131,9 @@ p {
 }
 .text-green {
 	color: $green;
+}
+.text-red {
+	color: $red;
 }
 .p-m-0 {
 	p {
@@ -613,4 +619,9 @@ body ul.page-numbers span, body ul.page-numbers a, .view-more {
 }
 body ul.page-numbers span.current {
     cursor: default;
+}
+
+// News Content 
+.news-content {
+	box-shadow: 0 10px 30px 0 rgb(0 0 0 / 15%);
 }
