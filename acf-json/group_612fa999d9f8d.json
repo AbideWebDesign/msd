@@ -1,11 +1,11 @@
 {
-    "key": "group_612fa31074f21",
-    "title": "News Options",
+    "key": "group_612fa999d9f8d",
+    "title": "Category Options",
     "fields": [
         {
-            "key": "field_612fa326b6609",
-            "label": "Include Hero",
-            "name": "include_hero",
+            "key": "field_612fa99eb282f",
+            "label": "Hide on Home Page",
+            "name": "hide_on_home_page",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "show_in_rest": 1,
+            "show_in_rest": 0,
             "message": "",
             "default_value": 0,
             "ui": 1,
@@ -26,19 +26,19 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "taxonomy",
                 "operator": "==",
-                "value": "post"
+                "value": "category"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "side",
+    "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1630513970
+    "modified": 1630513623
 }
