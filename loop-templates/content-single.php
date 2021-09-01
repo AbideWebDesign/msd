@@ -23,7 +23,7 @@ if ( function_exists( 'yoast_breadcrumb' ) ) {
 
 	<header class="post-header">
 
-		<h1 class="text-dark"><?php the_title(); ?></h1>
+		<h1 class="text-dark smaller"><?php the_title(); ?></h1>
 		
 	</header><!-- .entry-header -->
 
