@@ -9,12 +9,12 @@ if ( get_field('carousel_images') || is_home() || is_single() || is_front_page()
 		$num_slides = count( $slides );
 		
 	} elseif ( is_home() ) { // News Archive
-		
-		$args = array( 'post_type' => 'post', 'posts_per_page' => '3' );
+
+		$args = array( 'post_type' => 'post', 'posts_per_page' => '3', 'meta_query' => array ( array ( 'key' => 'include_hero', 'value' => '1' ) ) );
 
 		$query = new WP_Query( $args );
-		
-		$num_slides = 3;
+
+		$num_slides = $query->found_posts;
 
 	} elseif ( is_single() ) {
 		
