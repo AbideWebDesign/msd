@@ -37,9 +37,17 @@
 								<div class="col-3 col-md-3 mb-0 align-self-center">
 								
 									<a href="<?php the_permalink(); ?>">
-								
-										<?php echo get_the_post_thumbnail( get_the_id(), 'card', array('alt'=> esc_html( get_the_title() ), 'class' => 'img-fluid w-100') ); ?>
-								
+									
+										<?php if ( has_post_thumbnail() ): ?>
+										
+											<?php echo get_the_post_thumbnail( get_the_id(), 'card', array('alt'=> esc_html( get_the_title() ), 'class' => 'img-fluid w-100') ); ?>
+										
+										<?php else: ?>
+										
+											<img src="<?php the_field('news_placeholder', 'options'); ?>" class="img-fluid w-100" />
+										
+										<?php endif; ?>
+																
 									</a>
 								
 								</div>
