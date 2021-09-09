@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 
 ?>
-<div class="bg-orange py-3">
+<div class="bg-red py-3">
 
 	<div class="container">
 
