@@ -35,7 +35,7 @@ defined( 'ABSPATH' ) || exit;
 					
 					<div id="staff-icon" class="mr-2 pr-2 border-right border-light align-self-center">
 						
-						<a href="<?php echo home_url(''); ?>" class="text-sm"><i class="fa fa-user"></i> <?php _e('Staff'); ?></a>
+						<a href="<?php echo home_url('/staff-resources'); ?>" class="text-sm"><i class="fa fa-user"></i> <?php _e('Staff'); ?></a>
 						
 					</div>
 					
