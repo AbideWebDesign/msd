@@ -411,6 +411,19 @@ h2 {
 	.ubermenu-responsive-toggle {
 		padding: 0 !important;
 	}
+	.ubermenu-target-title {
+		font-size: $font-size-sm;
+	}
+	.ubermenu-sub-indicator {
+		right: 5px;
+		margin-top: -4px;
+	}
+	#staff-icon {
+		padding: 7px 0;
+	}
+	.border-light {
+		border-color: darken( $blue-dark, 6) !important;
+	}
 }
 #header-global {
 	padding: 1.5em 0;

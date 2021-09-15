@@ -31,11 +31,25 @@ defined( 'ABSPATH' ) || exit;
 			
 			<div class="col-auto d-none d-md-block align-self-center">
 				
-				<?php ubermenu( 'school-menu' , array( 'menu' => 23 ) ); ?>
+				<div class="d-flex">
+					
+					<div id="staff-icon" class="mr-2 pr-2 border-right border-light align-self-center">
+						
+						<a href="<?php echo home_url(''); ?>" class="text-sm"><i class="fa fa-user"></i> <?php _e('Staff'); ?></a>
+						
+					</div>
+					
+					<div class="align-self-center">
+						
+						<?php ubermenu( 'school-menu', array( 'menu' => 23 ) ); ?>
+						
+					</div>
+					
+				</div>
 				
 			</div>
 			
-			<div class="col-auto align-self-center py-1">
+			<div class="col-auto align-self-center">
 				
 				<a href="<?php the_field('covid_19_page', 'options'); ?>" class="text-sm"><i class="fa fa-user-shield text-xs"></i> <?php _e('COVID-19'); ?></a>
 				

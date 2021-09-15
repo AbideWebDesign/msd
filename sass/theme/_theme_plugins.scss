@@ -1,4 +1,4 @@
-/* Gravity Forms */
+	/* Gravity Forms */
 .gform_wrapper {
 	input[type="email"],
 	input[type="date"],
@@ -136,6 +136,9 @@
 		
 		.ubermenu-item-level-0 > .ubermenu-target {
 			padding-left: 0;
+		}
+		a.ubermenu-target {
+			padding: 5px 20px;
 		}
 		.ubermenu-submenu.ubermenu-submenu-drop  {
 			background-color: $dark;
