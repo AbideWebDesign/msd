@@ -12,7 +12,25 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 
+function sort_type( $name, $type ) {
+
+	if ( $sort_name = get_query_var( $name ) ) {
+
+		if ( $sort_name == $type ) {
+		
+			return true;
+		
+		}
+		
+	}
+	
+	return false;
+	
+}
+
+
 ?>
+
 <div class="bg-red py-3">
 
 	<div class="container">
@@ -65,7 +83,17 @@ get_header();
 					
 					<tr>
 						
-						<th><?php _e('Building Name'); ?></th><th><?php _e('First Name'); ?></th><th><?php _e('Last Name'); ?></th><th><?php _e('Email Address'); ?></th><th><?php _e('Position Description'); ?></th><th><?php _e('Phone Number'); ?></th>
+						<th><?php _e('Building Name'); ?> </th>
+						
+						<th><?php _e('First Name'); ?></th>
+						
+						<th><?php _e('Last Name'); ?> <a href="<?php echo home_url('staff/?staff_last_name=asc'); ?>"><i class="fa fa-chevron-up text-xs <?php echo ( sort_type( 'staff_last_name', 'asc' ) ? 'text-dark' : '' ); ?>"></i></a><a href="<?php echo home_url('staff/?staff_last_name=desc'); ?>"><i class="fa fa-chevron-down text-xs <?php echo ( sort_type( 'staff_last_name', 'desc' ) ? 'text-dark' : '' ); ?>"></i></a></th>
+						
+						<th><?php _e('Email Address'); ?></th>
+						
+						<th><?php _e('Position Description'); ?> <a href="<?php echo home_url('staff/?staff_position=asc'); ?>"><i class="fa fa-chevron-up text-xs <?php echo ( sort_type( 'staff_position', 'asc' ) ? 'text-dark' : '' ); ?>"></i></a><a href="<?php echo home_url('staff/?staff_position=desc'); ?>"><i class="fa fa-chevron-down text-xs <?php echo ( sort_type( 'staff_position', 'desc' ) ? 'text-dark' : '' ); ?>"></i></a></th>
+						
+						<th><?php _e('Phone Number'); ?></th>
 						
 					</tr>		
 			
