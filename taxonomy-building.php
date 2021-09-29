@@ -23,7 +23,7 @@ $tax = $wp_query->get_queried_object();
 
 			<div class="col-12">
 				
-				<div class="text-sm font-weight-bold"><?php _e('Buidling Directory'); ?></div>
+				<div class="text-sm font-weight-bold"><?php _e('Building Directory'); ?></div>
 				
 				<h1 class="text-lg mb-0"><?php echo $tax->name; ?></h1>
 

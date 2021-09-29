@@ -4,9 +4,9 @@
 	
 	<td><?php echo ( is_array( $building ) ? ucwords( strtolower( $building[0]->name ) ) : '' ); ?></td>
 	
-	<td><?php echo ucwords( strtolower ( get_field('staff_first_name') ) ); ?></td>
+	<td><?php echo ucwords( get_field('staff_first_name') ); ?></td>
 	
-	<td><?php echo ucwords( strtolower ( get_field('staff_last_name') ) ); ?></td>
+	<td><?php echo ucwords( get_field('staff_last_name') ); ?></td>
 	
 	<td>
 		
@@ -19,7 +19,7 @@
 	
 	</td>
 	
-	<td><?php echo ucwords( strtolower ( get_field('staff_position_description') ) ); ?></td>
+	<td><?php echo ucwords( get_field('staff_position_description') ); ?></td>
 		
 	<td><?php the_field('staff_work_phone'); ?></td>
 			
