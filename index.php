@@ -18,41 +18,29 @@ get_header();
 
 ?>
 
-<?php if ( ! is_paged() ): ?>
-
-	<?php get_template_part( 'template-parts/blocks/content', 'hero-banner' ); ?>
+<div class="bg-red py-3">
 	
-	<?php get_template_part( 'template-parts/blocks/content', 'quick-links'); ?>
-	
-<?php else: ?>
-
-	<div class="bg-red py-3">
+	<div class="container">
 		
-		<div class="container">
+		<div class="row">
 			
-			<div class="row">
+			<div class="col">
 				
-				<div class="col">
-					
-					<h2 class="text-white mb-0"><?php _e('District News'); ?></h2>
-					
-				</div>
+				<h2 class="text-white mb-0"><?php _e('District News'); ?></h2>
 				
 			</div>
 			
 		</div>
-	
+		
 	</div>
-	
-<?php endif; ?>
+
+</div>
 
 <div class="wrapper-sm bg-light">
 
 	<div class="container" tabindex="-1">
 
 		<?php if ( have_posts() ) : ?>
-
-			<?php /* Start the Loop */ ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -66,11 +54,10 @@ get_header();
 
 		<?php endif; ?>
 
-		<!-- The pagination component -->
 		<?php msd_pagination(); ?>
 
-	</div><!-- #content -->
+	</div>
 
-</div><!-- #index-wrapper -->
+</div>
 
 <?php get_footer();
