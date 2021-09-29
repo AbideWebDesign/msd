@@ -342,11 +342,15 @@ if ( get_field('carousel_images') || is_home() || is_single() || is_front_page()
 														
 														<div class="p-2 p-xl-3">
 													
-															<h1 class="text-primary mb-2"><?php echo $slide['slide_title']; ?></h1>
+															<?php if ( $slide['slide_title'] ): ?>
+															
+																<h1 class="text-primary mb-2"><?php echo $slide['slide_title']; ?></h1>
+																
+															<?php endif; ?>
 														
 															<?php echo $slide['slide_content']; ?>
 															
-															<?php if ( isset( $slide['slide_button'] ) ): ?>
+															<?php if ( isset( $slide['slide_button'] ) && $slide['slide_button'] != '' ): ?>
 																																															
 																<a href="<?php echo $slide['slide_button']['url']; ?>" class="btn btn-primary btn-lg btn-block" target="<?php echo $slide['slide_button']['target']; ?>"><?php echo $slide['slide_button']['title']; ?></a>
 																															

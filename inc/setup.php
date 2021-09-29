@@ -31,28 +31,20 @@ add_image_size( 'slide', 900, 675, true );
 add_image_size( 'slide-sm', 900, 370, true );
 add_image_size( 'slide-lg', 1318, 500, true );
 
-/* Remove Featured Image Box from Pages */
-add_action( 'after_setup_theme', function(){
-
-    remove_theme_support( 'post-thumbnails' );
-
-    add_theme_support( 'post-thumbnails', array( 'post' ) ); 
-
-}, 11 );
-
 if ( function_exists( 'acf_add_options_page' ) ) {
 	
 	acf_add_options_page();
 
 	acf_add_options_sub_page( 'Assets' );
 	acf_add_options_sub_page( 'Calendar' );
+	acf_add_options_sub_page( 'Carousel Slides' );
 	acf_add_options_sub_page( 'COVID-19' );
 	acf_add_options_sub_page( 'District Info' );	
 	acf_add_options_sub_page( 'ParentSquare' );	
 	acf_add_options_sub_page( 'Quick Links' );
 	acf_add_options_sub_page( 'Search' );
 	acf_add_options_sub_page( 'Sidebar Navigation' );	
-	acf_add_options_sub_page( 'Carousel Slides' );
+
 }
 
 function modify_embed_defaults() {
@@ -81,6 +73,10 @@ add_action( 'after_setup_theme', 'msd_setup' );
 if ( ! function_exists( 'msd_setup' ) ) {
 
 	function msd_setup() {
+	
+	    remove_theme_support( 'post-thumbnails' );
+	
+	    add_theme_support( 'post-thumbnails', array( 'post' ) ); 
 
 		add_theme_support( 'automatic-feed-links' );
 
@@ -246,7 +242,7 @@ add_action( 'admin_head', 'hide_update_msg_non_admins');
 
 function hide_update_msg_non_admins() {
 	
-	if ( !current_user_can( 'manage_options' ) ) { // non-admin users
+	if ( ! current_user_can( 'manage_options' ) ) { // non-admin users
     	
     	echo '<style>#setting-error-tgmpa>.updated settings-error notice is-dismissible, .update-nag, .updated { display: none; }</style>';
         
