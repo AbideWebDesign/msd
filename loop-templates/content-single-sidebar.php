@@ -1,12 +1,22 @@
 <?php 
 
 	$id = get_the_ID();
+	
+	if ( has_category( 'meeting', $id ) ) {
+	
+		$args = array( 'post_type' => 'post', 'posts_per_page' => '5', 'post__not_in' => array( $id ), 'category_name' => 'meeting' );
 
-	$args = array( 'post_type' => 'post', 'posts_per_page' => '5', 'post__not_in' => array( $id ) );
+		
+	} else {
+
+		$args = array( 'post_type' => 'post', 'posts_per_page' => '5', 'post__not_in' => array( $id ), 'category__not_in' => get_excluded_cats() );
+
+	}
 
 	$loop = new WP_Query( $args );
 
 ?>
+
 <div class="wrapper-sidebar-links border rounded mb-3">
 		
 	<div class="bg-blue-dark text-white p-2">
