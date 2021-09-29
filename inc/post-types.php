@@ -23,6 +23,10 @@ function staff_sort_order( $query ) {
 		$query->set( 'order', 'ASC' );
 		$query->set( 'posts_per_page', 100 );
 	
+	} elseif ( $query->is_posts_page ) {
+
+		$query->set( 'meta_query', array ( array ( 'key' => 'hide_on_home', 'value' => '0', 'compare' => 'NOT' ) ) );
+		
 	}
 		
 	return $query;
