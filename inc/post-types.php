@@ -25,12 +25,32 @@ function staff_sort_order( $query ) {
 	
 	} elseif ( $query->is_posts_page ) {
 
-		$query->set( 'meta_query', array ( array ( 'key' => 'hide_on_home', 'value' => '0', 'compare' => 'NOT' ) ) );
+		$query->set( 'category__not_in', get_excluded_cats() );
 		
 	}
 		
 	return $query;
 
+}
+
+function get_excluded_cats() {
+	
+	$excluded = array(); 
+	
+	$categories = get_categories();
+
+	foreach( $categories as $category ) {
+
+		if ( get_field('hide_on_home_page', $category) ) {
+			
+			$excluded[] = $category->term_id;
+			
+		}
+		
+	}
+	
+	return $excluded;
+	
 }
 
 function msd_register_my_cpts() {
