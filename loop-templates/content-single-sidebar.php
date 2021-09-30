@@ -1,12 +1,11 @@
 <?php 
 
 	$id = get_the_ID();
-	
-	if ( has_category( 'meeting', $id ) ) {
-	
-		$args = array( 'post_type' => 'post', 'posts_per_page' => '5', 'post__not_in' => array( $id ), 'category_name' => 'meeting' );
 
-		
+	if ( has_category( 'meeting-minutes-agenda' ) ) {
+
+		$args = array( 'post_type' => 'post', 'posts_per_page' => '15', 'post__not_in' => array( $id ), 'category_name' => 'meeting-minutes-agenda' );
+
 	} else {
 
 		$args = array( 'post_type' => 'post', 'posts_per_page' => '5', 'post__not_in' => array( $id ), 'category__not_in' => get_excluded_cats() );
@@ -21,7 +20,15 @@
 		
 	<div class="bg-blue-dark text-white p-2">
 		
-		<div class="font-weight-bold text-lg"><?php _e('Recent News'); ?></div>
+		<?php if ( has_category( 'meeting-minutes-agenda' ) ): ?>
+		
+			<div class="font-weight-bold text-lg"><?php _e('Past Meetings'); ?></div>
+			
+		<?php else: ?>
+
+			<div class="font-weight-bold text-lg"><?php _e('Recent News'); ?></div>
+		
+		<?php endif; ?>
 
 	</div>
 	

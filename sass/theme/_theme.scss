@@ -248,7 +248,6 @@ h2 {
 	.bg-white {
 		color: $body-color;
 	}	
-	
 }
 .bg-primary {
 	color: white;
@@ -261,6 +260,9 @@ h2 {
 			color: $primary;
 		}
 	}
+	.btn-light {
+		color: $primary;
+	}
 }
 .bg-blue-dark {
 	background-color: $blue-dark;
@@ -269,6 +271,9 @@ h2 {
 		a:not(.btn) {
 			color: $blue-dark;
 		}
+	}
+	.btn-light {
+		color: $blue-dark;
 	}
 }
 .bg-orange {
@@ -279,6 +284,9 @@ h2 {
 			color: $orange;
 		}
 	}
+	.btn-light {
+		color: $orange;
+	}
 }
 .bg-green {
 	background-color: $green;
@@ -288,6 +296,9 @@ h2 {
 			color: $green;
 		}
 	}
+	.btn-light {
+		color: $green;
+	}
 }
 .bg-red {
 	background-color: $red;
@@ -296,6 +307,9 @@ h2 {
 		a:not(.btn) {
 			color: $red;
 		}
+	}
+	.btn-light {
+		color: $red;
 	}
 }
 .bg-light {
@@ -640,4 +654,9 @@ body ul.page-numbers span.current {
 // News Content 
 .news-content {
 	box-shadow: 0 10px 30px 0 rgb(0 0 0 / 15%);
+}
+.archive-description {
+	p:last-child {
+		margin-bottom: 0;
+	}
 }
