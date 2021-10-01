@@ -56,6 +56,18 @@ function modify_embed_defaults() {
 
 }
 
+add_filter( 'wp_link_query_args', 'msd_wp_link_query_args' ); 
+ 
+function msd_wp_link_query_args( $query ) {
+
+	$query['post_status'] = array( 'publish','inherit' );
+	
+	$query['post_type'] = array( 'post', 'page', 'attachment' ); 
+	
+	return $query;
+
+}
+
 add_filter( 'embed_oembed_html', 'wrap_oembed_html', 99, 4 );
  
 function wrap_oembed_html( $cached_html, $url, $attr, $post_id ) {
