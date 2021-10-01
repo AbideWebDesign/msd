@@ -46,7 +46,7 @@
 					
 					<div class="h-100 <?php echo ( get_sub_field('card_type') != 'Text Focus' ? $colors[$x] : 'card-text border rounded p-1' ); ?>">
 					
-						<?php if ( get_sub_field('card_link') && ! get_sub_field('card_type') == 'Text Focus' ): ?>
+						<?php if ( get_sub_field('card_link') && get_sub_field('card_type') != 'Text Focus' ): ?>
 						
 							<?php $link = get_sub_field('card_link'); ?>
 							
@@ -118,7 +118,7 @@
 													
 						<?php endif; ?>
 						
-						<?php if ( get_sub_field('card_link') && ! get_sub_field('card_type') == 'Text Focus' ): ?>
+						<?php if ( get_sub_field('card_link') && get_sub_field('card_type') != 'Text Focus' ): ?>
 					
 							</a>
 					
