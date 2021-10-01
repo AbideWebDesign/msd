@@ -100,7 +100,7 @@
 		
 			<?php $x = 0; ?>
 		
-			<div class="wrapper-buttons d-flex flex-column flex-md-row">
+			<div class="wrapper-buttons d-flex flex-column flex-md-row mt-2">
 				
 				<?php while ( have_rows('text_buttons') ): the_row(); ?>
 					
