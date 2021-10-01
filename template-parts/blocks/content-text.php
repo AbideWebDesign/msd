@@ -97,27 +97,25 @@
 		<?php endif; ?>
 		
 		<?php if ( have_rows( 'text_buttons' ) ): ?>
+					
+			<?php $x = 0; ?>
 		
-			<?php if ( get_sub_field('button') ): ?>
-			
-				<?php $x = 0; ?>
-			
-				<div class="wrapper-buttons d-flex flex-column flex-md-row mt-2">
+			<div class="wrapper-buttons d-flex flex-column flex-md-row mt-2">
+				
+				<?php while ( have_rows('text_buttons') ): the_row(); ?>
 					
-					<?php while ( have_rows('text_buttons') ): the_row(); ?>
-						
-						<?php $link = get_sub_field('button'); ?>
-						
+					<?php if ( $link = get_sub_field('button') ): ?>
+					
 						<a class="btn <?php echo ( $x == 0 ? 'btn-primary' : 'btn-secondary' ); ?> mr-2" href="<?php echo $link['url']; ?>" title="Click to visit <?php echo $link['title']; ?>" target="<?php echo $link['target']; ?>"><?php echo ( get_sub_field('button_type') == 'download' ? '<i class="fa fa-file-download text-sm mr-1"></i>' : ''); ?><?php echo $link['title']; ?><?php echo ( get_sub_field('button_type') == 'external' ? '<i class="fa fa-external-link-alt text-sm ml-1"></i>' : ''); ?></a>
-					
+				
 						<?php $x ++; ?>
 						
-					<?php endwhile; ?>
+					<?php endif; ?>
 					
-				</div>
+				<?php endwhile; ?>
 				
-			<?php endif; ?>
-			
+			</div>
+							
 		<?php endif; ?>
 
 					
