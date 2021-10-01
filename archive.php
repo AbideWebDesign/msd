@@ -21,7 +21,7 @@ get_header();
 
 			<div class="col-12">
 
-				<?php the_archive_title( '<h1 class="smaller mb-0">', '</h1>' ); ?>
+				<?php the_archive_title( '<h1 class="text-lg mb-0">', '</h1>' ); ?>
 				
 				<?php the_archive_description( '<div class="text-lg archive-description mt-1">', '</div>' ); ?>
 

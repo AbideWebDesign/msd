@@ -26,7 +26,7 @@ get_header();
 			
 			<div class="col">
 				
-				<h1 class="smaller text-white mb-0"><?php _e('District News'); ?></h2>
+				<h1 class="text-lg text-white mb-0"><?php _e('District News'); ?></h1>
 				
 			</div>
 			

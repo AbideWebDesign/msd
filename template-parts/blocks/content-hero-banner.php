@@ -78,11 +78,11 @@ if ( get_field('carousel_images') || is_home() || is_single() || is_front_page()
 															  		
 										<div class="row no-gutters h-100">
 											
-											<div class="col-md-4 order-2 order-md-1 bg-dark">
+											<div class="col-md-3 order-2 order-md-1 bg-dark">
 												
 												<div class="slide-content-wrap d-flex pl-xl-4">
 												
-													<div class="slide-content bg-white shadow align-self-center">
+													<div class="slide-content bg-white shadow align-self-end mb-2">
 														
 														<div class="p-2 p-xl-3">
 													
@@ -106,7 +106,7 @@ if ( get_field('carousel_images') || is_home() || is_single() || is_front_page()
 												
 											</div>
 											
-											<div class="col-md-8 order-1 order-md-2 align-self-xl-center">
+											<div class="col-md-9 order-1 order-md-2 align-self-xl-center">
 												
 												<?php $img_src = wp_get_attachment_image_src( get_sub_field('slide_image'), 'slide', false ); ?>
 												
@@ -134,11 +134,11 @@ if ( get_field('carousel_images') || is_home() || is_single() || is_front_page()
 
 										<div class="row no-gutters h-100">
 											
-											<div class="col-md-4 order-2 order-md-1 bg-<?php echo $colors[$x]; ?>">
+											<div class="col-md-3 order-2 order-md-1 bg-<?php echo $colors[$x]; ?>">
 												
 												<div class="slide-content-wrap d-flex pl-xl-4">
 												
-													<div class="slide-content bg-white shadow align-self-center">
+													<div class="slide-content bg-white shadow align-self-end mb-2">
 														
 														<div class="p-2 p-xl-3">
 													
@@ -156,7 +156,7 @@ if ( get_field('carousel_images') || is_home() || is_single() || is_front_page()
 												
 											</div>
 											
-											<div class="col-md-8 order-1 order-md-2 align-self-xl-center">
+											<div class="col-md-9 order-1 order-md-2 align-self-xl-center">
 												
 												<?php $img_src = get_the_post_thumbnail_url( $post->ID, 'slide' ); ?>
 												
@@ -182,11 +182,11 @@ if ( get_field('carousel_images') || is_home() || is_single() || is_front_page()
 															  		
 									<div class="row no-gutters h-100">
 										
-										<div class="col-md-4 order-2 order-md-1 bg-dark">
+										<div class="col-md-3 order-2 order-md-1 bg-dark">
 											
 											<div class="slide-content-wrap d-flex pl-xl-4">
 												
-												<div class="slide-content slide-content-sm bg-white shadow align-self-center">
+												<div class="slide-content slide-content-sm bg-white shadow align-self-end mb-2">
 													
 													<div class="p-2 p-xl-3">
 												
@@ -210,7 +210,7 @@ if ( get_field('carousel_images') || is_home() || is_single() || is_front_page()
 											
 										</div>
 										
-										<div class="col-md-8 order-1 order-md-2 align-self-xl-center">
+										<div class="col-md-9 order-1 order-md-2 align-self-xl-center">
 											
 											<?php $img_src = get_the_post_thumbnail_url( $post->ID, 'slide' ); ?>
 											
@@ -334,11 +334,11 @@ if ( get_field('carousel_images') || is_home() || is_single() || is_front_page()
 															  		
 										<div class="row no-gutters h-100">
 											
-											<div class="col-md-4 order-2 order-md-1 bg-dark">
+											<div class="col-md-3 order-2 order-md-1 bg-dark">
 												
 												<div class="slide-content-wrap d-flex pl-xl-4">
 												
-													<div class="slide-content bg-white shadow align-self-center">
+													<div class="slide-content bg-white shadow align-self-end mb-2">
 														
 														<div class="p-2 p-xl-3">
 													
@@ -364,7 +364,7 @@ if ( get_field('carousel_images') || is_home() || is_single() || is_front_page()
 												
 											</div>
 											
-											<div class="col-md-8 order-1 order-md-2 align-self-xl-center">
+											<div class="col-md-9 order-1 order-md-2 align-self-xl-center">
 																								
 												<div class="d-xl-none h-100 w-100 slide-image" style="background-image: url('<?php echo $slide["slide_image"]["sizes"]["slide"]; ?>');"></div>
 																								
