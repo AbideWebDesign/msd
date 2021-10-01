@@ -60,32 +60,36 @@
 				
 				<?php while ( have_rows( 'text_list' ) ): the_row(); ?>
 				
-					<li>
-						
-						<span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span> 
+					<?php if ( get_sub_field('item_text') || get_sub_field('item_title') ): ?>
+					
+						<li>
 							
-						<?php if ( get_sub_field('item_type') == 'Full' && get_sub_field('item_title') ): ?>
-						
-							<p class="mb-0"><strong><?php the_sub_field('item_title'); ?></strong></p>
-						
-						<?php endif; ?>
+							<span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span> 
+								
+							<?php if ( get_sub_field('item_type') == 'Full' && get_sub_field('item_title') ): ?>
 							
-						<?php if ( get_sub_field('item_text') ): ?>
-						
-							<?php the_sub_field('item_text'); ?>
+								<p class="mb-0"><strong><?php the_sub_field('item_title'); ?></strong></p>
 							
-						<?php endif; ?>
+							<?php endif; ?>
+								
+							<?php if ( get_sub_field('item_text') ): ?>
 							
-						<?php if ( get_sub_field('item_type') == 'Full' && get_sub_field('item_link') ): ?>
-						
-							<?php $link = get_sub_field('item_link'); ?>
+								<?php the_sub_field('item_text'); ?>
+								
+							<?php endif; ?>
+								
+							<?php if ( get_sub_field('item_type') == 'Full' && get_sub_field('item_link') ): ?>
 							
-							<p class="mt-1 mb-2"><a class="btn btn-primary btn-sm" title="Click to visit <?php echo $link['url']; ?>"  href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>"><?php echo $link['title']; ?> <i class="fas fa-chevron-right text-xs"></i></a></p>
+								<?php $link = get_sub_field('item_link'); ?>
+								
+								<p class="mt-1 mb-2"><a class="btn btn-primary btn-sm" title="Click to visit <?php echo $link['url']; ?>"  href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>"><?php echo $link['title']; ?> <i class="fas fa-chevron-right text-xs"></i></a></p>
+							
+							<?php endif; ?>
+							
+						</li>
 						
-						<?php endif; ?>
-						
-					</li>
-				
+					<?php endif; ?>
+					
 				<?php endwhile; ?>
 				
 			</ul>
