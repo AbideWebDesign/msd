@@ -7,7 +7,7 @@
  get_header();
 ?>
 
-<div class="bg-green py-3">
+<div class="bg-blue-light py-3">
 
 	<div class="container">
 
@@ -15,7 +15,7 @@
 
 			<div class="col-12">
 
-				<h1 class="mb-0 text-lg"><?php the_field('calendar_title', 'options'); ?></h1>
+				<h1 class="mb-0 text-lg text-white"><?php the_field('calendar_title', 'options'); ?></h1>
 
 			</div>
 

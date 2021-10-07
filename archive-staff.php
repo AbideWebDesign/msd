@@ -31,7 +31,7 @@ function sort_type( $name, $type ) {
 
 ?>
 
-<div class="bg-red py-3">
+<div class="bg-blue-light py-3">
 
 	<div class="container">
 
@@ -39,7 +39,7 @@ function sort_type( $name, $type ) {
 
 			<div class="col-12">
 
-				<h1 class="text-lg mb-0"><?php _e('Staff Directory'); ?></h1>
+				<h1 class="text-lg mb-0 text-white"><?php _e('Staff Directory'); ?></h1>
 
 			</div>
 

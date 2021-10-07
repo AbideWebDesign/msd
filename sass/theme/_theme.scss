@@ -238,7 +238,6 @@ h2 {
 		max-width: 1350px;
 	}
 }
-
 .bg-primary, .bg-blue-dark, .bg-orange, .bg-green, .bg-red {
 	color: white;
 
@@ -318,6 +317,9 @@ h2 {
 	.bg-light {
 		background-color: white !important;
 	}
+}
+.bg-blue-light {
+	background-color: $blue-alt;
 }
 .bg-img {
 	background-size: cover;

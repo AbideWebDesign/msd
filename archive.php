@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 
 ?>
-<div class="bg-red py-3">
+<div class="bg-blue-light py-3">
 
 	<div class="container">
 
@@ -21,9 +21,9 @@ get_header();
 
 			<div class="col-12">
 
-				<?php the_archive_title( '<h1 class="text-lg mb-0">', '</h1>' ); ?>
+				<?php the_archive_title( '<h1 class="text-lg mb-0 text-white">', '</h1>' ); ?>
 				
-				<?php the_archive_description( '<div class="text-lg archive-description mt-1">', '</div>' ); ?>
+				<?php the_archive_description( '<div class="text-lg text-white archive-description mt-1">', '</div>' ); ?>
 
 			</div>
 

@@ -18,7 +18,7 @@ get_header();
 
 ?>
 
-<div class="bg-red py-3">
+<div class="bg-blue-light py-3">
 	
 	<div class="container">
 		
