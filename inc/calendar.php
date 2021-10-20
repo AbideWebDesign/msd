@@ -10,7 +10,7 @@ function render_calendar() {
 	
 			<div class="calendar-dropdown">
 	
-				<button type="button" id="dropdown-menu" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-rss"></i> Subscribe </button>
+				<button type="button" id="dropdown-menu" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-rss"></i> <?php _e('Subscribe'); ?> </button>
 	
 	            <ul class="dropdown-menu" aria-labelledby="dropdown-menu" >
 	
@@ -47,54 +47,6 @@ function render_calendar() {
 					<?php endif; ?>
 	
 	            </ul>
-	
-			</div>
-	
-			<div id="calendar-dropdown-view" class="calendar-dropdown">
-	
-				<button type="button" id="dropdown-menu-view" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-filter"></i> Filter </button>
-	
-				<ul class="dropdown-menu" aria-labelledby="dropdown-menu-view" >
-	
-					<?php if ( have_rows('calendars', 'options') ): ?>
-	
-						<?php $count = 0; ?>
-	
-						<?php while ( have_rows('calendars', 'options') ): the_row(); ?>
-	
-							<li>
-	
-							   <label class="checkbox"><input type="checkbox" id="<?php echo str_replace(' ', '_', get_sub_field('calendar_name')); ?>" <?php echo get_sub_field('visible') ? 'checked="checked"' : ''; ?> value="<?php echo $count; ?>" /><span class="label-text"><?php the_sub_field('calendar_name'); ?></label>
-	
-							</li>
-	
-							<?php $count++; ?>
-	
-						<?php endwhile; ?>
-	
-					<?php endif; ?>
-	
-					<?php if ( have_rows('school_calendars', 'options') ): ?>
-	
-						<li role="separator" class="divider"></li>
-	
-						<li class="dropdown-header"><?php _e('School Calendars'); ?></li>	
-	
-					 	<?php while( have_rows('school_calendars', 'options') ): the_row(); ?>
-	
-					 		<li>
-	
-								<label class="checkbox"><input type="checkbox" id="<?php echo str_replace(' ', '_', get_sub_field('calendar_name')); ?>" <?php echo get_sub_field('visible') ? 'checked="checked"' : ''; ?> value="<?php echo $count; ?>" /><span class="label-text"><?php the_sub_field('calendar_name'); ?></label>
-	
-					 		</li>
-	
-					 		<?php $count++; ?>
-	
-					 	<?php endwhile; ?>
-	
-					<?php endif; ?>           
-	
-				</ul>
 	
 			</div>
 	
