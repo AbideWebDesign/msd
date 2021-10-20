@@ -15,7 +15,7 @@ get_header();
 $tax = $wp_query->get_queried_object();
 
 ?>
-<div class="bg-red py-3">
+<div class="bg-blue-light py-3">
 
 	<div class="container">
 
