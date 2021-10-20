@@ -284,6 +284,8 @@ function render_list_view_district() {
 			
 		document.addEventListener('DOMContentLoaded', function() {
 
+			var initialEventSources = [];
+
 			var allEventSources = [];
 			
 			<?php if ( have_rows('calendars', 'options') ): ?>
@@ -297,16 +299,16 @@ function render_list_view_district() {
 						<?php $calendar_name = get_sub_field('calendar_name'); ?>
 						
 						<?php $calendar_color = get_sub_field('calendar_color'); ?>
-						
-						allEventSources.push( {
-							id: '<?php echo $calendar_name; ?>', 
+													
+						initialEventSources.push({
+							id: '<?php echo str_replace(' ' , '_', $calendar_name); ?>', 
 							googleCalendarId: '<?php echo $calendar_address; ?>', 
 							textColor: '<?php echo $calendar_color; ?>',
 							backgroundColor: '<?php echo $calendar_color; ?>',
 							borderColor: '<?php echo $calendar_color; ?>',
-						} );
+						});
 						
-					<?php endif; ?>
+					<?php endif; ?>						
 	
 				<?php endwhile; ?>
 				
@@ -356,18 +358,24 @@ function render_list_view_district() {
 			let calendarEl = document.getElementById( 'calendar-list-district' );
 		
 			let calendar = new FullCalendar.Calendar( calendarEl, {
-				
-// 				plugins: [ listPlugin ],
-				
+								
 				googleCalendarApiKey: 'AIzaSyCtn4VYI0llZ2sEGiMgezxWyBDTVuKaHds',
 				
 				initialView: 'list',
 				
 				timeZone: 'local',
+				
 				themeSystem: 'bootstrap',
-				events: {
-					googleCalendarId: 'msd.oregonk-12.net_pahhc93bihmeglb881ofdqen5g@group.calendar.google.com',
- 				},
+				
+				eventSources: [
+					{
+						googleCalendarId: 'msd.oregonk-12.net_pahhc93bihmeglb881ofdqen5g@group.calendar.google.com'
+					},
+					{
+						googleCalendarId: 'msd.oregonk-12.net_pjsts5qmq4td8fq4jtppe6g3b0@group.calendar.google.com'
+
+					}					
+ 				],
  				duration: { days: 30 },
 
 			} );
