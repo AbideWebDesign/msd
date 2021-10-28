@@ -3,6 +3,32 @@
     "title": "Block - Cards",
     "fields": [
         {
+            "key": "field_617b20bc87fb2",
+            "label": "Padding Type",
+            "name": "padding_type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_rest": 0,
+            "choices": {
+                "wrapper": "Normal",
+                "wrapper-sm-none": "No Padding Bottom"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
             "key": "field_61030e4b971a2",
             "label": "Include Background",
             "name": "cards_include_background",
@@ -258,5 +284,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1630518146
+    "modified": 1635459432
 }

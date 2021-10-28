@@ -20,7 +20,9 @@
 
 <?php $x = 0; ?>
 
-<div class="wrapper wrapper-cards <?php echo ( get_field('include_sidebar', $post) || ! get_field('cards_include_background') ? 'wrapper-cards-sub' : ''); ?>">
+<?php $padding = ( get_field('padding_type') == 'wrapper-sm-none' ? 'wrapper-sm-none' : 'wrapper' ); ?>
+
+<div class="<?php echo $padding; ?> wrapper-cards <?php echo ( get_field('include_sidebar', $post) || ! get_field('cards_include_background') ? 'wrapper-cards-sub' : ''); ?>">
 	
 	<div class="container">
 		

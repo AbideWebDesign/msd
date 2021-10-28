@@ -196,6 +196,9 @@ h2 {
 .wrapper-sm-bottom {
 	padding: 100px 0 75px 0 !important;
 }
+.wrapper-sm-none {
+	padding: 100px 0 0 0 !important;	
+}
 .wrapper-sm-top {
 	padding: 75px 0 100px 0 !important;
 }
@@ -211,6 +214,9 @@ h2 {
 	}
 	.wrapper-sm-bottom {
 		padding: 75px 0 50px 0 !important;
+	}
+	.wrapper-sm-none {
+		padding: 75px 0 0 0 !important;	
 	}
 	.wrapper-sm-top {
 		padding: 50px 0 75px 0 !important;
@@ -228,6 +234,9 @@ h2 {
 	}
 	.wrapper-sm-bottom {
 		padding: 50px 0 50px 0 !important;
+	}
+	.wrapper-sm-none {
+		padding: 50px 0 0 0 !important;	
 	}
 	.wrapper-sm-top {
 		padding: 50px 0 50px 0 !important;
