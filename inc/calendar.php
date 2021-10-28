@@ -280,81 +280,9 @@ function render_list_view_district() {
 	<div id='calendar-list-district'></div>
 	
 	<script>
-				
-			
+					
 		document.addEventListener('DOMContentLoaded', function() {
-
-			var initialEventSources = [];
-
-			var allEventSources = [];
-			
-			<?php if ( have_rows('calendars', 'options') ): ?>
-			
-				<?php while ( have_rows('calendars', 'options') ): the_row(); ?>
-				
-					<?php if ( get_sub_field('visible') ): ?>
-					
-						<?php $calendar_address = get_sub_field('calendar_address'); ?>
-						
-						<?php $calendar_name = get_sub_field('calendar_name'); ?>
-						
-						<?php $calendar_color = get_sub_field('calendar_color'); ?>
-													
-						initialEventSources.push({
-							id: '<?php echo str_replace(' ' , '_', $calendar_name); ?>', 
-							googleCalendarId: '<?php echo $calendar_address; ?>', 
-							textColor: '<?php echo $calendar_color; ?>',
-							backgroundColor: '<?php echo $calendar_color; ?>',
-							borderColor: '<?php echo $calendar_color; ?>',
-						});
-						
-					<?php endif; ?>						
-	
-				<?php endwhile; ?>
-				
-			<?php endif; ?>	
-			
-			const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-			
-			const { sliceEvents, createPlugin, Calendar } = FullCalendar
-			
-			const CustomViewConfig = {
 		
-				classNames: [ 'custom-view' ],
-				
-				timeZone: 'America/Los_Angeles',
-				
-				content: function( props ) {
-					
-					let options = { timeStyle: 'short', timeZone: 'America/Los_Angeles'  };
-					
-					let segs = sliceEvents( props, true ); // allDay=true
-
-					let html =
-						'<div class="view-events">' +				
-				 		segs.map( function( seg ) { 
-					 		console.log(seg.range.start);
-					 		return '<div class="row no-gutters mb-1"><div class="col-4 col-md-2 col-lg-3"><div class="d-flex bg-primary text-white p-1 h-100 text-center"><div class="d-flex align-self-center flex-column w-100"><div class="text-sm">' + months[seg.range.start.getMonth()] + '</div><div class="text-xl line-height-1">' + seg.range.start.getDate() + '</div></div></div></div><div class="col-8 col-md-10 col-lg-9 d-flex align-self-stretch bg-light"><div class="align-self-center p-2 text-blue-dark text-sm"><a class="stretched-link" target="_blank" href="' + seg.def.url + '">' + seg.def.title + '</a><br>' + seg.range.start.toLocaleString( 'en-US', options ) + '</div></div></div>'             				
-        				} ).join('') +
-						'</div>';
-					
-					return { html: html }
-					
-				}
-				
-			}
-			
-			const CustomViewPlugin = createPlugin( {
-				
-				views: {
-				
-					custom: CustomViewConfig,
-				
-				},
-				
-			} );
-
-
 			let calendarEl = document.getElementById( 'calendar-list-district' );
 		
 			let calendar = new FullCalendar.Calendar( calendarEl, {
@@ -368,15 +296,21 @@ function render_list_view_district() {
 				themeSystem: 'bootstrap',
 				
 				eventSources: [
+					
 					{
+					
 						googleCalendarId: 'msd.oregonk-12.net_pahhc93bihmeglb881ofdqen5g@group.calendar.google.com'
+					
 					},
 					{
+					
 						googleCalendarId: 'msd.oregonk-12.net_pjsts5qmq4td8fq4jtppe6g3b0@group.calendar.google.com'
 
-					}					
+					}
+										
  				],
- 				duration: { days: 30 },
+ 				
+ 				duration: { days: 5 },
 
 			} );
 			

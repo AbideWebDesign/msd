@@ -127,7 +127,7 @@
             "key": "field_6101de7a21cb4",
             "label": "Text",
             "name": "callout_text",
-            "type": "textarea",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
@@ -146,10 +146,10 @@
             },
             "show_in_rest": 0,
             "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 2,
-            "new_lines": ""
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         },
         {
             "key": "field_6101de9821cb5",
@@ -203,5 +203,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1628282051
+    "modified": 1635458808
 }
