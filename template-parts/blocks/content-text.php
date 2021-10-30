@@ -26,7 +26,7 @@
 				
 				<div class="col-xl-4">
 					
-					<?php echo wp_get_attachment_image( get_field('text_image'), $type_lg, false, array('class'=>'img-fluid w-100 d-none d-lg-block') ); ?>
+					<?php echo wp_get_attachment_image( get_field('text_image'), $type_lg, false, array('class'=>'img-fluid w-100 d-none d-xl-block') ); ?>
 					
 					<?php echo wp_get_attachment_image( get_field('text_image'), $type, false, array('class'=>'img-fluid w-100 d-xl-none mb-2') ); ?>
 	
