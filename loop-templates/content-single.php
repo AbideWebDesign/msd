@@ -23,9 +23,9 @@ if ( function_exists( 'yoast_breadcrumb' ) ) {
 
 	<header class="post-header mb-3 border-bottom">
 
-		<h1 class="text-dark smaller"><?php the_title(); ?></h1>
+		<h1 class="text-dark smaller mb-1"><?php the_title(); ?></h1>
 		
-		<div class="text-sm text-muted pb-1"><?php _e('Posted: '); ?> <?php the_date(); ?></div>
+		<div class="text-muted pb-1"><?php _e('Posted: '); ?> <?php the_date(); ?></div>
 		
 	</header><!-- .entry-header -->
 

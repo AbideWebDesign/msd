@@ -58,6 +58,12 @@ if ( ! function_exists( 'msd_scripts' ) ) {
 			
 			
 		}
+		
+		if ( is_single() && 'post' == get_post_type() ) {
+
+			wp_enqueue_script( 'gcal.min.js', 'https://platform-api.sharethis.com/js/sharethis.js#property=617d9def22fcc40019171d40&product=sop', '', '', true );
+			
+		}
 	
 	}
 	
