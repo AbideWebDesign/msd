@@ -24,13 +24,13 @@ get_header();
 
 		<div class="row justify-content-between">
 			
-			<div class="col-lg-4 col-xl-3 order-2 order-lg-1">
+			<div class="col-lg-4 col-xl-3 order-2 order-xl-1">
 				
 				<?php get_template_part( 'loop-templates/content', 'single-sidebar'); ?>
 				
 			</div>
 			
-			<div class="col-lg-8 col-xl-9 order-1 order-lg-2">
+			<div class="col-lg-8 col-xl-9 order-1 order-xl-2">
 
 				<?php while ( have_posts() ) : the_post(); ?>
 	

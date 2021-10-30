@@ -21,9 +21,11 @@ if ( function_exists( 'yoast_breadcrumb' ) ) {
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<header class="post-header">
+	<header class="post-header mb-3 border-bottom">
 
 		<h1 class="text-dark smaller"><?php the_title(); ?></h1>
+		
+		<div class="text-sm text-muted pb-1"><?php _e('Posted: '); ?> <?php the_date(); ?></div>
 		
 	</header><!-- .entry-header -->
 
