@@ -24,19 +24,19 @@ get_header();
 
 		<div class="row justify-content-between">
 			
-			<div class="col-lg-4 col-xl-3 order-2 order-xl-1">
-				
-				<?php get_template_part( 'loop-templates/content', 'single-sidebar'); ?>
-				
-			</div>
-			
-			<div class="col-lg-8 col-xl-9 order-1 order-xl-2">
+			<div class="col-lg-8 col-xl-9">
 
 				<?php while ( have_posts() ) : the_post(); ?>
 	
 					<?php get_template_part( 'loop-templates/content', 'single' ); ?>
 	
 				<?php endwhile; ?>
+				
+			</div>
+			
+			<div class="col-lg-4 col-xl-3">
+				
+				<?php get_template_part( 'loop-templates/content', 'single-sidebar'); ?>
 				
 			</div>
 
