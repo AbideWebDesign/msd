@@ -25,6 +25,20 @@ defined( 'ABSPATH' ) || exit;
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-QG7ECV7D5J"></script>
+
+	<script>
+
+		window.dataLayer = window.dataLayer || [];
+		
+		function gtag(){dataLayer.push(arguments);}
+		
+		gtag('js', new Date());
+		
+		gtag('config', 'G-QG7ECV7D5J');
+
+	</script>
 
 </head>
 
