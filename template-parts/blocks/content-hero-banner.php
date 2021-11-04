@@ -252,14 +252,8 @@ if ( get_field('carousel_images') || is_home() || is_single() || is_front_page()
 														
 														<?php endif; ?>
 														
-														<?php if ( get_field('staff_work_phone') ): ?>
-								
-															<div class="text-sm"><i class="fa fa-phone-square-alt mr-1"></i> <?php the_field('staff_work_phone'); ?></div>
-														
-														<?php endif; ?>
-														
 														<?php if ( get_field('staff_email_address') ): ?>
-									
+							
 															<div class="text-sm"><a href="mailto:<?php the_field('staff_email_address'); ?>" class="text-decoration-none text-body"><i class="fa fa-envelope mr-1"></i> <?php the_field('staff_email_address'); ?></a></div>
 														
 														<?php endif; ?>

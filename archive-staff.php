@@ -92,9 +92,7 @@ function sort_type( $name, $type ) {
 						<th><?php _e('Email Address'); ?></th>
 						
 						<th><?php _e('Position Description'); ?> <a href="<?php echo home_url('staff/?staff_position=asc'); ?>"><i class="fa fa-chevron-up text-xs <?php echo ( sort_type( 'staff_position', 'asc' ) ? 'text-dark' : '' ); ?>"></i></a><a href="<?php echo home_url('staff/?staff_position=desc'); ?>"><i class="fa fa-chevron-down text-xs <?php echo ( sort_type( 'staff_position', 'desc' ) ? 'text-dark' : '' ); ?>"></i></a></th>
-						
-						<th><?php _e('Phone Number'); ?></th>
-						
+												
 					</tr>		
 			
 				<?php while ( have_posts() ) : the_post(); ?>

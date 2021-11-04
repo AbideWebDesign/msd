@@ -20,7 +20,5 @@
 	</td>
 	
 	<td><?php echo ucwords( get_field('staff_position_description') ); ?></td>
-		
-	<td><?php the_field('staff_work_phone'); ?></td>
-			
+					
 </tr>
