@@ -540,6 +540,8 @@ add_filter( 'jpeg_quality', function( $arg ){ return 100; } );
 
 add_filter( 'wp_editor_set_quality', function( $arg ){ return 100; } );
 
+add_filter( 'wp_is_application_passwords_available', '__return_false' );
+
 /*
  * Staff Sorting
  */
