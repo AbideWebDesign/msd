@@ -8,8 +8,6 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-add_filter( 'wp_is_application_passwords_available', '__return_false' );
-
 register_nav_menus( array (
     'primary-menu' 		=> 'Primary Menu',
     'secondary-menu'	=> 'Secondary Menu',
@@ -212,6 +210,16 @@ function remove_dashboard_widgets() {
 }
 
 /*
+ * Remove unused user roles
+ */
+remove_role( 'contributor' );
+remove_role( 'author' );
+remove_role( 'editor' );
+remove_role( 'member' );
+remove_role( 'wpseo_editor' );
+remove_role( 'wpseo_manager' );
+
+/*
  * Remove Welcome panel
  */
 remove_action( 'welcome_panel', 'wp_welcome_panel' );
@@ -249,6 +257,7 @@ add_action( 'admin_init', function () {
         if ( post_type_supports( $post_type, 'comments' ) ) {
         
             remove_post_type_support( $post_type, 'comments' );
+         
             remove_post_type_support( $post_type, 'trackbacks' );
         
         }
@@ -309,6 +318,17 @@ function add_login_favicon() {
 	
 }
 
+/**
+ * Change Login Logo URL
+ */
+add_filter( 'login_headerurl', 'login_logo_url' );
+
+function login_logo_url() {
+	
+	return home_url();
+
+}
+
 /*
  * Add custom admin styles
  */
@@ -367,7 +387,7 @@ function custom_login_css() {
 			border-color: #004a7c;	
 			box-shadow: none;
 		}	
-		#login #nav {
+		#login #backtoblog {
 			display: none;
 		}
 		.login label {
@@ -405,18 +425,27 @@ add_filter( 'retrieve_password_message', 'retrieve_password_message', 10, 4 );
 
 function retrieve_password_message( $message, $key, $user_login, $user_data ) {
 
-    // Start with the default content.
-    $site_name = wp_specialchars_decode( get_option( 'blogname' ), ENT_QUOTES );
-    $message = __( 'Someone has requested a password reset for the following account:' ) . "\r\n\r\n";
-    /* translators: %s: site name */
-    $message .= sprintf( __( 'Site Name: %s' ), $site_name ) . "\r\n\r\n";
-    /* translators: %s: user login */
-    $message .= sprintf( __( 'Username: %s' ), $user_login ) . "\r\n\r\n";
-    $message .= __( 'If this was a mistake, just ignore this email and nothing will happen.' ) . "\r\n\r\n";
-    $message .= __( 'To reset your password, visit the following address:' ) . "\r\n\r\n";
-    $message .= '<' . network_site_url( "wp-login.php?action=rp&key=$key&login=" . rawurlencode( $user_login ), 'login' ) . ">\r\n";
+	// Start with the default content.
 
-    return $message;
+	$site_name = wp_specialchars_decode( get_option( 'blogname' ), ENT_QUOTES );
+
+	$message = __( 'Someone has requested a password reset for the following account:' ) . "\r\n\r\n";
+
+	/* translators: %s: site name */
+
+	$message .= sprintf( __( 'Site Name: %s' ), $site_name ) . "\r\n\r\n";
+
+	/* translators: %s: user login */
+
+	$message .= sprintf( __( 'Username: %s' ), $user_login ) . "\r\n\r\n";
+
+	$message .= __( 'If this was a mistake, just ignore this email and nothing will happen.' ) . "\r\n\r\n";
+
+	$message .= __( 'To reset your password, visit the following address:' ) . "\r\n\r\n";
+
+	$message .= '<' . network_site_url( "wp-login.php?action=rp&key=$key&login=" . rawurlencode( $user_login ), 'login' ) . ">\r\n";
+
+	return $message;
 
 }
 
@@ -443,118 +472,6 @@ function humanTiming ( $time ) {
 		return $numberOfUnits . ' ' . $text . ( ( $numberOfUnits > 1 ) ? 's' : '' );
   
 	}
-
-}
-
-/*
- * Add bootstrap 4 styles for gravity forms
- */
-//add_filter( 'gform_field_content', 'bootstrap_styles_for_gravityforms_fields', 10, 5 );
-
-function bootstrap_styles_for_gravityforms_fields( $content, $field, $value, $lead_id, $form_id ) {
-
-	if ( !is_admin() ) {
-			
-		if ( $field["type"] != 'hidden' && $field["type"] != 'list' && $field["type"] != 'multiselect' && $field["type"] != 'checkbox' && $field["type"] != 'fileupload' && $field["type"] != 'date' && $field["type"] != 'html' && $field["type"] != 'address' ) {
-			
-			$content = str_replace('class=\'medium', 'class=\'form-control medium', $content);
-		
-		}
-	
-		if ( $field["type"] == 'name' || $field["type"] == 'address' ) {
-			
-			$content = str_replace('<input ', '<input class=\'form-control\' ', $content);
-		
-		}
-	
-		if ( $field["type"] == 'textarea' ) {
-			
-			$content = str_replace('class=\'textarea', 'class=\'form-control textarea', $content);
-		
-		}
-	
-		if ( $field["type"] == 'checkbox' ) {
-			
-			$content = str_replace('li class=\'', 'li class=\'form-check ', $content);
-			$content = str_replace('<input ', '<input class="custom-control-input" style=\'margin-top:-2px\' ', $content);
-			
-		}
-	
-		if ( $field["type"] == 'select' ) {
-			
-			$content = str_replace('large gfield_select', 'custom-select custom-select-lg', $content);
-		
-		}
-		
-		if ( $field["type"] == 'product' ) {
-	
-			$content = str_replace("<div class='ginput_container ginput_container_product_price'>", '', $content);
-			$content = str_replace('</div>', '', $content);
-		}
-		
-		if ( $field["type"] == 'radio' ) {
-			
-			$content = str_replace('li class=\'', 'li class=\'radio ', $content);
-			$content = str_replace('<input ', '<input style=\'margin-left:1px;\' ', $content);
-		
-		}
-		
-		if ($field["type"] == 'password' ) {
-
-			$content = str_replace("class='form-control medium'", '', $content);
-			
-		}
-	
-	}
-
-	return $content;
-
-} 
-
-add_filter( 'gform_submit_button', 'form_submit_button', 10, 2 );
-
-function form_submit_button($button, $form){
-
-    return "<button class='button btn btn-primary' id='gform_submit_button_{$form["id"]}'><span>{$form["button"]["text"]}</span></button>";
-
-}
-
-//add_filter( 'gform_field_container', 'add_bootstrap_container_class', 10, 6 );
-
-function add_bootstrap_container_class( $field_container, $field, $form, $css_class, $style, $field_content ) {
-	
-	$id = $field->id;
-	
-	$field_id = is_admin() || empty( $form ) ? "field_{$id}" : 'field_' . $form['id'] . "_$id";
-	
-	if ( !is_admin() ) {
-
-		if ( $field->type == 'product' && $field->inputType != 'calculation' && $field->inputType != 'singleproduct' ) {
-				
-			return '<li id="' . $field_id . '" class="' . $css_class . '"><div id="' . $field_id . '" class="' . $css_class . ' input-group input-group-lg"><div class="input-group-prepend"><span class="input-group-text">$</span></div>{FIELD_CONTENT}<span id="post-amount" class="postinput">USD</span></div></li>';
-			
-		} else if ( $field->type == 'checkbox' ) {
-			
-			return '<li id="' . $field_id . '" class="' . $css_class . '"><div class="custom-control custom-checkbox">{FIELD_CONTENT}</div></li>';
-		
-		} else {
-			
-			return '<li id="' . $field_id . '" class="' . $css_class . ' form-group">{FIELD_CONTENT}</li>';
-			
-		}
-		
-	} else {
-		
-		return '<li id="' . $field_id . '" class="' . $css_class . ' form-group">{FIELD_CONTENT}</li>';
-		
-	}
-}
-
-add_filter( 'gform_ajax_spinner_url', 'spinner_url', 10, 2 );
-
-function spinner_url( $image_src, $form ) {
-   
-	return  'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
 }
 
@@ -585,23 +502,42 @@ function redirect_after_logout() {
 	
 }
 
-add_filter( 'acf/rest_api/field_settings/show_in_rest', '__return_true' );
-
-add_filter( 'wpseo_enable_notification_post_trash', '__return_false' );
-
-add_filter( 'wpseo_enable_notification_post_slug_change', '__return_false' );
-
-add_filter( 'wpseo_enable_notification_term_delete', '__return_false' );
-
-add_filter( 'wpseo_enable_notification_term_slug_change', '__return_false' );
-
 /*
- * Disable Image Compression
+ * Wordpress Customizations
  */
+
+function msd_new_user_notifications( $user_id, $notify = 'user' ) {
+	
+	if ( empty( $notify ) || $notify == 'admin' ) {
+	
+	  return;
+	
+	} elseif ( $notify == 'both' ) { //Only send the new user their email, not the admin
+
+		$notify = 'user';
+	
+	}
+	
+	wp_send_new_user_notifications( $user_id, $notify );
+
+}
+ 
+remove_action( 'register_new_user', 'wp_send_new_user_notifications' );
+
+remove_action( 'edit_user_created_user', 'wp_send_new_user_notifications', 10, 2 );
+
+add_action( 'register_new_user', 'msd_new_user_notifications' );
+
+add_action( 'edit_user_created_user', 'msd_new_user_notifications', 10, 2 );
+
 add_filter( 'big_image_size_threshold', '__return_false' );
+
 add_filter( 'auto_plugin_update_send_email', '__return_false' );
+
 add_filter( 'auto_theme_update_send_email', '__return_false' );
+
 add_filter( 'jpeg_quality', function( $arg ){ return 100; } );
+
 add_filter( 'wp_editor_set_quality', function( $arg ){ return 100; } );
 
 /*

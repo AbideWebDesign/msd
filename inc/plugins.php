@@ -55,7 +55,17 @@ if ( is_plugin_active( 'wordpress-seo/wp-seo.php' ) ) {
 		
 		return $option;
     }
+   
+	add_filter( 'wpseo_enable_notification_post_trash', '__return_false' );
+	
+	add_filter( 'wpseo_enable_notification_post_slug_change', '__return_false' );
+	
+	add_filter( 'wpseo_enable_notification_term_delete', '__return_false' );
+	
+	add_filter( 'wpseo_enable_notification_term_slug_change', '__return_false' );
     
 }
+
+    add_filter( 'acf/rest_api/field_settings/show_in_rest', '__return_true' );
 
 ?>
