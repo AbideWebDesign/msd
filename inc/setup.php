@@ -522,7 +522,6 @@ function msd_new_user_notifications( $user_id, $notify = 'user' ) {
 
 }
 
-
 /*
  * Disable Update Emails
  */
