@@ -287,7 +287,7 @@ add_action( 'init', function () {
 
 	}
 
-});
+} );
 
 /*
  * Hide admin notifications for non-admins
@@ -519,6 +519,24 @@ function msd_new_user_notifications( $user_id, $notify = 'user' ) {
 	}
 	
 	wp_send_new_user_notifications( $user_id, $notify );
+
+}
+
+
+/*
+ * Disable Update Emails
+ */
+add_filter( 'auto_core_update_send_email', 'disable_auto_update_emails', 10, 4 );
+  
+function disable_auto_update_emails( $send, $type, $core_update, $result ) {
+
+	if ( ! empty( $type ) && $type == 'success' ) {
+
+		return false;
+
+	}
+
+	return true;
 
 }
  
