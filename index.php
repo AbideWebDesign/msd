@@ -44,7 +44,11 @@ get_header();
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'loop-templates/content', 'single-archive' ); ?>
+				<?php if ( ! get_field('hide_on_news') ): ?>
+				
+					<?php get_template_part( 'loop-templates/content', 'single-archive' ); ?>
+					
+				<?php endif; ?>
 
 			<?php endwhile; ?>
 

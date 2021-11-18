@@ -42,9 +42,9 @@ get_header();
 			<?php if ( have_posts() ) : ?>
 	
 				<?php while ( have_posts() ) : the_post(); ?>
-	
+					
 					<?php get_template_part( 'loop-templates/content', 'single-archive' ); ?>
-	
+							
 				<?php endwhile; ?>
 	
 			<?php else : ?>
