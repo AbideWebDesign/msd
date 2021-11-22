@@ -40,7 +40,7 @@
 									
 										<?php if ( has_post_thumbnail() ): ?>
 										
-											<?php echo get_the_post_thumbnail( get_the_id(), 'card', array('alt'=> esc_html( get_the_title() ), 'class' => 'img-fluid w-100') ); ?>
+											<?php echo get_the_post_thumbnail( get_the_id(), 'medium', array('alt'=> esc_html( get_the_title() ), 'class' => 'img-fluid w-100') ); ?>
 										
 										<?php else: ?>
 										
