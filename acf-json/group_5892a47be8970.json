@@ -379,6 +379,26 @@
             "min_size": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_61a7cba496572",
+            "label": "Calendar Download - Bell Schedule",
+            "name": "calendar_download_bell_schedule",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_rest": 1,
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
         }
     ],
     "location": [
@@ -398,5 +418,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1634696201
+    "modified": 1638386624
 }
