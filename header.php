@@ -72,7 +72,7 @@ defined( 'ABSPATH' ) || exit;
 				
 			</div>
 			
-			<div class="col-auto align-self-center">
+			<div class="col-auto align-self-center my-1 my-md-0">
 				
 				<a href="<?php the_field('covid_19_page', 'options'); ?>" class="text-sm"><i class="fa fa-user-shield text-xs"></i> <?php _e('COVID-19'); ?></a>
 				

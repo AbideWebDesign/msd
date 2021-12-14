@@ -95,8 +95,8 @@
                     "return_format": "id",
                     "preview_size": "medium",
                     "library": "all",
-                    "min_width": "",
-                    "min_height": "",
+                    "min_width": 900,
+                    "min_height": 475,
                     "min_size": "",
                     "max_width": "",
                     "max_height": "",
@@ -138,5 +138,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1625518276
+    "modified": 1638893483
 }

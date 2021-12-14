@@ -25,7 +25,7 @@ add_image_size( 'card-alt', 800, 600, true );
 add_image_size( 'card-full', 660, false );
 add_image_size( 'hero-banner', 1920, 1280, true );
 add_image_size( 'page-header', 1920, false );
-add_image_size( 'slide', 900, 675, true );
+add_image_size( 'slide', 900, 475, true );
 add_image_size( 'slide-sm', 900, 370, true );
 add_image_size( 'slide-lg', 1318, 500, true );
 

@@ -34,7 +34,7 @@
 						
 							<div class="row">
 								
-								<div class="col-3 col-md-3 mb-0 align-self-center">
+								<div class="col-12 col-md-3 mb-1 mb-md-0 align-self-center">
 								
 									<a href="<?php the_permalink(); ?>">
 									
@@ -52,7 +52,7 @@
 								
 								</div>
 								
-								<div class="col-9 col-md-9 news-list-content">
+								<div class="col-12 col-md-9 news-list-content">
 								
 									<a class="text-dark stretched-link text-lg font-weight-bold text-decoration-none mb-2" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 								
