@@ -47,7 +47,7 @@ $tax = $wp_query->get_queried_object();
 					
 					<tr>
 						
-						<th><?php _e('Building Name'); ?></th><th><?php _e('First Name'); ?></th><th><?php _e('Last Name'); ?></th><th><?php _e('Email Address'); ?></th><th><?php _e('Position Description'); ?></th><th><?php _e('Phone Number'); ?></th>
+						<th><?php _e('Building Name'); ?></th><th><?php _e('First Name'); ?></th><th><?php _e('Last Name'); ?></th><th><?php _e('Email Address'); ?></th><th><?php _e('Position Description'); ?></th>
 						
 					</tr>		
 				

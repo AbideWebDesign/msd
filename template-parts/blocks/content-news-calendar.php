@@ -14,7 +14,7 @@
 						
 					</div>
 			
-					<div class="mb-1 mb-md-0">
+					<div class="align-self-center">
 			
 						<a class="btn btn-primary btn-sm" href="<?php echo home_url('/news'); ?>"><?php _e('More Updates'); ?></a>
 			
