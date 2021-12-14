@@ -1,4 +1,4 @@
-<section id="news" class="wrapper-sm">
+<section id="news" class="py-3">
 	
 	<div class="container">
 
@@ -77,16 +77,24 @@
 			<div class="col-12 col-lg-4">
 			
 				<div class="calendar">
-			
-					<h2 class="text-primary border-bottom pb-1 mb-1"><?php _e('Calendar'); ?></h2>
+					
+					<div class="d-flex justify-content-between border-bottom pb-1 mb-1">
+						
+						<div class="align-self-center">
+							
+							<h2 class="text-primary mb-0"><?php _e('Calendar'); ?></h2>
+							
+						</div>
+						
+						<div class="align-self-center">
+							
+							<a class="btn btn-primary btn-sm" href="<?php home_url(); ?>/calendar"><?php _e('More Events'); ?> <i class="fa fa-chevron-right text-xs ml-1"></i></a>
+							
+						</div>
+						
+					</div>
 							
 					<?php render_list_view_district(); ?>
-		
-					<div class="">
-			
-						<a class="btn btn-primary btn-sm" href="<?php home_url(); ?>/calendar"><?php _e('More Events'); ?> <i class="fa fa-chevron-right text-xs ml-1"></i></a>
-			
-					</div>
 					
 				</div>
 			
