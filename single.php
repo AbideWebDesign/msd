@@ -18,7 +18,7 @@ get_header();
 
 <?php endif; ?>
 
-<div class="<?php echo ( get_field('include_hero') ? 'pt-1 pb-3' : 'py-3' ); ?>">
+<div class="py-3">
 
 	<div class="container" tabindex="-1">
 

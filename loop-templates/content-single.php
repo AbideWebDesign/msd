@@ -21,7 +21,7 @@ if ( function_exists( 'yoast_breadcrumb' ) ) {
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<header class="post-header mb-3 border-bottom">
+	<header class="post-header mb-2 border-bottom">
 
 		<h1 class="text-dark smaller mb-1"><?php the_title(); ?></h1>
 		
