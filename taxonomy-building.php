@@ -35,7 +35,7 @@ $tax = $wp_query->get_queried_object();
 
 </div>
 
-<div id="archive-wrapper" class="mt-1 mb-3">
+<div id="archive-wrapper" class="py-3">
 
 	<div class="container" tabindex="-1">
 
@@ -43,7 +43,7 @@ $tax = $wp_query->get_queried_object();
 
 			<div class="table-responsive">
 				
-				<table class="table table-borderd table-striped table-sm">
+				<table class="table table-borderd table-striped table-sm mb-0">
 					
 					<tr>
 						

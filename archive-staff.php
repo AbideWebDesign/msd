@@ -79,7 +79,7 @@ function sort_type( $name, $type ) {
 
 			<div class="table-responsive">
 				
-				<table class="table table-borderd table-striped table-sm">
+				<table class="table table-borderd table-striped table-sm mb-2">
 					
 					<tr>
 						

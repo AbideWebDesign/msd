@@ -2,7 +2,7 @@
 	
 	<div id="post-<?php the_ID(); ?>" class="row">
 		
-		<div class="col-4 col-lg-3">
+		<div class="col-12 col-md-4 col-lg-3 mb-1 mb-md-0">
 			
 			<a href="<?php the_permalink(); ?>">
 				
@@ -20,7 +20,7 @@
 		
 		</div>
 		
-		<div class="col-8 col-lg-9 align-self-center align-self-md-start">
+		<div class="col-12 col-md-8 col-lg-9 align-self-center align-self-md-start">
 		
 			<a class="stretched-link text-dark text-xl font-weight-bold text-decoration-none" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 			

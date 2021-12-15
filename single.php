@@ -18,7 +18,7 @@ get_header();
 
 <?php endif; ?>
 
-<div class="wrapper-sm">
+<div class="pt-1 pb-3">
 
 	<div class="container" tabindex="-1">
 

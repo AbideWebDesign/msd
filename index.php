@@ -36,7 +36,7 @@ get_header();
 
 </div>
 
-<div class="wrapper-sm bg-light">
+<div class="bg-light py-3">
 
 	<div class="container" tabindex="-1">
 
