@@ -69,7 +69,7 @@ function msd_wp_link_query_args( $query ) {
 add_filter( 'embed_oembed_html', 'wrap_oembed_html', 99, 4 );
  
 function wrap_oembed_html( $cached_html, $url, $attr, $post_id ) {
-	
+
 	$cached_html = str_replace( '<iframe ', '<iframe class="embed-responsive-item" ', $cached_html );
 
 	$cached_html = '<div class="embed-responsive embed-responsive-16by9">' . $cached_html . '</div>';

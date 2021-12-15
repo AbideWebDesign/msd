@@ -104,6 +104,7 @@ p {
 }
 .text-xl {
 	font-size: $font-size-xl;
+	line-height: $line-height-xl;
 }
 @include media-breakpoint-down(lg) {
 	.text-lg-sm {
