@@ -54,9 +54,9 @@
 								
 								<div class="col-12 col-md-9 news-list-content align-self-center">
 								
-									<a class="text-dark stretched-link text-lg font-weight-bold text-decoration-none mb-1" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+									<a class="text-dark stretched-link text-lg font-weight-bold text-decoration-none" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 								
-									<div class="text-sm mb-1"><?php the_excerpt(); ?></div>
+									<div class="text-sm my-1"><?php the_excerpt(); ?></div>
 									
 									<div class="text-sm text-muted"><?php echo date( 'l, M d Y', strtotime( get_the_date() ) ); ?></div>
 									
