@@ -1,16 +1,16 @@
 <?php
 
 // find date time now
-$tz = new DateTimeZone('America/Los_Angeles');
+$tz = new DateTimeZone( 'America/Los_Angeles' );
 
 $date_now = new DateTime();
 
-$date_now->setTimezone($tz);
+$date_now->setTimezone( $tz );
 
 // query events
 $args = array(
 	'posts_per_page'	=> 1,
-	'post_type'			=> 'emergency-alert',
+	'post_type'			=> 'alert',
 	'meta_query' 		=> array(
 		'relation' 			=> 'AND',
 		array(
@@ -38,7 +38,7 @@ if ( $query->have_posts() ) :
 	
 	while ( $query->have_posts() ) : $query->the_post(); ?>
 	
-		<div class="alert-emergency-body" style="background-color: #<?php the_field('alert_color', get_the_ID()); ?>">
+		<div class="alert-emergency-body py-1" style="background-color: #<?php the_field('alert_color', get_the_ID()); ?>">
 			
 			<div class="container">
 			
@@ -46,13 +46,13 @@ if ( $query->have_posts() ) :
 			
 					<div class="col-12">
 			
-						<h4><?php the_field('alert_sub_title', get_the_ID()); ?></h4>	
+						<div class="text-uppercase text-white font-weight-bold mb-0 text-xs"><?php the_field('alert_sub_title', get_the_ID()); ?></div>	
 			
-						<h3>
+						<div class="text-lg text-white">
 			
 							<?php if ( get_field('link_to_post', get_the_id()) ): ?>
 			
-								<a href="<?php the_field('link', get_the_id()); ?>">
+								<a class="stretched-link" href="<?php the_field('link', get_the_id()); ?>" target="<?php echo ( get_field('link_type', get_the_id()) == 'External' ? '_blank' : '_self' ); ?>">
 			
 							<?php endif; ?>
 							
@@ -64,7 +64,7 @@ if ( $query->have_posts() ) :
 			
 							<?php endif; ?>
 			
-						</h3>
+						</div>
 			
 					</div>
 			

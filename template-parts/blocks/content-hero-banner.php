@@ -46,7 +46,7 @@ if ( get_field('carousel_images') || is_home() || is_single() || is_front_page()
 	
 		<div class="container container-lg-full">
 			
-			<div class="row">
+			<div class="row no-gutters">
 				
 				<div class="col-12">
 			
