@@ -53,7 +53,6 @@ function sort_type( $name, $type ) {
 
 	<div class="container" tabindex="-1">
 
-<!--
 		<?php if ( have_posts() ) : ?>
 			
 			<?php $buildings = get_terms( array( 'taxonomy' => 'building', 'hide_empty' => true ) ); ?>
@@ -113,7 +112,6 @@ function sort_type( $name, $type ) {
 		<?php endif; ?>
 
 		<?php msd_pagination(); ?>
--->
 
 	</div>
 
