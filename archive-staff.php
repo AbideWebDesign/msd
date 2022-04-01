@@ -49,6 +49,7 @@ function sort_type( $name, $type ) {
 
 </div>
 
+<!--
 <div id="archive-wrapper" class="mt-1 mb-3">
 
 	<div class="container" tabindex="-1">
@@ -116,5 +117,6 @@ function sort_type( $name, $type ) {
 	</div>
 
 </div>
+-->
 
 <?php get_footer();
