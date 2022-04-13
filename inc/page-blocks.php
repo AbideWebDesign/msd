@@ -110,7 +110,7 @@ function msd_acf_block_render_callback( $block ) {
 	}
 }
 
-add_filter( 'allowed_block_types', 'msd_allowed_block_types' );
+add_filter( 'allowed_block_types_all', 'msd_allowed_block_types' );
  
 function msd_allowed_block_types( $allowed_blocks ) {
 
