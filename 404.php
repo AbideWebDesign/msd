@@ -34,7 +34,6 @@ get_header();
 
 							<p><?php esc_html_e( 'It looks like nothing was found at this location.', 'msd' ); ?></p
 
-
 						</div><!-- .page-content -->
 
 					</section><!-- .error-404 -->

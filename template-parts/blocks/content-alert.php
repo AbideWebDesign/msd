@@ -1,13 +1,11 @@
 <?php
 
-// find date time now
 $tz = new DateTimeZone( 'America/Los_Angeles' );
 
 $date_now = new DateTime();
 
 $date_now->setTimezone( $tz );
 
-// query events
 $args = array(
 	'posts_per_page'	=> 1,
 	'post_type'			=> 'alert',
@@ -24,22 +22,22 @@ $args = array(
 	        'compare'		=> '>=',
 	        'value'			=> $date_now->format( 'Y-m-d H:i:s' ),
 	        'type'			=> 'DATETIME'
+	    ),
+	    array(
+		'relation' => 'OR',
+			array(
+				'key'		=> 'schools',
+				'value'		=> 'McMinnville School District',
+				'compare'	=> 'LIKE',
+			),
+			array(
+				'key'      => 'schools',
+				'value'		=> 'All',
+				'compare'	=> 'LIKE',
+			)  
 	    )
     ),
-    'meta_query'		=> array(
-	    'relation' => 'OR',
-		array(
-			'key'		=> 'schools',
-			'value'		=> 'McMinnville School District',
-			'compare'	=> 'LIKE',
-		),
-		array(
-			'key'      => 'schools',
-			'value'		=> 'All',
-			'compare'	=> 'LIKE',
-		)
-    ),
-	'order'				=> 'ASC',
+   	'order'				=> 'ASC',
 	'orderby'			=> 'meta_value',
 	'meta_key'			=> 'start_time',
 	'meta_type'			=> 'DATE'
