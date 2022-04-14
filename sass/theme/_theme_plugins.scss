@@ -312,3 +312,46 @@ h1#month {
 		}
 	}
 }
+
+/* Google Sheets */
+.gswpts_tables_container {
+	padding: 0;
+	margin: 0;
+	
+	h3 {
+		display: none;
+	}
+	th {
+		cursor: pointer;
+	}
+	td {
+		font-size: $font-size-sm;
+	}
+	.even td {
+		background-color: $light;
+	}
+	thead {
+		background-color: $light;
+		color: $body-color;
+	}
+	table.dataTable.table thead th.sorting::after {
+		color: $body-color;
+		content: '\f0dc';
+		font-family: fontawesome;
+	}
+	table.dataTable.table thead th.sorting_asc:after {
+		content: '\f0d8';
+		font-family: fontawesome;
+	}
+	table.dataTable.table thead th.sorting_desc:after {
+		content: '\f0d7';
+		font-family: fontawesome;
+	}
+	.gswpts_tables_content .bottom_options #create_tables_paginate {
+		margin: auto !important;
+	}
+	.gswpts_tables_content .bottom_options .pagination.menu>* {
+		color: $primary;
+		box-shadow: none;
+	}
+}

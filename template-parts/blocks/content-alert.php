@@ -16,15 +16,28 @@ $args = array(
 		array(
 	        'key'			=> 'start_time',
 	        'compare'		=> '<=',
-	        'value'			=> $date_now->format('Y-m-d H:i:s'),
+	        'value'			=> $date_now->format( 'Y-m-d H:i:s' ),
 	        'type'			=> 'DATETIME'
 	    ),
 	    array(
 	        'key'			=> 'end_time',
 	        'compare'		=> '>=',
-	        'value'			=> $date_now->format('Y-m-d H:i:s'),
+	        'value'			=> $date_now->format( 'Y-m-d H:i:s' ),
 	        'type'			=> 'DATETIME'
 	    )
+    ),
+    'meta_query'		=> array(
+	    'relation' => 'OR',
+		array(
+			'key'		=> 'schools',
+			'value'		=> 'McMinnville School District',
+			'compare'	=> 'LIKE',
+		),
+		array(
+			'key'      => 'schools',
+			'value'		=> 'All',
+			'compare'	=> 'LIKE',
+		)
     ),
 	'order'				=> 'ASC',
 	'orderby'			=> 'meta_value',
@@ -45,9 +58,7 @@ if ( $query->have_posts() ) :
 				<div class="row">
 			
 					<div class="col-12">
-			
-						<div class="text-uppercase text-white font-weight-bold mb-0 text-xs"><?php the_field('alert_sub_title', get_the_ID()); ?></div>	
-			
+						
 						<div class="text-lg text-white">
 			
 							<?php if ( get_field('link_to_post', get_the_id()) ): ?>
@@ -57,6 +68,12 @@ if ( $query->have_posts() ) :
 							<?php endif; ?>
 							
 							<?php the_title(); ?>
+							
+							<?php if ( get_field('alert_sub_title', get_the_ID()) ): ?>
+							
+								<div class="text-uppercase text-white font-weight-bold mb-0 text-xs"><?php the_field('alert_sub_title', get_the_ID()); ?></div>	
+								
+							<?php endif; ?>
 							
 							<?php if ( get_field('link_to_post', get_the_id()) ): ?>
 			

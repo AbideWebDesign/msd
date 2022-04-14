@@ -1,7 +1,44 @@
 {
     "key": "group_57eaaaef41225",
-    "title": "Builder - Emergency Alerts",
+    "title": "Emergency Alerts",
     "fields": [
+        {
+            "key": "field_6230e936d2ae8",
+            "label": "Schools",
+            "name": "schools",
+            "type": "select",
+            "instructions": "On which sites should this alert display.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_rest": 1,
+            "choices": {
+                "All": "All",
+                "McMinnville School District": "McMinnville School District",
+                "McMinnville High School": "McMinnville High School",
+                "Duniway Middle School": "Duniway Middle School",
+                "Patton Middle School": "Patton Middle School",
+                "Buel Elementary School": "Buel Elementary School",
+                "Columbus Elementary School": "Columbus Elementary School",
+                "Grandhaven Elementary School": "Grandhaven Elementary School",
+                "Memorial Elementary School": "Memorial Elementary School",
+                "Newby Elementary School": "Newby Elementary School",
+                "Wascher Elementary School": "Wascher Elementary School"
+            },
+            "default_value": [
+                "All"
+            ],
+            "allow_null": 0,
+            "multiple": 1,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
         {
             "key": "field_5b8da7eb9df30",
             "label": "Alert Color",
@@ -15,6 +52,7 @@
                 "class": "",
                 "id": ""
             },
+            "show_in_rest": 1,
             "choices": {
                 "C36714": "Orange",
                 "C61723": "Red"
@@ -40,6 +78,7 @@
                 "class": "",
                 "id": ""
             },
+            "show_in_rest": 1,
             "default_value": "Important News",
             "placeholder": "",
             "prepend": "",
@@ -59,6 +98,7 @@
                 "class": "",
                 "id": ""
             },
+            "show_in_rest": 1,
             "display_format": "m\/d\/Y g:i a",
             "return_format": "m\/d\/Y g:i a",
             "first_day": 1
@@ -76,6 +116,7 @@
                 "class": "",
                 "id": ""
             },
+            "show_in_rest": 1,
             "display_format": "m\/d\/Y g:i a",
             "return_format": "m\/d\/Y g:i a",
             "first_day": 1
@@ -93,6 +134,7 @@
                 "class": "",
                 "id": ""
             },
+            "show_in_rest": 1,
             "message": "",
             "default_value": 1,
             "ui": 0,
@@ -120,6 +162,7 @@
                 "class": "",
                 "id": ""
             },
+            "show_in_rest": 1,
             "choices": {
                 "Internal": "Internal",
                 "External": "External"
@@ -158,12 +201,12 @@
                 "class": "",
                 "id": ""
             },
+            "show_in_rest": 1,
             "post_type": [
                 "page",
-                "attachment",
-                "news"
+                "attachment"
             ],
-            "taxonomy": [],
+            "taxonomy": "",
             "allow_null": 1,
             "allow_archives": 0,
             "multiple": 0
@@ -194,6 +237,7 @@
                 "class": "",
                 "id": ""
             },
+            "show_in_rest": 1,
             "default_value": "",
             "placeholder": ""
         }
@@ -230,5 +274,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1625238830
+    "modified": 1647534851
 }

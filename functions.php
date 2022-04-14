@@ -18,6 +18,7 @@ $msd_includes = array(
 	'/plugins.php',
 	'/calendar.php',
 	'/post-types.php',
+	'/msd-api.php',
 );
 
 foreach ( $msd_includes as $file ) {
