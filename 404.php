@@ -32,9 +32,7 @@ get_header();
 
 						<div class="page-content">
 
-							<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'msd' ); ?></p>
-
-							<?php get_search_form(); ?>
+							<p><?php esc_html_e( 'It looks like nothing was found at this location.', 'msd' ); ?></p
 
 
 						</div><!-- .page-content -->
