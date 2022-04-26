@@ -351,7 +351,9 @@ function admin_bar_style_override() {
 			#your-profile h2, .gswpts-review-notice, .gswpts-affiliate-notice {
 				display: none !important;
 			}
-			
+			#link-selector label {
+				display: inline !important;
+			}
 	<?php
 		
 	}
