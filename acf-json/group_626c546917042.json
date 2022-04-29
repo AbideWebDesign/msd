@@ -1,0 +1,106 @@
+{
+    "key": "group_626c546917042",
+    "title": "Block - Gallery Small",
+    "fields": [
+        {
+            "key": "field_626c59bee1a27",
+            "label": "Title",
+            "name": "gallery_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_rest": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_626c59c8e1a28",
+            "label": "Text",
+            "name": "gallery_text",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_rest": 0,
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_626c546e9ea9e",
+            "label": "Gallery",
+            "name": "gallery",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_rest": 0,
+            "choices": {
+                "17": "About",
+                "12": "Branding",
+                "16": "Departments",
+                "20": "Documents",
+                "15": "Graphics",
+                "10": "Icons",
+                "58": "Meetings\/Minutes 2019-2020",
+                "6": "News",
+                "59": "News updates",
+                "18": "Parents and Students",
+                "57": "Pathways",
+                "11": "Photos",
+                "19": "Quick Links",
+                "54": "School Board",
+                "56": "School Board Minutes &amp; Agendas",
+                "14": "Schools",
+                "53": "Staff",
+                "43": "Volunteer"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/gallery-small"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1651268049
+}

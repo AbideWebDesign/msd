@@ -177,7 +177,6 @@ function admin_bar_render() {
 	$wp_admin_bar->remove_menu('customize');
     $wp_admin_bar->remove_node('wp-logo');
     $wp_admin_bar->remove_menu('comments');
-    $wp_admin_bar->remove_menu('new-post');
     $wp_admin_bar->remove_menu('search');
     $wp_admin_bar->remove_menu('themes');
     $wp_admin_bar->remove_menu('widgets');

@@ -77,6 +77,17 @@ function msd_acf_init() {
 		) );	
 		
 		acf_register_block( array (
+			'name'				=> 'gallery-small',
+			'title'				=> __('Image Gallery Small'),
+			'description'		=> __(''),
+			'render_callback'	=> 'msd_acf_block_render_callback',
+			'category'			=> 'formatting',
+			'icon'				=> 'format-gallery',
+			'mode'				=> 'edit',
+		) );	
+
+		
+		acf_register_block( array (
 			'name'				=> 'text',
 			'title'				=> __('Text'),
 			'description'		=> __(''),
@@ -122,8 +133,29 @@ function msd_allowed_block_types( $allowed_blocks ) {
 		'acf/cards',
 		'acf/call-out',
 		'acf/gallery',
+		'acf/gallery-small',
 		'acf/text',
 		'acf/staff',
 	);
  
+}
+
+add_filter('acf/load_field/name=gallery', 'acf_load_gallery_field_choices');
+
+function acf_load_gallery_field_choices( $field ) {
+
+    // reset choices
+    $field['choices'] = array();
+    
+	$galleries = get_terms( 'wpmf-category' );
+
+	foreach ( $galleries as $gallery ) {
+
+		$field['choices'][ $gallery->term_id ] = $gallery->name;
+        
+    }
+    
+    // return the field
+    return $field;
+    
 }
