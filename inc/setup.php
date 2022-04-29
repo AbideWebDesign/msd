@@ -348,7 +348,7 @@ function admin_bar_style_override() {
 			.yoast-notification, #toplevel_page_searchwp-settings, .post-type-alert .view, .post-type-alert #wp-admin-bar-view, .post-type-alert #minor-publishing-actions, #toplevel_page_searchwp-settings, form#your-profile > h3, form#your-profile .user-profile-picture, form#your-profile .user-description-wrap, form#your-profile .user-display-name-wrap, form#your-profile .user-nickname-wrap, form#your-profile .show-admin-bar, .user-comment-shortcuts-wrap, form#your-profile .yoast-settings, form#your-profile .user-rich-editing-wrap, form#your-profile .user-admin-color-wrap, form#your-profile .user-url-wrap, form#your-profile .user-facebook-wrap, form#your-profile .user-instagram-wrap, form#your-profile .user-linkedin-wrap, form#your-profile .user-myspace-wrap, form#your-profile .user-pinterest-wrap, form#your-profile .user-soundcloud-wrap, form#your-profile .user-tumblr-wrap, form#your-profile .user-twitter-wrap, form#your-profile .user-youtube-wrap, form#your-profile .user-wikipedia-wrap  {
 				display: none !important;
 			}
-			#your-profile h2, .gswpts-review-notice, .gswpts-affiliate-notice {
+			#your-profile h2, .gswpts-review-notice, .gswpts-affiliate-notice, #edittag .description, .edit-post-post-status .components-panel__row:nth-child(4), .edit-post-post-status .components-panel__row:nth-child(5) {
 				display: none !important;
 			}
 			#link-selector label {
@@ -563,6 +563,24 @@ function disable_auto_update_emails( $send, $type, $core_update, $result ) {
 
 	return true;
 
+}
+
+add_action( 'admin_bar_menu', 'add_toolbar_items', 100 );
+
+function add_toolbar_items( $admin_bar ) {
+	
+	global $post;
+
+	if ( is_single() && get_field('news_translation', $post->id) ) {
+		$admin_bar->add_menu( array(
+			'id'    => 'view-translation',
+			'title' => 'View Translation',
+			'href'  => get_field('news_translation', $post->id),
+			'meta'  => array(
+			    'title' => __('View Translation'),            
+			),
+		));
+	}
 }
  
 remove_action( 'register_new_user', 'wp_send_new_user_notifications' );
