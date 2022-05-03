@@ -106,6 +106,17 @@ function msd_acf_init() {
 			'icon'				=> 'admin-users',
 			'mode'				=> 'edit',
 		) );
+		
+		acf_register_block( array (
+			'name'				=> 'posts',
+			'title'				=> __('Posts'),
+			'description'		=> __(''),
+			'render_callback'	=> 'msd_acf_block_render_callback',
+			'category'			=> 'formatting',
+			'icon'				=> 'category',
+			'mode'				=> 'edit',
+		) );
+
 				
 	}
 }
@@ -136,6 +147,7 @@ function msd_allowed_block_types( $allowed_blocks ) {
 		'acf/gallery-small',
 		'acf/text',
 		'acf/staff',
+		'acf/posts',
 	);
  
 }
