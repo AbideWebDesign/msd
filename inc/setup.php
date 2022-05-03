@@ -517,9 +517,9 @@ function get_google_languages() {
   	
 }
 
-add_action( 'wp_logout', 'redirect_after_logout' );
+add_action( 'wp_logout', 'msd_redirect_after_logout' );
 
-function redirect_after_logout() {
+function msd_redirect_after_logout() {
     
     wp_redirect( home_url() );
 	
@@ -530,7 +530,6 @@ function redirect_after_logout() {
 /*
  * Wordpress Customizations
  */
-
 function msd_new_user_notifications( $user_id, $notify = 'user' ) {
 	
 	if ( empty( $notify ) || $notify == 'admin' ) {
@@ -550,9 +549,9 @@ function msd_new_user_notifications( $user_id, $notify = 'user' ) {
 /*
  * Disable Update Emails
  */
-add_filter( 'auto_core_update_send_email', 'disable_auto_update_emails', 10, 4 );
+add_filter( 'auto_core_update_send_email', 'msd_disable_auto_update_emails', 10, 4 );
   
-function disable_auto_update_emails( $send, $type, $core_update, $result ) {
+function msd_disable_auto_update_emails( $send, $type, $core_update, $result ) {
 
 	if ( ! empty( $type ) && $type == 'success' ) {
 
@@ -564,24 +563,34 @@ function disable_auto_update_emails( $send, $type, $core_update, $result ) {
 
 }
 
-add_action( 'admin_bar_menu', 'add_toolbar_items', 100 );
+/*
+ * Add Translation Link to Admin Menu
+ */
+add_action( 'admin_bar_menu', 'msd_add_translation_link', 100 );
 
-function add_toolbar_items( $admin_bar ) {
+function msd_add_translation_link( $admin_bar ) {
 	
 	global $post;
 
 	if ( is_single() && get_field('news_translation', $post->id) ) {
-		$admin_bar->add_menu( array(
+		
+		$admin_bar->add_menu( array (
 			'id'    => 'view-translation',
 			'title' => 'View Translation',
 			'href'  => get_field('news_translation', $post->id),
 			'meta'  => array(
-			    'title' => __('View Translation'),            
+			    'title' => __( 'View Translation' ),            
 			),
-		));
+		) );
+		
 	}
+	
 }
- 
+
+/*
+ * Misc
+ */
+
 remove_action( 'register_new_user', 'wp_send_new_user_notifications' );
 
 remove_action( 'edit_user_created_user', 'wp_send_new_user_notifications', 10, 2 );
@@ -601,83 +610,6 @@ add_filter( 'jpeg_quality', function( $arg ){ return 100; } );
 add_filter( 'wp_editor_set_quality', function( $arg ){ return 100; } );
 
 add_filter( 'wp_is_application_passwords_available', '__return_false' );
-
-/*
- * Staff Sorting
- */
-
-add_filter( 'query_vars', 'msd_staff_query_vars' );
-
-function msd_staff_query_vars( $vars ) {
-	
-	$vars[] = 'staff_last_name';
-	
-	$vars[] = 'staff_position';
-    
-    return $vars;
-
-}
-
-add_action('pre_get_posts', 'msd_staff_sorting');
-
-function msd_staff_sorting( $wp_query ) {
-	
-	global $wp_query;
-	
-	if ( ! is_admin() && $wp_query->is_main_query() ) {
-		
-		if( isset( $wp_query->query_vars['post_type']) && $wp_query->query_vars['post_type'] == 'staff' ) {
-								
-			if ( $var = get_query_var( 'staff_last_name' ) ) {
-
-				if ( 'asc' === $var ) {
-
-					$wp_query->set( 'orderby', 'meta_value' );
-					
-					$wp_query->set( 'meta_key', 'staff_last_name' );
-        
-					$wp_query->set( 'order', 'ASC' );
-					
-				} elseif ( 'desc' == $var ) {
-
-					$wp_query->set( 'orderby', 'meta_value' );
-					
-					$wp_query->set( 'meta_key', 'staff_last_name' );
-        
-					$wp_query->set( 'order', 'DESC' );
-					
-				}
-			
-			} elseif ( $var = get_query_var( 'staff_position' ) ) {
-				
-				if ( 'asc' === $var ) {
-
-					$wp_query->set( 'orderby', 'meta_value' );
-					
-					$wp_query->set( 'meta_key', 'staff_position_description' );
-        
-					$wp_query->set( 'order', 'ASC' );
-					
-				} elseif ( 'desc' == $var ) {
-
-					$wp_query->set( 'orderby', 'meta_value' );
-					
-					$wp_query->set( 'meta_key', 'staff_position_description' );
-        
-					$wp_query->set( 'order', 'DESC' );
-					
-				}
-				
-				
-			}
-					
-		}
-		
-	}
-	
-	return $wp_query;
-
-}
 
 /**
  * Create HTML list of pages.

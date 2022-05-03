@@ -1,3 +1,52 @@
+<?php 
+
+$tz = new DateTimeZone( 'America/Los_Angeles' );
+
+$date_now = new DateTime();
+
+$date_now->setTimezone( $tz );
+	
+$args = array ( 
+	'post_type' => 'post', 
+	'posts_per_page' => '3', 
+	'category__not_in' => get_excluded_cats(), 
+	'meta_query' => array (
+		'relation' => 'AND',
+		array ( 
+			'key' => 'hide_on_home', 
+			'value' => '0', 
+			'compare' => 'NOT' 
+		),
+		array (
+			'relation' => 'OR',
+			array(
+				'relation' => 'AND',
+				array(
+					'key'	=> 'remove_from_home',
+					'compare'	=> 'EXISTS',
+				),
+				array(
+					'key'		=> 'remove_from_home',
+			        'compare'	=> '>=',
+			        'value'		=> $date_now->format( 'Y-m-d H:i:s' ),
+			        'type'		=> 'DATETIME'	
+				)
+			),
+			array(
+				'key'		=> 'remove_from_home',
+		        'compare'	=> 'NOT EXISTS',
+			), 
+			array(
+				'key'		=> 'remove_from_home', // For dates set and then removed
+				'compare'	=> '=',
+				'value'		=> '',
+			)
+		)
+	) 
+); 
+	
+?>
+
 <section id="news" class="py-3">
 	
 	<div class="container">
@@ -24,8 +73,6 @@
 				
 				<ul class="list-group">
 								
-					<?php $args = array( 'post_type' => 'post', 'posts_per_page' => '3', 'category__not_in' => get_excluded_cats(), 'meta_query' => array ( array ( 'key' => 'hide_on_home', 'value' => '0', 'compare' => 'NOT' ) ) ); ?>
-	
 					<?php $loop = new WP_Query( $args ); ?>
 	
 	 				<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
