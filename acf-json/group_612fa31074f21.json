@@ -67,7 +67,7 @@
             "label": "Removal Date",
             "name": "remove_from_home",
             "type": "date_time_picker",
-            "instructions": "",
+            "instructions": "Date\/Time to remove post from home page.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -98,5 +98,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1651598529
+    "modified": 1651599286
 }
