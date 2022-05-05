@@ -57,6 +57,20 @@ defined( 'ABSPATH' ) || exit;
 											<?php the_field('district_disclaimer', 'options'); ?>
 											
 										</div>
+										
+										<div class="mt-2">
+											
+											<div class="d-flex justify-content-center justify-content-md-start text-xl">
+												
+												<div class="mr-1"><a class="text-white" href="https://www.facebook.com/McMinnvilleSchoolDistrict" target="_blank"><i class="fab fa-facebook"></i></a></div>
+											
+												<div class="mr-1"><a class="text-white" href="https://www.instagram.com/mcminschools/" target="_blank"><i class="fab fa-instagram-square"></i></a></div>
+												
+												<div><a class="text-white" href="https://twitter.com/McMSchools" target="_blank"><i class="fab fa-twitter-square"></i></a></div>
+												
+											</div>
+											
+										</div>
 																				
 									</div>
 									
