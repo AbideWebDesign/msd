@@ -24,7 +24,7 @@
 			
 			<div class="col-12">
 				
-				<?php echo do_shortcode('[gswpts_table id=1]'); ?>
+				<?php echo do_shortcode('[gswpts_table id=2]'); ?>
 				
 			</div>
 			
