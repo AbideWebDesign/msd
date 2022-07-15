@@ -74,7 +74,7 @@ defined( 'ABSPATH' ) || exit;
 			
 			<div class="col-auto align-self-center my-1 my-md-0">
 				
-				<a href="<?php the_field('covid_19_page', 'options'); ?>" class="text-sm"><i class="fa fa-user-shield text-xs"></i> <?php _e('COVID-19'); ?></a>
+				<a href="https://www.msd.k12.or.us/departments/human-resources/employment-opportunities/" class="text-sm"><i class="fa fa-bullhorn text-xs"></i> <?php _e('Employment'); ?></a>
 				
 			</div>
 			

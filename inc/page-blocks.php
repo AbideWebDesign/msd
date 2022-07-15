@@ -85,8 +85,7 @@ function msd_acf_init() {
 			'icon'				=> 'format-gallery',
 			'mode'				=> 'edit',
 		) );	
-
-		
+	
 		acf_register_block( array (
 			'name'				=> 'text',
 			'title'				=> __('Text'),
@@ -116,7 +115,6 @@ function msd_acf_init() {
 			'icon'				=> 'category',
 			'mode'				=> 'edit',
 		) );
-
 				
 	}
 }

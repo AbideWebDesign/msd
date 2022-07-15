@@ -35,7 +35,6 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 	acf_add_options_sub_page( 'Assets' );
 	acf_add_options_sub_page( 'Calendar' );
 	acf_add_options_sub_page( 'Carousel Slides' );
-	acf_add_options_sub_page( 'COVID-19' );
 	acf_add_options_sub_page( 'District Info' );	
 	acf_add_options_sub_page( 'ParentSquare' );	
 	acf_add_options_sub_page( 'Quick Links' );
