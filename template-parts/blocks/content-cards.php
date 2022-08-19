@@ -16,7 +16,7 @@
 
 <?php endif; ?>
 
-<?php $colors = array( 'bg-primary', 'bg-green', 'bg-red', 'bg-orange', 'bg-dark', 'bg-primary', 'bg-orange', 'bg-red', 'bg-green', 'bg-dark', 'bg-primary', 'bg-red', 'bg-primary', 'bg-green', 'bg-red', 'bg-orange', 'bg-dark', 'bg-primary', 'bg-orange', 'bg-red', 'bg-green', 'bg-dark', 'bg-primary', 'bg-red' ); ?>
+<?php $colors = array( 'bg-green-dark', 'bg-green', 'bg-red', 'bg-orange', 'bg-dark', 'bg-primary', 'bg-orange', 'bg-red', 'bg-green', 'bg-dark', 'bg-primary', 'bg-red', 'bg-primary', 'bg-green', 'bg-red', 'bg-orange', 'bg-dark', 'bg-primary', 'bg-orange', 'bg-red', 'bg-green', 'bg-dark', 'bg-primary', 'bg-red' ); ?>
 
 <?php $x = 0; ?>
 
