@@ -274,7 +274,6 @@ h1#month {
 	color: $dark;
 }
 #calendar-list-district {
-
 	.fc-view-harness {
 		height: auto !important;
 	}
@@ -289,6 +288,9 @@ h1#month {
 	}	
 	.fc-list-day-text {
 		color: $dark;
+	}
+	.fc-scroller {
+	    height: 400px !important;
 	}
 	.custom-view {
 		position: relative;
