@@ -72,7 +72,7 @@
 								
 							<?php endif; ?>
 							
-							<div class="<?php echo ( get_sub_field('card_type') != 'Text Focus' ? $colors[$x] . 'text-white' : '' ); ?> text-center p-2">
+							<div class="<?php echo ( get_sub_field('card_type') != 'Text Focus' ? 'text-white' : '' ); ?> text-center p-2">
 							
 								<h4><?php the_sub_field('card_title'); ?></h4>
 								
