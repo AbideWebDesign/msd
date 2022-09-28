@@ -68,9 +68,15 @@ function msd_menu_render() {
 
 	if ( current_user_can( 'editor' ) ) {
 		
+		remove_menu_page( 'appearance' );
+		
 		remove_menu_page( 'tools.php' );
 		
-		remove_menu_page( 'user-access' ); 
+		remove_menu_page( 'user-access' );  
+		
+		remove_menu_page( 'posts-staff' );
+		
+		remove_menu_page( 'postman' );
 		
 		remove_menu_page( 'wpseo_workouts' );
 		
