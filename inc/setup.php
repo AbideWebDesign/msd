@@ -40,6 +40,16 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 	acf_add_options_sub_page( 'Quick Links' );
 	acf_add_options_sub_page( 'Search' );
 	acf_add_options_sub_page( 'Sidebar Navigation' );	
+	
+	acf_add_options_page(array(
+        'page_title'    => __('User Access'),
+        'menu_title'    => __('User Access'),
+        'menu_slug'     => 'user-access',
+        'capability'    => 'edit_posts',
+        'icon_url'			=> 'dashicons-admin-network',
+        'redirect'      => false
+    ) );
+
 
 }
 
@@ -173,6 +183,7 @@ add_action( 'wp_before_admin_bar_render', 'admin_bar_render' );
 function admin_bar_render() {
 	
     global $wp_admin_bar;
+    
 	$wp_admin_bar->remove_menu('customize');
     $wp_admin_bar->remove_node('wp-logo');
     $wp_admin_bar->remove_menu('comments');
@@ -205,16 +216,6 @@ function remove_dashboard_widgets() {
 	remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
 
 }
-
-/*
- * Remove unused user roles
- */
-remove_role( 'contributor' );
-remove_role( 'author' );
-remove_role( 'editor' );
-remove_role( 'member' );
-remove_role( 'wpseo_editor' );
-remove_role( 'wpseo_manager' );
 
 /*
  * Remove Welcome panel
