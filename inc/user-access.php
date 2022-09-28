@@ -74,7 +74,7 @@ function msd_menu_render() {
 		
 		remove_menu_page( 'user-access' );  
 		
-		remove_menu_page( 'posts-staff' );
+		remove_menu_page( 'staff' );
 		
 		remove_menu_page( 'postman' );
 		
