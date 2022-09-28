@@ -62,21 +62,51 @@ function msd_admin_bar_render() {
 /*
  * Admin menu customizations
  */
-add_action( 'admin_menu', 'msd_menu_render', 99 );
+add_action( 'admin_menu', 'msd_menu_render', 99999 );
 
 function msd_menu_render() {
-
-	if ( current_user_can( 'editor' ) ) {
+	
+	$user = wp_get_current_user();
+	
+	$roles = ( array ) $user->roles;
+	
+	if ( $roles[0] == 'editor' || $roles[0] == 'administrator' && $user->user_login != 'abide_admin' ) {
 		
 		remove_menu_page( 'appearance' );
 		
 		remove_menu_page( 'tools.php' );
 		
-		remove_menu_page( 'user-access' );  
+		remove_menu_page( 'plugins.php' );
+
+		remove_menu_page( 'options-general.php' );
 		
+		remove_submenu_page( 'themes.php', 'themes.php' );
+		
+		remove_submenu_page( 'themes.php', 'customize.php?return=' . urlencode($_SERVER['SCRIPT_NAME']) );
+		
+		remove_submenu_page( 'themes.php', 'shiftnav-settings' );
+		
+		remove_submenu_page( 'themes.php', 'ubermenu-settings' );
+				
 		remove_menu_page( 'staff' );
 		
-		remove_menu_page( 'postman' );
+		remove_menu_page( 'sb-instagram-feed' );
+		
+		remove_menu_page( 'gswpts-dashboard' );
+		
+		remove_menu_page( 'aiwp_settings' );
+		
+		remove_menu_page( 'wpseo_dashboard' );
+		
+		remove_menu_page( 'itsec-dashboard' );
+		
+ 		remove_menu_page( 'postman' );
+		
+		remove_menu_page( 'edit.php?post_type=acf-field-group' );
+		
+		remove_menu_page( 'litespeed' );
+		
+		remove_submenu_page( 'options-general.php', 'codepress-admin-columns' );
 		
 		remove_menu_page( 'wpseo_workouts' );
 		
@@ -84,7 +114,15 @@ function msd_menu_render() {
 		
 		remove_submenu_page( 'gf_edit_forms', 'gf_help' );
 		
-	}	
+	}
+	
+	if ( $roles[0] == 'editor' ) {
+		
+		remove_menu_page( 'user-access' );
+		
+		remove_menu_page( 'users.php' );
+		
+	}
 
 }
 
