@@ -96,33 +96,43 @@ add_filter( 'parse_query', 'exclude_pages_from_admin' );
 function exclude_pages_from_admin( $query ) {
 	
 	global $pagenow, $post_type;
+
+	if ( is_admin() ) {
 	
-	$found = false;
-	
-	if ( is_admin() && $pagenow == 'edit.php' && $post_type == 'page' ) {
+		if ( $pagenow == 'admin.php' ) {
+			
+			$current_page = $_GET['page'];
+
+			$found = false;
+			
+			if ( $current_page == 'nestedpages'  ) {
 		
-		$user_id = get_current_user_id();
-
-		while ( have_rows('users_access', 'options') ) {
-			
-			the_row();
-			
-			if ( get_sub_field('user') == $user_id ) {
-
-				$found = true;
+				$user_id = get_current_user_id();
+		
+				while ( have_rows('users_access', 'options') ) {
+					
+					the_row();
+					
+					if ( get_sub_field('user') == $user_id ) {
+		
+						$found = true;
+						
+						$query->query_vars['post__in'] = get_sub_field('pages');
+						
+					}
 				
-				$query->query_vars['post__in'] = get_sub_field('pages');
+				}
 				
+				if ( ! $found ) {
+					
+					$query->query_vars['post__in'] = [ 0 ]; // Clear array to return no values
+					
+				}
+			
 			}
 		
 		}
 		
-		if ( ! $found ) {
-			
-			$query->query_vars['post__in'] = [ 0 ]; // Clear array to return no values
-			
-		}
-	
 	}
-	
+		
 }
