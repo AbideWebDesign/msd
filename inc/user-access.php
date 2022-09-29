@@ -87,6 +87,8 @@ function msd_menu_render() {
 		remove_submenu_page( 'themes.php', 'shiftnav-settings' );
 		
 		remove_submenu_page( 'themes.php', 'ubermenu-settings' );
+		
+		remove_submenu_page( 'nestedpages', 'edit.php?post_type=page' );
 				
 		remove_menu_page( 'staff' );
 		
