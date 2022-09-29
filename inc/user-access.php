@@ -17,7 +17,11 @@ function msd_admin_bar_render() {
 	
 	global $wp_admin_bar, $post;
 	
-	if ( isset( $post ) && ! current_user_can( 'administrator') ) {
+	$user = wp_get_current_user();
+	
+	$roles = ( array ) $user->roles;
+	
+	if ( isset( $post ) && $roles[0] != 'administrator' ) {
 		
 		$user_id = get_current_user_id();
 		
@@ -145,7 +149,11 @@ function exclude_pages_from_admin( $query ) {
 	
 	global $pagenow, $post_type;
 
-	if ( is_admin() ) {
+	$user = wp_get_current_user();
+	
+	$roles = ( array ) $user->roles;
+
+	if ( is_admin() && $roles[0] != 'administrator' ) {
 	
 		if ( $pagenow == 'admin.php' ) {
 			
