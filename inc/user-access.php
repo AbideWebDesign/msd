@@ -82,11 +82,13 @@ function msd_menu_render() {
 		
 		remove_submenu_page( 'themes.php', 'themes.php' );
 		
-		remove_submenu_page( 'themes.php', 'customize.php?return=' . urlencode($_SERVER['SCRIPT_NAME']) );
+		remove_submenu_page( 'themes.php', 'theme-editor.php' );
 		
 		remove_submenu_page( 'themes.php', 'shiftnav-settings' );
 		
 		remove_submenu_page( 'themes.php', 'ubermenu-settings' );
+		
+		remove_submenu_page( 'users.php', 'users-user-role-editor.php' );
 		
 		remove_submenu_page( 'nestedpages', 'edit.php?post_type=page' );
 				
@@ -115,6 +117,12 @@ function msd_menu_render() {
 		remove_submenu_page( 'gf_edit_forms', 'gf_export' );
 		
 		remove_submenu_page( 'gf_edit_forms', 'gf_help' );
+		
+		remove_submenu_page( 'gf_edit_forms', 'gf_settings' );
+		
+		remove_submenu_page( 'gf_edit_forms', 'gf_addons' );
+		
+		remove_submenu_page( 'gf_edit_forms', 'gf_system_status' );
 		
 	}
 	

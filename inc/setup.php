@@ -116,6 +116,8 @@ if ( ! function_exists( 'msd_setup' ) ) {
 
 		add_theme_support( 'responsive-embeds' );
 		
+
+        
 	}
 }
 
