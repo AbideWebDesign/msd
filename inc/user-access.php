@@ -157,8 +157,20 @@ function exclude_pages_from_admin( $query ) {
 		
 						$found = true;
 						
-						$query->query_vars['post__in'] = get_sub_field('pages');
+						$author_pages = array();
 						
+						$_author_pages = get_pages( [ 'authors' => $user_id ] );
+						
+						foreach ( $_author_pages as $page ) {
+							
+							$author_pages[] = $page->ID; 
+							
+						}
+						
+						$pages = array_merge( $author_pages, get_sub_field('pages') );
+						
+						$query->query_vars['post__in'] = $pages;
+												
 					}
 				
 				}
