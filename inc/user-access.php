@@ -74,7 +74,7 @@ function msd_menu_render() {
 	
 	$roles = ( array ) $user->roles;
 	
-	if ( $roles[0] == 'editor' || $roles[0] == 'administrator' && $user->user_login != 'abide_admin' ) {
+	if ( $user->user_login != 'abide_admin' ) {
 		
 		remove_menu_page( 'appearance' );
 		
@@ -83,6 +83,8 @@ function msd_menu_render() {
 		remove_menu_page( 'plugins.php' );
 
 		remove_menu_page( 'options-general.php' );
+		
+		remove_menu_page( 'user-access' );
 		
 		remove_submenu_page( 'themes.php', 'themes.php' );
 		
@@ -117,7 +119,7 @@ function msd_menu_render() {
 		remove_submenu_page( 'options-general.php', 'codepress-admin-columns' );
 		
 		remove_menu_page( 'wpseo_workouts' );
-		
+				
 		remove_submenu_page( 'gf_edit_forms', 'gf_export' );
 		
 		remove_submenu_page( 'gf_edit_forms', 'gf_help' );
@@ -130,11 +132,13 @@ function msd_menu_render() {
 		
 	}
 	
-	if ( $roles[0] == 'editor' ) {
+	if ( $roles[0] != 'administrator' ) {
 		
 		remove_menu_page( 'user-access' );
 		
 		remove_menu_page( 'users.php' );
+		
+		remove_menu_page( 'settings');
 		
 	}
 
@@ -165,7 +169,7 @@ function exclude_pages_from_admin( $query ) {
 		
 				$user_id = get_current_user_id();
 		
-				while ( have_rows('users_access', 'options') ) {
+				while ( have_rows( 'users_access', 'options' ) ) {
 					
 					the_row();
 					
@@ -175,7 +179,7 @@ function exclude_pages_from_admin( $query ) {
 						
 						$author_pages = array();
 						
-						$_author_pages = get_pages( [ 'authors' => $user_id ] );
+						$_author_pages = get_pages( [ 'authors' => $user_id, 'post_status' => 'publish,draft' ] );
 						
 						foreach ( $_author_pages as $page ) {
 							
