@@ -6,6 +6,7 @@
             "key": "field_60f9b38b94b97",
             "label": "Include Sidebar",
             "name": "include_sidebar",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -26,6 +27,7 @@
             "key": "field_60faf4d5cf759",
             "label": "Include Breadcrumbs",
             "name": "include_breadcrumbs",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -46,6 +48,7 @@
             "key": "field_6101ddf1239e3",
             "label": "Include Callout",
             "name": "include_callout",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -66,6 +69,7 @@
             "key": "field_62598f61a2e0a",
             "label": "Callout Type",
             "name": "callout_type",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 1,
@@ -100,6 +104,7 @@
             "key": "field_6101ddff239e4",
             "label": "Title",
             "name": "callout_title",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -128,6 +133,7 @@
             "key": "field_6101de6421cb3",
             "label": "Image",
             "name": "callout_image",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -166,6 +172,7 @@
             "key": "field_6101de7a21cb4",
             "label": "Text",
             "name": "callout_text",
+            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -199,6 +206,7 @@
             "key": "field_6101de9821cb5",
             "label": "Button",
             "name": "callout_button",
+            "aria-label": "",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -228,6 +236,7 @@
             "key": "field_62599036a2e0e",
             "label": "Staff",
             "name": "staff",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -261,6 +270,7 @@
                     "key": "field_62599041a2e0f",
                     "label": "Name",
                     "name": "name",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -275,12 +285,14 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_62599036a2e0e"
                 },
                 {
                     "key": "field_62599045a2e10",
                     "label": "Title",
                     "name": "title",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -295,12 +307,14 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_62599036a2e0e"
                 },
                 {
                     "key": "field_62599048a2e11",
                     "label": "Email",
                     "name": "email",
+                    "aria-label": "",
                     "type": "email",
                     "instructions": "",
                     "required": 0,
@@ -314,12 +328,14 @@
                     "default_value": "",
                     "placeholder": "",
                     "prepend": "",
-                    "append": ""
+                    "append": "",
+                    "parent_repeater": "field_62599036a2e0e"
                 },
                 {
                     "key": "field_62599055a2e12",
                     "label": "Phone",
                     "name": "phone",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -334,9 +350,11 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_62599036a2e0e"
                 }
-            ]
+            ],
+            "rows_per_page": 20
         }
     ],
     "location": [
@@ -355,16 +373,22 @@
                 "param": "page_type",
                 "operator": "!=",
                 "value": "front_page"
+            },
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "page-external-url.php"
             }
         ]
     ],
     "menu_order": 0,
     "position": "normal",
-    "style": "default",
+    "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1650036848
+    "show_in_rest": 0,
+    "modified": 1667493329
 }

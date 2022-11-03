@@ -1,5 +1,4 @@
-<?php 
-	
+<?php 	
 
 add_action('acf/init', 'msd_acf_init');
 
@@ -130,9 +129,9 @@ function msd_acf_block_render_callback( $block ) {
 	}
 }
 
-add_filter( 'allowed_block_types_all', 'msd_allowed_block_types' );
+add_filter( 'allowed_block_types_all', 'msd_allowed_block_types', 10, 2 );
  
-function msd_allowed_block_types( $allowed_blocks ) {
+function msd_allowed_block_types( $allowed_blocks, $editor_context ) {
 
 	return array(
 		'acf/hero-banner',

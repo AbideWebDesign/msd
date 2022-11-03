@@ -20,6 +20,7 @@ $msd_includes = array(
 	'/post-types.php',
 	'/msd-api.php',
 	'/user-access.php',
+	'/redirects.php',
 );
 
 foreach ( $msd_includes as $file ) {
