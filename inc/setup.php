@@ -50,7 +50,6 @@ if ( function_exists( 'acf_add_options_page' ) ) {
         'redirect'      => false
     ) );
 
-
 }
 
 function modify_embed_defaults() {
@@ -581,11 +580,73 @@ function msd_add_translation_link( $admin_bar ) {
 			'title' => 'View Translation',
 			'href'  => get_field('news_translation', $post->id),
 			'meta'  => array(
-			    'title' => __( 'View Translation' ),            
+			    'title' => __( 'View Spanish Translation' ),            
 			),
 		) );
 		
 	}
+	
+	if ( is_single() && get_field('news_english_translation', $post->id) ) {
+
+		$admin_bar->add_menu( array (
+			'id'    => 'view-translation',
+			'title' => 'View Translation',
+			'href'  => get_field('news_english_translation', $post->id),
+			'meta'  => array(
+			    'title' => __( 'View English Translation' ),            
+			),
+		) );
+		
+	}
+
+}
+
+/*
+ * Remove posts from excluded categories
+ */
+add_action( 'pre_get_posts', 'remove_excluded_categories' );
+
+function remove_excluded_categories( $query ) {
+	
+	if ( $query->is_home() && $query->is_main_query() ) {
+    	
+    	$excluded = array(); 
+	
+		$categories = get_categories();
+	
+		foreach( $categories as $category ) {
+	
+			if ( get_field('hide_on_home_page', $category) ) {
+				
+				$excluded[] = '-' . $category->term_id;
+				
+			}
+			
+		}
+	
+		$query->set( 'cat', $excluded );
+    
+    }
+
+}
+
+function get_excluded_cats() {
+	
+	$excluded = array(); 
+	
+	$categories = get_categories();
+
+	foreach( $categories as $category ) {
+
+		if ( get_field('hide_on_home_page', $category) ) {
+			
+			$excluded[] = $category->term_id;
+			
+		}
+		
+	}
+	
+	return $excluded;
 	
 }
 

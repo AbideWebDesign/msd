@@ -5,7 +5,8 @@
         {
             "key": "field_626c2b52d8342",
             "label": "Translation",
-            "name": "news_translation",
+            "name": "news_english_translation",
+            "aria-label": "",
             "type": "page_link",
             "instructions": "",
             "required": 0,
@@ -22,9 +23,9 @@
             "taxonomy": [
                 "category:meeting-minutes-agenda"
             ],
-            "allow_null": 1,
             "allow_archives": 0,
-            "multiple": 0
+            "multiple": 0,
+            "allow_null": 1
         }
     ],
     "location": [
@@ -49,5 +50,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1651256350
+    "show_in_rest": 0,
+    "modified": 1667576832
 }

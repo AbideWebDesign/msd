@@ -1,25 +1,5 @@
 <?php 
 
-function get_excluded_cats() {
-	
-	$excluded = array(); 
-	
-	$categories = get_categories();
-
-	foreach( $categories as $category ) {
-
-		if ( get_field('hide_on_home_page', $category) ) {
-			
-			$excluded[] = $category->term_id;
-			
-		}
-		
-	}
-	
-	return $excluded;
-	
-}
-
 function msd_register_my_cpts() {
 
 	/**

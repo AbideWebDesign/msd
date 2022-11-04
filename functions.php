@@ -24,5 +24,7 @@ $msd_includes = array(
 );
 
 foreach ( $msd_includes as $file ) {
+	
 	require_once get_template_directory() . '/inc' . $file;
+
 }
