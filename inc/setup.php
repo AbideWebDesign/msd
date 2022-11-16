@@ -602,52 +602,18 @@ function msd_add_translation_link( $admin_bar ) {
 }
 
 /*
- * Remove posts from excluded categories
+ * Only show posts from district news category on blog list page
  */
 add_action( 'pre_get_posts', 'remove_excluded_categories' );
 
 function remove_excluded_categories( $query ) {
-	
+
 	if ( $query->is_home() && $query->is_main_query() ) {
-    	
-    	$excluded = array(); 
-	
-		$categories = get_categories();
-	
-		foreach( $categories as $category ) {
-	
-			if ( get_field('hide_on_home_page', $category) ) {
-				
-				$excluded[] = '-' . $category->term_id;
-				
-			}
-			
-		}
-	
-		$query->set( 'cat', $excluded );
-    
+  		
+    	$query->set( 'cat', array( 1 ) );
+    	    
     }
 
-}
-
-function get_excluded_cats() {
-	
-	$excluded = array(); 
-	
-	$categories = get_categories();
-
-	foreach( $categories as $category ) {
-
-		if ( get_field('hide_on_home_page', $category) ) {
-			
-			$excluded[] = $category->term_id;
-			
-		}
-		
-	}
-	
-	return $excluded;
-	
 }
 
 /*

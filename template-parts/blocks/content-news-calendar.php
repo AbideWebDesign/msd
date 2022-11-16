@@ -9,7 +9,7 @@ $date_now->setTimezone( $tz );
 $args = array ( 
 	'post_type' => 'post', 
 	'posts_per_page' => '3', 
-	'category__not_in' => get_excluded_cats(), 
+	'category__in' => '1', 
 	'meta_query' => array (
 		'relation' => 'AND',
 		array ( 

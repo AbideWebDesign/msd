@@ -8,7 +8,7 @@
 
 	} else {
 
-		$args = array( 'post_type' => 'post', 'posts_per_page' => '5', 'post__not_in' => array( $id ), 'category__not_in' => get_excluded_cats() );
+		$args = array( 'post_type' => 'post', 'posts_per_page' => '5', 'post__not_in' => array( $id ), 'cat' => array( 1 ) );
 
 	}
 
