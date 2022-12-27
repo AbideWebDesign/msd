@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="<?php echo ( have_rows('call_outs') ? 'wrapper' : 'wrapper-sm' ); ?>">
 	
 	<div class="container">
 		
