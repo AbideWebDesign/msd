@@ -176,10 +176,16 @@ defined( 'ABSPATH' ) || exit;
 											
 										</div>
 										
-									</div>									
+									</div>		
+									
+									<div class="col-12 mt-3">
+										
+										<div class="text-white text-lg font-weight-bold text-center">McMinnville School District will honor, empower, and prepare each individual to thrive and contribute.</div>
+										
+									</div>							
 									
 								</div>
-								
+																
 							</div>
 														
 						</div>
