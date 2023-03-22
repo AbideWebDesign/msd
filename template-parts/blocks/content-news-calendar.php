@@ -16,31 +16,6 @@ $args = array (
 			'key' => 'hide_on_home', 
 			'value' => '0', 
 			'compare' => 'NOT' 
-		),
-		array (
-			'relation' => 'OR',
-			array(
-				'relation' => 'AND',
-				array(
-					'key'	=> 'remove_from_home',
-					'compare'	=> 'EXISTS',
-				),
-				array(
-					'key'		=> 'remove_from_home',
-			        'compare'	=> '>=',
-			        'value'		=> $date_now->format( 'Y-m-d H:i:s' ),
-			        'type'		=> 'DATETIME'	
-				)
-			),
-			array(
-				'key'		=> 'remove_from_home',
-		        'compare'	=> 'NOT EXISTS',
-			), 
-			array(
-				'key'		=> 'remove_from_home', // For dates set and then removed
-				'compare'	=> '=',
-				'value'		=> '',
-			)
 		)
 	) 
 ); 
