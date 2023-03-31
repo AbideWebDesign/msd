@@ -214,6 +214,7 @@ function remove_dashboard_widgets() {
 	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']); 
 	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
 	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity']);
+	unset($wp_meta_boxes['dashboard']['normal']['high']['dashboard_rediscache']);
 	remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
 
 }

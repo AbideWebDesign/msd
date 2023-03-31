@@ -87,7 +87,7 @@ $args = array (
 							</div>
 						
 						</li> 
-						
+					
 					<?php endwhile; ?>
 		 			
 					<?php wp_reset_query(); ?>
