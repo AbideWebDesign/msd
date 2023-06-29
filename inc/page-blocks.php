@@ -114,6 +114,17 @@ function msd_acf_init() {
 			'icon'				=> 'category',
 			'mode'				=> 'edit',
 		) );
+		
+		acf_register_block( array (
+			'name'				=> 'google-doc',
+			'title'				=> __('Google Document'),
+			'description'		=> __(''),
+			'render_callback'	=> 'msd_acf_block_render_callback',
+			'category'			=> 'formatting',
+			'icon'				=> 'google',
+			'mode'				=> 'edit',
+			'supports'			=> array( 'mode'=>false ),
+		) );
 				
 	}
 }
@@ -145,6 +156,7 @@ function msd_allowed_block_types( $allowed_blocks, $editor_context ) {
 		'acf/text',
 		'acf/staff',
 		'acf/posts',
+		'acf/google-doc',
 	);
  
 }
