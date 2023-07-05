@@ -144,7 +144,7 @@ $args = array (
 										
 					<div class="col-8 col-md-4 col-lg-6 align-self-xl-center">
 						
-						<?php the_field('peachjar_script', 'options'); ?>
+						<a href="https://app.peachjar.com/flyers/all/districts/33778/"><img style="width:175px;" src="https://app.peachjar.com/assets/flyers_medium_gray.svg" alt="School Flyers Powered by Peachjar" title="School Flyers Powered by Peachjar"></a>
 						
 					</div>
 																
