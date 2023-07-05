@@ -133,6 +133,22 @@ $args = array (
 					<?php render_list_view_district(); ?>
 					
 				</div>
+				
+				<div class="row justify-content-center mt-2">
+					
+					<div class="col-8 col-md-4 mb-1 mb-md-0">
+						
+						<a href="https://www.safeoregon.com/" target="_blank"><img src="https://www.msd.k12.or.us/wp-content/uploads/2023/07/Safe_Oregon_Vertical-1-e1649882378961-mcminnville-school-district.jpg" class="img-fluid" /></a>
+											
+					</div>
+										
+					<div class="col-8 col-md-4 col-lg-6 align-self-xl-center">
+						
+						<?php the_field('peachjar_script', 'options'); ?>
+						
+					</div>
+																
+				</div>
 			
 			</div>
 				
