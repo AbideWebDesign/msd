@@ -144,7 +144,7 @@ $args = array (
 										
 					<div class="col-8 col-md-4 col-lg-6 align-self-xl-center">
 						
-						<a href="https://app.peachjar.com/flyers/all/districts/33778/"><img style="width:175px;" src="https://app.peachjar.com/assets/flyers_medium_gray.svg" alt="School Flyers Powered by Peachjar" title="School Flyers Powered by Peachjar"></a>
+						<a href="https://app.peachjar.com/flyers/all/districts/33778/" target="_blank"><img style="width:175px;" src="https://www.msd.k12.or.us/wp-content/uploads/2023/07/button-blue-peachjar-copy-1-1-mcminnville-school-district.jpg" alt="School Flyers Powered by Peachjar" title="School Flyers Powered by Peachjar"></a>
 						
 					</div>
 																
