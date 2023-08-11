@@ -132,7 +132,7 @@ function msd_acf_init() {
 			'description'		=> __(''),
 			'render_callback'	=> 'msd_acf_block_render_callback',
 			'category'			=> 'formatting',
-			'icon'				=> 'google',
+			'icon'				=> 'editor-ul',
 			'mode'				=> 'edit',
 		) );
 
