@@ -685,7 +685,7 @@ body ul.page-numbers span.current {
 
 // News Content 
 .news-content {
-	box-shadow: 0 10px 30px 0 rgb(0 0 0 / 15%);
+	box-shadow: $box-shadow;
 }
 .archive-description {
 	p:last-child {

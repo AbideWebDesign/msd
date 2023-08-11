@@ -125,6 +125,17 @@ function msd_acf_init() {
 			'mode'				=> 'edit',
 			'supports'			=> array( 'mode'=>false ),
 		) );
+		
+		acf_register_block( array (
+			'name'				=> 'page-links',
+			'title'				=> __('Page Links'),
+			'description'		=> __(''),
+			'render_callback'	=> 'msd_acf_block_render_callback',
+			'category'			=> 'formatting',
+			'icon'				=> 'google',
+			'mode'				=> 'edit',
+		) );
+
 				
 	}
 }
@@ -157,6 +168,7 @@ function msd_allowed_block_types( $allowed_blocks, $editor_context ) {
 		'acf/staff',
 		'acf/posts',
 		'acf/google-doc',
+		'acf/page-links',
 	);
  
 }
