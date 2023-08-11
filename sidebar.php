@@ -56,6 +56,7 @@ if ( $post->post_parent ) {
 	    'parent' => 0,
 	    'echo' => 0,
 	    'exclude' => $exclude,
+	    'sort_column' => 'post_name',
 	);
 	
 	$children = wp_list_pages( $query_args );
