@@ -12,9 +12,9 @@
 				
 				<div class="col-12">
 											
-					<?php foreach ($post_objects as $post): setup_postdata( $post ); ?>
+					<?php foreach ($post_objects as $post): ?>
 						
-						<h2><?php the_title(); ?></h2>
+						<h2><?php echo get_the_title( $post->ID ); ?></h2>
 						
 						<ul class="page-links <?php echo ( $depth == 1 ? 'page-depth-1' : 'page-depth-2' ); ?>">
 							
@@ -32,6 +32,8 @@
 						</ul>
 					
 					<?php endforeach; ?>
+					
+					
 					
 				</div>
 				
