@@ -6,6 +6,7 @@
             "key": "field_611d6ff71a171",
             "label": "Slides",
             "name": "slides",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -26,6 +27,7 @@
                     "key": "field_611d700b1a172",
                     "label": "Schools",
                     "name": "schools",
+                    "aria-label": "",
                     "type": "select",
                     "instructions": "",
                     "required": 0,
@@ -43,7 +45,7 @@
                         "Duniway Middle School": "Duniway Middle School",
                         "Patton Middle School": "Patton Middle School",
                         "Buel Elementary School": "Buel Elementary School",
-                        "Columbus Elementary School": "Columbus Elementary School",
+                        "Willamette Elementary School": "Willamette Elementary School",
                         "Grandhaven Elementary School": "Grandhaven Elementary School",
                         "Memorial Elementary School": "Memorial Elementary School",
                         "Newby Elementary School": "Newby Elementary School",
@@ -52,17 +54,19 @@
                     "default_value": [
                         "All"
                     ],
-                    "allow_null": 0,
+                    "return_format": "value",
                     "multiple": 1,
+                    "allow_null": 0,
                     "ui": 1,
                     "ajax": 0,
-                    "return_format": "value",
-                    "placeholder": ""
+                    "placeholder": "",
+                    "parent_repeater": "field_611d6ff71a171"
                 },
                 {
                     "key": "field_611d706c1a173",
                     "label": "Title",
                     "name": "slide_title",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -77,12 +81,14 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_611d6ff71a171"
                 },
                 {
                     "key": "field_611d70851a174",
                     "label": "Content",
                     "name": "slide_content",
+                    "aria-label": "",
                     "type": "textarea",
                     "instructions": "",
                     "required": 0,
@@ -97,12 +103,14 @@
                     "placeholder": "",
                     "maxlength": "",
                     "rows": "",
-                    "new_lines": "wpautop"
+                    "new_lines": "wpautop",
+                    "parent_repeater": "field_611d6ff71a171"
                 },
                 {
                     "key": "field_611d70a51a175",
                     "label": "Button",
                     "name": "slide_button",
+                    "aria-label": "",
                     "type": "link",
                     "instructions": "",
                     "required": 0,
@@ -113,12 +121,14 @@
                         "id": ""
                     },
                     "show_in_rest": 1,
-                    "return_format": "array"
+                    "return_format": "array",
+                    "parent_repeater": "field_611d6ff71a171"
                 },
                 {
                     "key": "field_611d70b11a176",
                     "label": "Image",
                     "name": "slide_image",
+                    "aria-label": "",
                     "type": "image",
                     "instructions": "",
                     "required": 0,
@@ -138,9 +148,11 @@
                     "max_width": "",
                     "max_height": "",
                     "max_size": "",
-                    "mime_types": ""
+                    "mime_types": "",
+                    "parent_repeater": "field_611d6ff71a171"
                 }
-            ]
+            ],
+            "rows_per_page": 20
         }
     ],
     "location": [
@@ -160,5 +172,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1638893523
+    "show_in_rest": 0,
+    "modified": 1692226108
 }
