@@ -42,10 +42,12 @@ add_filter( 'acf/update_value/key=field_64dfca31a6812', 'msd_update_user_access_
 
 function msd_update_user_access_value( $value, $post_id, $field ) {
     
-    if ( $value ) {
-				
+    global $pagenow;
+    
+    if ( $value && $pagenow == 'edit.php' ) {
+					
 		$all_wp_pages = get_posts( [ 'post_type' => 'page', 'posts_per_page' => -1 ] );
-	
+
 		$children = array();
 		
 		$children_pages = array();
@@ -69,8 +71,8 @@ function msd_update_user_access_value( $value, $post_id, $field ) {
 		$value = array_merge( $value, $children_pages );
 
     }
-    
-    return $value;
+	    	
+	return $value;
 
 }
 
@@ -81,27 +83,25 @@ add_filter( 'parse_query', 'msd_user_access' );
 
 function msd_user_access( $query ) {
 	
-	if ( is_admin() ) {
+	if ( ! is_admin() || ! $query->is_main_query() ) return;
+         
+	global $pagenow;
 		
-		global $pagenow;
+	if ( $query->is_admin && $pagenow == 'edit.php' && $query->query_vars['post_type'] == 'page' ) {
 		
-		if ( $query->is_admin && $pagenow == 'edit.php' && $query->query_vars['post_type'] == 'page' ) {
+		$user = wp_get_current_user();
+		
+		$allowed_pages = get_field('allowed_pages', $user);
+		
+		if ( $allowed_pages ) {
+					
+			$query->set('post__in', $allowed_pages );
 			
-			$user = wp_get_current_user();
-			
-			if ( get_field('allowed_pages', $user) ) {
-				
-				$pages_user_can_edit = get_field('allowed_pages', $user);
-				
-				$query->set('post__in', $pages_user_can_edit );
-				
-			}
-							
-		} 
+		}
+						
+	} 
 		
-		return $query;
-		
-	}
+	return $query;	
 
 }
 /*
