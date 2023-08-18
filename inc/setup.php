@@ -40,15 +40,6 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 	acf_add_options_sub_page( 'Quick Links' );
 	acf_add_options_sub_page( 'Search' );
 	acf_add_options_sub_page( 'Sidebar Navigation' );	
-	
-	acf_add_options_page(array(
-        'page_title'    => __('User Access'),
-        'menu_title'    => __('User Access'),
-        'menu_slug'     => 'user-access',
-        'capability'    => 'edit_posts',
-        'icon_url'			=> 'dashicons-admin-network',
-        'redirect'      => false
-    ) );
 
 }
 
@@ -359,14 +350,18 @@ function admin_bar_style_override() {
 		
 	}
 	
-	if ( current_user_can( 'subscriber' ) ) { ?>
+	if ( current_user_can( 'editor' ) ) { ?>
 		
 		.toplevel_page_wpseo_workouts, #menu-tools { 
 			display: none !important 
 		}
+		.acf-field-relationship{
+			display:none; 
+		}
 		
 	<?php }
-	
+
+
 	echo "</style>";
 	
 }
