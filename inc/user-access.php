@@ -8,51 +8,26 @@ remove_role( 'member' );
 remove_role( 'wpseo_editor' );
 remove_role( 'wpseo_manager' );
 
-/*
- * Admin bar customizations
- */
-add_action( 'wp_before_admin_bar_render', 'msd_admin_bar_render' );
+add_action( 'wp_before_admin_bar_render', 'msd_admin_bar_exclude_edit' );
 
-function msd_admin_bar_render() {
+function msd_admin_bar_exclude_edit() {
 	
 	global $wp_admin_bar, $post;
 	
 	$user = wp_get_current_user();
-	
-	$roles = ( array ) $user->roles;
-	
-	if ( isset( $post ) && $roles[0] != 'administrator' ) {
 		
-		$user_id = get_current_user_id();
-		
+	if ( isset( $post ) && get_field('allowed_pages', $user) ) {
+				
 		$user_can_edit = false;
+							
+		$pages_user_can_edit = get_field('allowed_pages', $user);
 		
-		while ( have_rows('users_access', 'options') ) {
-				
-			the_row();
+		if ( in_array( $post->ID, $pages_user_can_edit ) || array_intersect( $pages_user_can_edit, get_post_ancestors( $post->ID ) ) ) {
+		
+			$user_can_edit = true;
 			
-			if ( get_sub_field('user') == $user_id ) {
-				
-				$pages_user_can_edit = get_sub_field('pages');
-
-				foreach ( $pages_user_can_edit as $page ) {
-					
-					if ( $post->ID == $page ) {
-						
-						$user_can_edit = true;
-						
-						break;
-						
-					}
-					
-				}
-				
-				break;
-				
-			}
-				
-		}
-		
+		} 
+														
 		if ( ! $user_can_edit ) {
 			
 			$wp_admin_bar->remove_menu('edit');
@@ -63,6 +38,72 @@ function msd_admin_bar_render() {
 	
 }
 
+add_filter( 'acf/update_value/key=field_64dfca31a6812', 'msd_update_user_access_value', 10, 3 );
+
+function msd_update_user_access_value( $value, $post_id, $field ) {
+    
+    if ( $value ) {
+				
+		$all_wp_pages = get_posts( [ 'post_type' => 'page', 'posts_per_page' => -1 ] );
+	
+		$children = array();
+		
+		$children_pages = array();
+		
+		foreach ( $value as $page_id ) {
+		
+			$children[] = get_page_children( $page_id, $all_wp_pages );
+		
+		}
+		
+		foreach ( $children as $child ) {
+			
+			foreach ( $child as $c ) {
+				
+				$children_pages[] = strval( $c->ID );
+				
+			}
+		
+		}
+
+		$value = array_merge( $value, $children_pages );
+
+    }
+    
+    return $value;
+
+}
+
+/*
+ * Control User Access
+ */
+add_filter( 'parse_query', 'msd_user_access' );
+
+function msd_user_access( $query ) {
+	
+	if ( is_admin() ) {
+		
+		global $pagenow;
+		
+		if ( $query->is_admin && $pagenow == 'edit.php' && $query->query_vars['post_type'] == 'page' ) {
+			
+			$user = wp_get_current_user();
+			
+			if ( get_field('allowed_pages', $user) ) {
+				
+				$pages_user_can_edit = get_field('allowed_pages', $user);
+				
+				$query->set('post__in', $pages_user_can_edit );
+				
+			}
+							
+		} 
+		
+		return $query;
+		
+	}
+
+}
 /*
  * Admin menu customizations
  */
@@ -144,67 +185,3 @@ function msd_menu_render() {
 
 }
 
-/*
- * Control User Access
- */
-add_filter( 'parse_query', 'exclude_pages_from_admin' );
-
-function exclude_pages_from_admin( $query ) {
-	
-	global $pagenow, $post_type;
-
-	$user = wp_get_current_user();
-	
-	$roles = ( array ) $user->roles;
-
-	if ( is_admin() && $roles[0] != 'administrator' ) {
-	
-		if ( $pagenow == 'admin.php' ) {
-			
-			$current_page = $_GET['page'];
-
-			$found = false;
-			
-			if ( $current_page == 'nestedpages'  ) {
-		
-				$user_id = get_current_user_id();
-		
-				while ( have_rows( 'users_access', 'options' ) ) {
-					
-					the_row();
-					
-					if ( get_sub_field('user') == $user_id ) {
-		
-						$found = true;
-						
-						$author_pages = array();
-						
-						$_author_pages = get_pages( [ 'authors' => $user_id, 'post_status' => 'publish,draft' ] );
-						
-						foreach ( $_author_pages as $page ) {
-							
-							$author_pages[] = $page->ID; 
-							
-						}
-						
-						$pages = array_merge( $author_pages, get_sub_field('pages') );
-						
-						$query->query_vars['post__in'] = $pages;
-												
-					}
-				
-				}
-				
-				if ( ! $found ) {
-					
-					$query->query_vars['post__in'] = [ 0 ]; // Clear array to return no values
-					
-				}
-			
-			}
-		
-		}
-		
-	}
-		
-}
