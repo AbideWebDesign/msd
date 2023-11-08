@@ -46,7 +46,7 @@ function msd_update_user_access_value( $value, $post_id, $field ) {
     
     if ( $value && $pagenow == 'admin.php' ) {
 
-		$all_wp_pages = get_posts( [ 'post_type' => 'page', 'posts_per_page' => -1 ] );
+		$all_wp_pages = get_posts( [ 'post_type' => 'page', 'posts_per_page' => -1, 'post_status' => array( 'publish', 'pending', 'draft', 'auto-draft', 'future', 'private', 'inherit', 'trash' ) ] );
 
 		$children = array();
 		
