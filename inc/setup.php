@@ -346,6 +346,10 @@ function admin_bar_style_override() {
 			#link-selector label {
 				display: inline !important;
 			}
+			.acf-escaped-html-notice {
+				display: none !important;
+			}
+
 	<?php
 		
 	}
