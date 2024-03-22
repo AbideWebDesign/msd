@@ -135,7 +135,15 @@ function msd_acf_init() {
 			'icon'				=> 'editor-ul',
 			'mode'				=> 'edit',
 		) );
-
+		acf_register_block( array (
+			'name'				=> 'form',
+			'title'				=> __('Form'),
+			'description'		=> __(''),
+			'render_callback'	=> 'msd_acf_block_render_callback',
+			'category'			=> 'formatting',
+			'icon'				=> 'welcome-write-blog',
+			'mode'				=> 'edit',
+		) );
 				
 	}
 }
@@ -169,6 +177,7 @@ function msd_allowed_block_types( $allowed_blocks, $editor_context ) {
 		'acf/posts',
 		'acf/google-doc',
 		'acf/page-links',
+		'acf/form',
 	);
  
 }
