@@ -23,6 +23,90 @@ function sync_calendar_field_from_options( $post_id, $menu_slug ) {
 	        'Content-Type' => 'application/json',
 	    ),
 	) );
+	
+	$response = wp_remote_post( 'https://duniway.msd.k12.or.us/wp-json/custom/v1/update-calendar', array(
+	    'body' => json_encode( array(
+	        'calendar_download_current' => $calendar_download_current,
+	        'calendar_download_current_sp' => $calendar_download_current_sp,
+	        'calendar_download_next' => $calendar_download_next,
+	        'calendar_download_next_sp' => $calendar_download_next_sp,
+	    ) ),
+	    'headers' => array(
+	        'Content-Type' => 'application/json',
+	    ),
+	) );
+
+	$response = wp_remote_post( 'https://patton.msd.k12.or.us/wp-json/custom/v1/update-calendar', array(
+	    'body' => json_encode( array(
+	        'calendar_download_current' => $calendar_download_current,
+	        'calendar_download_current_sp' => $calendar_download_current_sp,
+	        'calendar_download_next' => $calendar_download_next,
+	        'calendar_download_next_sp' => $calendar_download_next_sp,
+	    ) ),
+	    'headers' => array(
+	        'Content-Type' => 'application/json',
+	    ),
+	) );
+
+	$response = wp_remote_post( 'https://buel.msd.k12.or.us/wp-json/custom/v1/update-calendar', array(
+	    'body' => json_encode( array(
+	        'calendar_download_current' => $calendar_download_current,
+	        'calendar_download_current_sp' => $calendar_download_current_sp,
+	        'calendar_download_next' => $calendar_download_next,
+	        'calendar_download_next_sp' => $calendar_download_next_sp,
+	    ) ),
+	    'headers' => array(
+	        'Content-Type' => 'application/json',
+	    ),
+	) );
+
+	$response = wp_remote_post( 'https://grandhaven.msd.k12.or.us/wp-json/custom/v1/update-calendar', array(
+	    'body' => json_encode( array(
+	        'calendar_download_current' => $calendar_download_current,
+	        'calendar_download_current_sp' => $calendar_download_current_sp,
+	        'calendar_download_next' => $calendar_download_next,
+	        'calendar_download_next_sp' => $calendar_download_next_sp,
+	    ) ),
+	    'headers' => array(
+	        'Content-Type' => 'application/json',
+	    ),
+	) );
+
+	$response = wp_remote_post( 'https://memorial.msd.k12.or.us/wp-json/custom/v1/update-calendar', array(
+	    'body' => json_encode( array(
+	        'calendar_download_current' => $calendar_download_current,
+	        'calendar_download_current_sp' => $calendar_download_current_sp,
+	        'calendar_download_next' => $calendar_download_next,
+	        'calendar_download_next_sp' => $calendar_download_next_sp,
+	    ) ),
+	    'headers' => array(
+	        'Content-Type' => 'application/json',
+	    ),
+	) );
+	
+	$response = wp_remote_post( 'https://newby.msd.k12.or.us/wp-json/custom/v1/update-calendar', array(
+	    'body' => json_encode( array(
+	        'calendar_download_current' => $calendar_download_current,
+	        'calendar_download_current_sp' => $calendar_download_current_sp,
+	        'calendar_download_next' => $calendar_download_next,
+	        'calendar_download_next_sp' => $calendar_download_next_sp,
+	    ) ),
+	    'headers' => array(
+	        'Content-Type' => 'application/json',
+	    ),
+	) );
+
+	$response = wp_remote_post( 'https://willamette.msd.k12.or.us/wp-json/custom/v1/update-calendar', array(
+	    'body' => json_encode( array(
+	        'calendar_download_current' => $calendar_download_current,
+	        'calendar_download_current_sp' => $calendar_download_current_sp,
+	        'calendar_download_next' => $calendar_download_next,
+	        'calendar_download_next_sp' => $calendar_download_next_sp,
+	    ) ),
+	    'headers' => array(
+	        'Content-Type' => 'application/json',
+	    ),
+	) );
 
 }
 
