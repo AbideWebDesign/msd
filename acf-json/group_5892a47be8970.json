@@ -6,6 +6,7 @@
             "key": "field_5892a483750f7",
             "label": "Calendar Title",
             "name": "calendar_title",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 1,
@@ -25,6 +26,7 @@
             "key": "field_5b687c2db3bea",
             "label": "Calendar Dates",
             "name": "calendar_dates",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -45,6 +47,7 @@
                     "key": "field_610435fad4fd6",
                     "label": "Entry Title",
                     "name": "entry_title",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -59,12 +62,14 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_5b687c2db3bea"
                 },
                 {
                     "key": "field_6104361dd4fd7",
                     "label": "Entry Date",
                     "name": "entry_date",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -79,14 +84,17 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_5b687c2db3bea"
                 }
-            ]
+            ],
+            "rows_per_page": 20
         },
         {
             "key": "field_59149b08875a1",
             "label": "Calendars",
             "name": "calendars",
+            "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -106,6 +114,7 @@
                     "key": "field_59149b14875a2",
                     "label": "Calendar Name",
                     "name": "calendar_name",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 1,
@@ -119,12 +128,14 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_59149b08875a1"
                 },
                 {
                     "key": "field_5b687cdbb3bf0",
                     "label": "Calendar Color",
                     "name": "calendar_color",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "Hex color code",
                     "required": 1,
@@ -138,12 +149,14 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_59149b08875a1"
                 },
                 {
                     "key": "field_5b76028876471",
                     "label": "Visible",
                     "name": "visible",
+                    "aria-label": "",
                     "type": "true_false",
                     "instructions": "",
                     "required": 0,
@@ -157,12 +170,14 @@
                     "default_value": 1,
                     "ui": 1,
                     "ui_on_text": "Yes",
-                    "ui_off_text": "No"
+                    "ui_off_text": "No",
+                    "parent_repeater": "field_59149b08875a1"
                 },
                 {
                     "key": "field_5b687cbeb3bee",
                     "label": "Calendar ID",
                     "name": "calendar_address",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 1,
@@ -177,12 +192,14 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_59149b08875a1"
                 },
                 {
                     "key": "field_5b687cc7b3bef",
                     "label": "Calendar iCal",
                     "name": "calendar_ical",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 1,
@@ -196,14 +213,17 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_59149b08875a1"
                 }
-            ]
+            ],
+            "rows_per_page": 20
         },
         {
             "key": "field_61042ba8e7f43",
             "label": "Current Year Label",
             "name": "calendar_current_year_label",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -224,6 +244,7 @@
             "key": "field_61042b366716b",
             "label": "Calendar Download - Current Year",
             "name": "calendar_download_current",
+            "aria-label": "",
             "type": "file",
             "instructions": "",
             "required": 0,
@@ -244,6 +265,7 @@
             "key": "field_61042b6d6716d",
             "label": "Calendar Download - Current Year SP",
             "name": "calendar_download_current_sp",
+            "aria-label": "",
             "type": "file",
             "instructions": "",
             "required": 0,
@@ -264,6 +286,7 @@
             "key": "field_616f7b1119f44",
             "label": "Calendar Download - Pre-K",
             "name": "calendar_download_pre_k",
+            "aria-label": "",
             "type": "file",
             "instructions": "",
             "required": 0,
@@ -284,6 +307,7 @@
             "key": "field_616f7b2a19f45",
             "label": "Calendar Download - Pre-K - SP",
             "name": "calendar_download_pre_k_sp",
+            "aria-label": "",
             "type": "file",
             "instructions": "",
             "required": 0,
@@ -304,6 +328,7 @@
             "key": "field_61042bb1e7f44",
             "label": "Next Year Label",
             "name": "calendar_next_year_label",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -324,6 +349,7 @@
             "key": "field_61042b576716c",
             "label": "Calendar Download - Next Year",
             "name": "calendar_download_next",
+            "aria-label": "",
             "type": "file",
             "instructions": "",
             "required": 0,
@@ -343,7 +369,8 @@
         {
             "key": "field_61042b936716e",
             "label": "Calendar Download - Next Year SP",
-            "name": "calendar_download_next_copy",
+            "name": "calendar_download_next_sp",
+            "aria-label": "",
             "type": "file",
             "instructions": "",
             "required": 0,
@@ -361,29 +388,10 @@
             "mime_types": ""
         },
         {
-            "key": "field_61042b936716e",
-            "label": "Calendar Download - Next Year SP",
-            "name": "calendar_download_next_copy",
-            "type": "file",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "show_in_rest": 1,
-            "return_format": "url",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
             "key": "field_61a7cba496572",
             "label": "Calendar Download - Bell Schedule",
             "name": "calendar_download_bell_schedule",
+            "aria-label": "",
             "type": "file",
             "instructions": "",
             "required": 0,
@@ -418,5 +426,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1638386624
+    "show_in_rest": 0,
+    "modified": 1723140439
 }

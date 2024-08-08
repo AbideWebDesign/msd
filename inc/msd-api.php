@@ -1,5 +1,31 @@
 <?php
 
+add_action( 'acf/options_page/save', 'sync_calendar_field_from_options', 10, 2 );
+
+function sync_calendar_field_from_options( $post_id, $menu_slug ) {
+
+	$calendar_download_current = get_field( 'calendar_download_current', $post_id );
+	
+	$calendar_download_current_sp = get_field( 'calendar_download_current_sp', $post_id );
+	
+	$calendar_download_next = get_field( 'calendar_download_next', $post_id );
+	
+	$calendar_download_next_sp = get_field( 'calendar_download_next_sp', $post_id );
+
+	$response = wp_remote_post( 'https://mhs.msd.k12.or.us/wp-json/custom/v1/update-calendar', array(
+	    'body' => json_encode( array(
+	        'calendar_download_current' => $calendar_download_current,
+	        'calendar_download_current_sp' => $calendar_download_current_sp,
+	        'calendar_download_next' => $calendar_download_next,
+	        'calendar_download_next_sp' => $calendar_download_next_sp,
+	    ) ),
+	    'headers' => array(
+	        'Content-Type' => 'application/json',
+	    ),
+	) );
+
+}
+
 add_filter( 'rest_alert_query', function( $query_args, $request ){
 
 	$tz = new DateTimeZone( 'America/Los_Angeles' );
