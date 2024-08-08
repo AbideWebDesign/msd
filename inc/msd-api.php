@@ -14,6 +14,14 @@ function sync_calendar_field_from_options( $post_id, $menu_slug ) {
 	
 	$calendar_download_bell = get_field( 'calendar_download_bell_schedule', $post_id );
 
+	$calendar_download_next_sp = get_field( 'calendar_download_next_sp', $post_id );
+	
+	$calendar_download_bell = get_field( 'calendar_download_bell_schedule', $post_id );
+	
+	$calendar_current_year_label = get_field( 'calendar_current_year_label', $post_id );
+	
+	$calendar_next_year_label = get_field( 'calendar_next_year_label', $post_id );
+	
 	$response = wp_remote_post( 'https://mhs.msd.k12.or.us/wp-json/custom/v1/update-calendar', array(
 	    'body' => json_encode( array(
 	        'calendar_download_current' => $calendar_download_current,
@@ -21,6 +29,8 @@ function sync_calendar_field_from_options( $post_id, $menu_slug ) {
 	        'calendar_download_next' => $calendar_download_next,
 	        'calendar_download_next_sp' => $calendar_download_next_sp,
 	        'calendar_download_bell' => $calendar_download_bell,
+	        'calendar_current_year_label' => $calendar_current_year_label,
+	        'calendar_next_year_label' => $calendar_next_year_label,	        
 	    ) ),
 	    'headers' => array(
 	        'Content-Type' => 'application/json',
@@ -33,6 +43,8 @@ function sync_calendar_field_from_options( $post_id, $menu_slug ) {
 	        'calendar_download_current_sp' => $calendar_download_current_sp,
 	        'calendar_download_next' => $calendar_download_next,
 	        'calendar_download_next_sp' => $calendar_download_next_sp,
+	        'calendar_current_year_label' => $calendar_current_year_label,
+	        'calendar_next_year_label' => $calendar_next_year_label,	        
 	    ) ),
 	    'headers' => array(
 	        'Content-Type' => 'application/json',
@@ -45,6 +57,8 @@ function sync_calendar_field_from_options( $post_id, $menu_slug ) {
 	        'calendar_download_current_sp' => $calendar_download_current_sp,
 	        'calendar_download_next' => $calendar_download_next,
 	        'calendar_download_next_sp' => $calendar_download_next_sp,
+	        'calendar_current_year_label' => $calendar_current_year_label,
+	        'calendar_next_year_label' => $calendar_next_year_label,	        
 	    ) ),
 	    'headers' => array(
 	        'Content-Type' => 'application/json',
@@ -57,6 +71,8 @@ function sync_calendar_field_from_options( $post_id, $menu_slug ) {
 	        'calendar_download_current_sp' => $calendar_download_current_sp,
 	        'calendar_download_next' => $calendar_download_next,
 	        'calendar_download_next_sp' => $calendar_download_next_sp,
+	        'calendar_current_year_label' => $calendar_current_year_label,
+	        'calendar_next_year_label' => $calendar_next_year_label,	        
 	    ) ),
 	    'headers' => array(
 	        'Content-Type' => 'application/json',
@@ -69,6 +85,8 @@ function sync_calendar_field_from_options( $post_id, $menu_slug ) {
 	        'calendar_download_current_sp' => $calendar_download_current_sp,
 	        'calendar_download_next' => $calendar_download_next,
 	        'calendar_download_next_sp' => $calendar_download_next_sp,
+	        'calendar_current_year_label' => $calendar_current_year_label,
+	        'calendar_next_year_label' => $calendar_next_year_label,	        
 	    ) ),
 	    'headers' => array(
 	        'Content-Type' => 'application/json',
@@ -81,6 +99,8 @@ function sync_calendar_field_from_options( $post_id, $menu_slug ) {
 	        'calendar_download_current_sp' => $calendar_download_current_sp,
 	        'calendar_download_next' => $calendar_download_next,
 	        'calendar_download_next_sp' => $calendar_download_next_sp,
+	        'calendar_current_year_label' => $calendar_current_year_label,
+	        'calendar_next_year_label' => $calendar_next_year_label,	        
 	    ) ),
 	    'headers' => array(
 	        'Content-Type' => 'application/json',
@@ -93,6 +113,8 @@ function sync_calendar_field_from_options( $post_id, $menu_slug ) {
 	        'calendar_download_current_sp' => $calendar_download_current_sp,
 	        'calendar_download_next' => $calendar_download_next,
 	        'calendar_download_next_sp' => $calendar_download_next_sp,
+	        'calendar_current_year_label' => $calendar_current_year_label,
+	        'calendar_next_year_label' => $calendar_next_year_label,	        
 	    ) ),
 	    'headers' => array(
 	        'Content-Type' => 'application/json',
@@ -105,6 +127,8 @@ function sync_calendar_field_from_options( $post_id, $menu_slug ) {
 	        'calendar_download_current_sp' => $calendar_download_current_sp,
 	        'calendar_download_next' => $calendar_download_next,
 	        'calendar_download_next_sp' => $calendar_download_next_sp,
+	        'calendar_current_year_label' => $calendar_current_year_label,
+	        'calendar_next_year_label' => $calendar_next_year_label,	        
 	    ) ),
 	    'headers' => array(
 	        'Content-Type' => 'application/json',
