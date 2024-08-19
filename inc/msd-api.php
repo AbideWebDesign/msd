@@ -157,6 +157,33 @@ function sync_slides_field_from_options( $post_id, $menu_slug ) {
 
     if ( ! empty( $slides ) ) {
 
+        $response = wp_remote_post( 'https://mhs.msd.k12.or.us/wp-json/custom/v1/update-slides', array(
+            'body' => json_encode( array(
+                'slides' => $slides,
+            ) ),
+            'headers' => array(
+                'Content-Type' => 'application/json',
+            ),
+        ) );
+
+        $response = wp_remote_post( 'https://duniway.msd.k12.or.us/wp-json/custom/v1/update-slides', array(
+            'body' => json_encode( array(
+                'slides' => $slides,
+            ) ),
+            'headers' => array(
+                'Content-Type' => 'application/json',
+            ),
+        ) );
+
+        $response = wp_remote_post( 'https://patton.msd.k12.or.us/wp-json/custom/v1/update-slides', array(
+            'body' => json_encode( array(
+                'slides' => $slides,
+            ) ),
+            'headers' => array(
+                'Content-Type' => 'application/json',
+            ),
+        ) );
+
         $response = wp_remote_post( 'https://buel.msd.k12.or.us/wp-json/custom/v1/update-slides', array(
             'body' => json_encode( array(
                 'slides' => $slides,
@@ -165,7 +192,43 @@ function sync_slides_field_from_options( $post_id, $menu_slug ) {
                 'Content-Type' => 'application/json',
             ),
         ) );
-        
+
+        $response = wp_remote_post( 'https://grandhaven.msd.k12.or.us/wp-json/custom/v1/update-slides', array(
+            'body' => json_encode( array(
+                'slides' => $slides,
+            ) ),
+            'headers' => array(
+                'Content-Type' => 'application/json',
+            ),
+        ) );
+
+        $response = wp_remote_post( 'https://memorial.msd.k12.or.us/wp-json/custom/v1/update-slides', array(
+            'body' => json_encode( array(
+                'slides' => $slides,
+            ) ),
+            'headers' => array(
+                'Content-Type' => 'application/json',
+            ),
+        ) );
+
+        $response = wp_remote_post( 'https://newby.msd.k12.or.us/wp-json/custom/v1/update-slides', array(
+            'body' => json_encode( array(
+                'slides' => $slides,
+            ) ),
+            'headers' => array(
+                'Content-Type' => 'application/json',
+            ),
+        ) );
+
+        $response = wp_remote_post( 'https://willamette.msd.k12.or.us/wp-json/custom/v1/update-slides', array(
+            'body' => json_encode( array(
+                'slides' => $slides,
+            ) ),
+            'headers' => array(
+                'Content-Type' => 'application/json',
+            ),
+        ) );
+      
         error_log( 'Sync response: ' . print_r( $response, true ) );
 
     }
