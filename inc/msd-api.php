@@ -143,7 +143,7 @@ function sync_calendar_field_from_options( $post_id, $menu_slug ) {
 	
 }
 
-add_action( 'acf/options/save', 'sync_slides_field_from_options', 10, 2 );
+add_action( 'acf/options_page/save', 'sync_slides_field_from_options', 10, 2 );
 
 function sync_slides_field_from_options( $post_id, $menu_slug ) {
 	
