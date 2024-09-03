@@ -235,6 +235,121 @@ function sync_slides_field_from_options( $post_id, $menu_slug ) {
 
 }
 
+// Add action hook for ACF saving
+add_action( 'acf/save_post', 'sync_news_on_acf_save', 20 );
+
+add_action( 'before_delete_post', 'sync_news_on_acf_save' );
+
+function sync_news_on_acf_save( $post_id ) {
+
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        
+        return;
+    
+    }
+
+    if ( wp_is_post_revision( $post_id ) || $post_id === 'options' ) {
+
+        return;
+
+    }
+
+    $post = get_post( $post_id );
+
+    if ( $post->post_status !== 'publish' ) {
+
+        return;
+
+    }
+    
+    $categories = get_the_category( $post_id );
+    
+    $category_slugs = array();
+    
+    foreach ( $categories as $category ) {
+
+        $category_slugs[] = $category->slug;
+
+    }
+
+    if ( ( count( $category_slugs ) === 1 ) && ( in_array( 'spanish', $category_slugs ) || in_array( 'district_news', $category_slugs ) ) ) {
+
+        return;
+
+    }
+    
+    $all_schools_category = in_array( 'all-schools', $category_slugs );
+
+    $schools = array( 'mcminnville-high-school', 'duniway-middle-school', 'patton-middle-school', 'buel-elementary-school', 'grandhaven-elementary-school', 'memorial-elementary-school', 'newby-elementary-school', 'willamette-elementary-school' );
+    
+    $news = array();
+
+    foreach ( $schools as $school ) {
+        
+        if ( $all_schools_category || in_array( $school, $category_slugs ) ) {
+            
+            $category_ids = array(
+                get_cat_ID( 'all-schools' ), 
+                get_cat_ID( $school )
+            );
+
+            $args = array(
+                'posts_per_page' => 3,
+                'cat' => $category_ids,
+                'post_status' => 'publish',
+                'orderby' => 'date',
+                'order' => 'DESC',
+            );
+
+            $school_posts = get_posts( $args );
+            
+            foreach ( $school_posts as $school_post ) {
+				
+				$featured_image = get_the_post_thumbnail_url( $school_post->ID, 'medium' );
+
+                $news[] = array(
+                    'school' => $school,
+                    'post_title' => $school_post->post_title,
+                    'post_excerpt' => $school_post->post_excerpt,
+                    'post_url' => get_permalink( $school_post->ID ),
+                    'image_url' => $featured_image,
+                    'date' => get_the_date( 'l, M d Y', $school_post->ID )
+                );
+
+            }
+            
+        }
+        
+    }
+        
+    // Send news data to respective endpoints
+    foreach ( $schools as $school ) {
+        
+        $url = "https://{$school}.msd.k12.or.us/wp-json/custom/v1/update-news";
+        
+        $school_news = array_slice( $news, 0, 3 ); // Get the first 3 news items
+        
+        $response = wp_remote_post( $url, array(
+            'body' => json_encode( array( 'news' => $school_news ) ),
+            'headers' => array(
+                'Content-Type' => 'application/json',
+            ),
+        ) );
+
+        if ( is_wp_error( $response ) ) {
+            
+            error_log( 'Error syncing news for ' . $school . ': ' . $response->get_error_message() );
+        
+        } else {
+            
+            error_log( 'Synced news for ' . $school . ': ' . print_r( $response, true ) );
+        
+        }
+        
+    }
+    
+}
+
 add_filter( 'rest_alert_query', function( $query_args, $request ){
 
 	$tz = new DateTimeZone( 'America/Los_Angeles' );
