@@ -281,7 +281,9 @@ function sync_news_on_acf_save( $post_id ) {
     $all_schools_category = in_array( 'all-schools', $category_slugs );
 
     $schools = array( 'mcminnville-high-school', 'duniway-middle-school', 'patton-middle-school', 'buel-elementary-school', 'grandhaven-elementary-school', 'memorial-elementary-school', 'newby-elementary-school', 'willamette-elementary-school' );
-    
+
+    $school_slugs = array( 'mhs', 'duniway', 'patton', 'buel', 'grandhaven', 'memorial', 'newby', 'willamette' );
+
     $news = array();
 
     foreach ( $schools as $school ) {
@@ -321,11 +323,13 @@ function sync_news_on_acf_save( $post_id ) {
         }
         
     }
-        
+    
+    $index = 0;
+    
     // Send news data to respective endpoints
     foreach ( $schools as $school ) {
-        
-        $url = "https://{$school}.msd.k12.or.us/wp-json/custom/v1/update-news";
+
+        $url = "https://{$school_slugs[$index]}.msd.k12.or.us/wp-json/custom/v1/update-news";
         
         $school_news = array_slice( $news, 0, 3 ); // Get the first 3 news items
         
@@ -345,6 +349,8 @@ function sync_news_on_acf_save( $post_id ) {
             error_log( 'Synced news for ' . $school . ': ' . print_r( $response, true ) );
         
         }
+        
+        $index ++;
         
     }
     
