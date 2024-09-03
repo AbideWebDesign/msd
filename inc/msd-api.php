@@ -282,10 +282,14 @@ function sync_news_on_acf_save( $post_id ) {
 
     $schools = array( 'mcminnville-high-school', 'duniway-middle-school', 'patton-middle-school', 'buel-elementary-school', 'grandhaven-elementary-school', 'memorial-elementary-school', 'newby-elementary-school', 'willamette-elementary-school' );
 
+	$school_names = array( 'Mcminnville High School', 'Duniway Middle School', 'Patton Middle School', 'Buel Elementary School', 'Grandhaven Elementary School', 'Memorial Elementary School', 'Newby Elementary School', 'Willamette Elementary School' );
+	
     $school_slugs = array( 'mhs', 'duniway', 'patton', 'buel', 'grandhaven', 'memorial', 'newby', 'willamette' );
 
     $news = array();
-
+	
+	$index = 0;
+	
     foreach ( $schools as $school ) {
         
         if ( $all_schools_category || in_array( $school, $category_slugs ) ) {
@@ -310,7 +314,7 @@ function sync_news_on_acf_save( $post_id ) {
 				$featured_image = get_the_post_thumbnail_url( $school_post->ID, 'medium' );
 
                 $news[] = array(
-                    'school' => $school,
+                    'school' => $school_names[$index],
                     'post_title' => $school_post->post_title,
                     'post_excerpt' => $school_post->post_excerpt,
                     'post_url' => get_permalink( $school_post->ID ),
@@ -322,14 +326,14 @@ function sync_news_on_acf_save( $post_id ) {
             
         }
         
+        $index ++;
+        
     }
-    
-    $index = 0;
-    
+        
     // Send news data to respective endpoints
-    foreach ( $schools as $school ) {
+    foreach ( $school_slugs as $school ) {
 
-        $url = "https://{$school_slugs[$index]}.msd.k12.or.us/wp-json/custom/v1/update-news";
+        $url = "https://{$school}.msd.k12.or.us/wp-json/custom/v1/update-news";
         
         $school_news = array_slice( $news, 0, 3 ); // Get the first 3 news items
         
@@ -349,9 +353,7 @@ function sync_news_on_acf_save( $post_id ) {
             error_log( 'Synced news for ' . $school . ': ' . print_r( $response, true ) );
         
         }
-        
-        $index ++;
-        
+                
     }
     
 }
