@@ -234,7 +234,15 @@ function sync_slides_field_from_options( $post_id, $menu_slug ) {
     }
 
 }
-
+if ( ! function_exists('write_log')) {
+   function write_log ( $log )  {
+      if ( is_array( $log ) || is_object( $log ) ) {
+         error_log( print_r( $log, true ) );
+      } else {
+         error_log( $log );
+      }
+   }
+}
 // Add action hook for ACF saving
 add_action( 'acf/save_post', 'sync_news_on_acf_save', 20 );
 
@@ -263,7 +271,7 @@ function sync_news_on_acf_save( $post_id ) {
     }
     
     $categories = get_the_category( $post_id );
-    
+
     $category_slugs = array();
     
     foreach ( $categories as $category ) {
@@ -282,7 +290,7 @@ function sync_news_on_acf_save( $post_id ) {
 
     $schools = array( 'mcminnville-high-school', 'duniway-middle-school', 'patton-middle-school', 'buel-elementary-school', 'grandhaven-elementary-school', 'memorial-elementary-school', 'newby-elementary-school', 'willamette-elementary-school' );
 
-	$school_names = array( 'Mcminnville High School', 'Duniway Middle School', 'Patton Middle School', 'Buel Elementary School', 'Grandhaven Elementary School', 'Memorial Elementary School', 'Newby Elementary School', 'Willamette Elementary School' );
+	$school_names = array( 'McMinnville High School', 'Duniway Middle School', 'Patton Middle School', 'Buel Elementary School', 'Grandhaven Elementary School', 'Memorial Elementary School', 'Newby Elementary School', 'Willamette Elementary School' );
 	
     $school_slugs = array( 'mhs', 'duniway', 'patton', 'buel', 'grandhaven', 'memorial', 'newby', 'willamette' );
 
@@ -291,14 +299,14 @@ function sync_news_on_acf_save( $post_id ) {
 	$index = 0;
 	
     foreach ( $schools as $school ) {
-        
+   
         if ( $all_schools_category || in_array( $school, $category_slugs ) ) {
             
             $category_ids = array(
-                get_cat_ID( 'all-schools' ), 
-                get_cat_ID( $school )
+                get_cat_ID( 'All Schools' ), 
+                get_cat_ID( $school_names[$index] )
             );
-
+ 
             $args = array(
                 'posts_per_page' => 3,
                 'cat' => $category_ids,
@@ -329,7 +337,7 @@ function sync_news_on_acf_save( $post_id ) {
         $index ++;
         
     }
-        
+
     // Send news data to respective endpoints
     foreach ( $school_slugs as $school ) {
 
