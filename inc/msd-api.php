@@ -127,6 +127,20 @@ function sync_calendar_field_from_options( $post_id, $menu_slug ) {
 	    ),
 	) );
 
+	$response = wp_remote_post( 'https://wascher.msd.k12.or.us/wp-json/custom/v1/update-calendar', array(
+	    'body' => json_encode( array(
+	        'calendar_download_current' => $calendar_download_current,
+	        'calendar_download_current_sp' => $calendar_download_current_sp,
+	        'calendar_download_next' => $calendar_download_next,
+	        'calendar_download_next_sp' => $calendar_download_next_sp,
+	        'calendar_current_year_label' => $calendar_current_year_label,
+	        'calendar_next_year_label' => $calendar_next_year_label,	        
+	    ) ),
+	    'headers' => array(
+	        'Content-Type' => 'application/json',
+	    ),
+	) );
+
 	$response = wp_remote_post( 'https://willamette.msd.k12.or.us/wp-json/custom/v1/update-calendar', array(
 	    'body' => json_encode( array(
 	        'calendar_download_current' => $calendar_download_current,
@@ -220,6 +234,15 @@ function sync_slides_field_from_options( $post_id, $menu_slug ) {
             ),
         ) );
 
+        $response = wp_remote_post( 'https://wascher.msd.k12.or.us/wp-json/custom/v1/update-slides', array(
+            'body' => json_encode( array(
+                'slides' => $slides,
+            ) ),
+            'headers' => array(
+                'Content-Type' => 'application/json',
+            ),
+        ) );
+
         $response = wp_remote_post( 'https://willamette.msd.k12.or.us/wp-json/custom/v1/update-slides', array(
             'body' => json_encode( array(
                 'slides' => $slides,
@@ -288,11 +311,11 @@ function sync_news_on_acf_save( $post_id ) {
     
     $all_schools_category = in_array( 'all-schools', $category_slugs );
 
-    $schools = array( 'mcminnville-high-school', 'duniway-middle-school', 'patton-middle-school', 'buel-elementary-school', 'grandhaven-elementary-school', 'memorial-elementary-school', 'newby-elementary-school', 'willamette-elementary-school' );
+    $schools = array( 'mcminnville-high-school', 'duniway-middle-school', 'patton-middle-school', 'buel-elementary-school', 'grandhaven-elementary-school', 'memorial-elementary-school', 'newby-elementary-school', 'wascher-elementary-school', 'willamette-elementary-school' );
 
-	$school_names = array( 'McMinnville High School', 'Duniway Middle School', 'Patton Middle School', 'Buel Elementary School', 'Grandhaven Elementary School', 'Memorial Elementary School', 'Newby Elementary School', 'Willamette Elementary School' );
+	$school_names = array( 'McMinnville High School', 'Duniway Middle School', 'Patton Middle School', 'Buel Elementary School', 'Grandhaven Elementary School', 'Memorial Elementary School', 'Newby Elementary School', 'Wascher Elementary School', 'Willamette Elementary School' );
 	
-    $school_slugs = array( 'mhs', 'duniway', 'patton', 'buel', 'grandhaven', 'memorial', 'newby', 'willamette' );
+    $school_slugs = array( 'mhs', 'duniway', 'patton', 'buel', 'grandhaven', 'memorial', 'newby', 'wascher', 'willamette' );
 
     $news = array();
 	
