@@ -15,7 +15,9 @@ defined( 'ABSPATH' ) || exit;
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+	
+	<meta name="google-site-verification" content="leu-38HG629JZp7qY9I5AYF4R5k4KxCXST8iZXvKkn4" />
+	
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
