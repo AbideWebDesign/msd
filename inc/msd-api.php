@@ -303,11 +303,11 @@ function sync_news_on_acf_save( $post_id ) {
 
     }
 
-    if ( ( count( $category_slugs ) === 1 ) && ( in_array( 'spanish', $category_slugs ) || in_array( 'district_news', $category_slugs ) ) ) {
+    if ( !in_array( 'mcminnville-high-school', $category_slugs ) && !in_array( 'duniway-middle-school', $category_slugs ) && !in_array( 'patton-middle-school', $category_slugs ) && !in_array( 'buel-elementary-school', $category_slugs ) && !in_array( 'grandhaven-elementary-school', $category_slugs ) && !in_array( 'memorial-elementary-school', $category_slugs ) && !in_array( 'newby-elementary-school', $category_slugs ) && !in_array( 'wascher-elementary-school', $category_slugs ) && !in_array( 'willamette-elementary-school', $category_slugs ) && !in_array( 'all-schools', $category_slugs ) ) {
 
-        return;
+    	return;
 
-    }
+	}
     
     $all_schools_category = in_array( 'all-schools', $category_slugs );
 
