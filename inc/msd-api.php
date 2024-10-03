@@ -286,12 +286,6 @@ function sync_news_on_acf_save( $post_id ) {
     }
 
     $post = get_post( $post_id );
-
-    if ( $post->post_status !== 'publish' ) {
-
-        return;
-
-    }
     
     $categories = get_the_category( $post_id );
 
