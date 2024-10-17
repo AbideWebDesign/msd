@@ -108,7 +108,15 @@ if ( get_field('carousel_images') || is_home() || is_single() || is_front_page()
 											
 											<div class="col-md-9 order-1 order-md-2 align-self-xl-center">
 												
-												<?php $img_src = wp_get_attachment_image_src( get_sub_field('slide_image'), 'slide', false ); ?>
+												<?php if ( get_sub_field('slide_image_mobile') ): ?>
+
+													<?php $img_src = wp_get_attachment_image_src( get_sub_field('slide_image_mobile'), 'card-alt', false ); ?>
+
+												<?php else: ?>
+												
+													<?php $img_src = wp_get_attachment_image_src( get_sub_field('slide_image'), 'slide', false ); ?>
+												
+												<?php endif; ?>												
 												
 												<div class="d-xl-none h-100 w-100 slide-image" style="background-image: url('<?php echo $img_src[0]; ?>');"></div>
 												
@@ -359,8 +367,18 @@ if ( get_field('carousel_images') || is_home() || is_single() || is_front_page()
 											</div>
 											
 											<div class="col-md-9 order-1 order-md-2 align-self-xl-center">
+												
+												<?php if ( isset ( $slide['slide_image_mobile'] ) ): ?>
+													
+													<?php $src = $slide["slide_image_mobile"]["sizes"]["card-alt"]; ?>
+													
+												<?php else: ?>
+												
+													<?php $src = $slide["slide_image"]["sizes"]["slide"]; ?>
+												
+												<?php endif; ?>
 																								
-												<div class="d-xl-none h-100 w-100 slide-image" style="background-image: url('<?php echo $slide["slide_image"]["sizes"]["slide"]; ?>');"></div>
+												<div class="d-xl-none h-100 w-100 slide-image" style="background-image: url('<?php echo $src; ?>');"></div>
 																								
 												<img src="<?php echo $slide['slide_image']['sizes']['slide']; ?>" alt="<?php echo $slide['slide_title']; ?>" class="w-100 img-fluid d-none d-xl-block" />
 												

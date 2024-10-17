@@ -150,6 +150,33 @@
                     "max_size": "",
                     "mime_types": "",
                     "parent_repeater": "field_611d6ff71a171"
+                },
+                {
+                    "key": "field_6711793613d33",
+                    "label": "Image Mobile",
+                    "name": "slide_image_mobile",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Minimum 800px x 600px",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": 800,
+                    "min_height": 600,
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 1,
+                    "preview_size": "medium",
+                    "parent_repeater": "field_611d6ff71a171"
                 }
             ],
             "rows_per_page": 20
@@ -173,5 +200,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1724092391
+    "modified": 1729200054
 }
