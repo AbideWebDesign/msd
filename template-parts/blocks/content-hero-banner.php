@@ -368,7 +368,7 @@ if ( get_field('carousel_images') || is_home() || is_single() || is_front_page()
 											
 											<div class="col-md-9 order-1 order-md-2 align-self-xl-center">
 												
-												<?php if ( isset ( $slide['slide_image_mobile'] ) ): ?>
+												<?php if ( $slide['slide_image_mobile'] != '' ): ?>
 													
 													<?php $src = $slide["slide_image_mobile"]["sizes"]["card-alt"]; ?>
 													
