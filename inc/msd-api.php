@@ -316,51 +316,51 @@ function sync_news_on_acf_save( $post_id ) {
 	$index = 0;
 	
     foreach ( $schools as $school ) {
-   
-        if ( $all_schools_category || in_array( $school, $category_slugs ) ) {
             
-            $category_ids = array(
-                get_cat_ID( 'All Schools' ), 
-                get_cat_ID( $school_names[$index] )
+        $category_ids = array(
+            get_cat_ID( 'All Schools' ), 
+            get_cat_ID( $school_names[$index] )
+        );
+
+        $args = array(
+            'posts_per_page' => 3,
+            'cat' => $category_ids,
+            'post_status' => 'publish',
+            'orderby' => 'date',
+            'order' => 'DESC',
+        );
+
+        $school_posts = get_posts( $args );
+        
+        foreach ( $school_posts as $school_post ) {
+			
+			$featured_image = get_the_post_thumbnail_url( $school_post->ID, 'medium' );
+
+            $news[] = array(
+                'school' => $school_names[$index],
+                'post_title' => $school_post->post_title,
+                'post_excerpt' => $school_post->post_excerpt,
+                'post_url' => get_permalink( $school_post->ID ),
+                'image_url' => $featured_image,
+                'date' => get_the_date( 'l, M d Y', $school_post->ID )
             );
- 
-            $args = array(
-                'posts_per_page' => 3,
-                'cat' => $category_ids,
-                'post_status' => 'publish',
-                'orderby' => 'date',
-                'order' => 'DESC',
-            );
 
-            $school_posts = get_posts( $args );
-            
-            foreach ( $school_posts as $school_post ) {
-				
-				$featured_image = get_the_post_thumbnail_url( $school_post->ID, 'medium' );
-
-                $news[] = array(
-                    'school' => $school_names[$index],
-                    'post_title' => $school_post->post_title,
-                    'post_excerpt' => $school_post->post_excerpt,
-                    'post_url' => get_permalink( $school_post->ID ),
-                    'image_url' => $featured_image,
-                    'date' => get_the_date( 'l, M d Y', $school_post->ID )
-                );
-
-            }
-            
         }
         
         $index ++;
         
     }
-
+	
+	$count_offset = 0;
+	
+	$count_length = 3;
+	
     // Send news data to respective endpoints
     foreach ( $school_slugs as $school ) {
 
         $url = "https://{$school}.msd.k12.or.us/wp-json/custom/v1/update-news";
         
-        $school_news = array_slice( $news, 0, 3 ); // Get the first 3 news items
+        $school_news = array_slice( $news, $count_offset, $count_length );
         
         $response = wp_remote_post( $url, array(
             'body' => json_encode( array( 'news' => $school_news ) ),
@@ -378,6 +378,8 @@ function sync_news_on_acf_save( $post_id ) {
             error_log( 'Synced news for ' . $school . ': ' . print_r( $response, true ) );
         
         }
+        
+        $count_offset = $count_offset + 3;
                 
     }
     
