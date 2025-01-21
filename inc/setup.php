@@ -346,7 +346,7 @@ function admin_bar_style_override() {
 			#link-selector label {
 				display: inline !important;
 			}
-			.acf-escaped-html-notice, .gswpts-ratting-banner, .gswpts-influencer-banner, .gswpts-upgrade-banner {
+			.acf-escaped-html-notice, .gswpts-ratting-banner, .gswpts-influencer-banner, .gswpts-upgrade-banner, #sb_dashboard_widget {
 				display: none !important;
 			}
 
