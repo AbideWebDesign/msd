@@ -196,3 +196,16 @@ function msd_menu_render() {
 
 }
 
+add_action( 'admin_init', 'redirect_amanda_to_dashboard' );
+
+function redirect_amanda_to_dashboard() {
+
+    if ( isset( $_GET['page'] ) && $_GET['page'] === 'gf_entries' && isset( $_GET['id'] ) && $_GET['id'] === '1' && is_user_logged_in() && wp_get_current_user()->user_login === 'Amanda Greene' ) {
+
+        wp_redirect( admin_url( '/index.php' ) );
+        
+        exit;
+    
+    }
+
+}
