@@ -72,13 +72,7 @@ $args = array (
 								<a class="btn btn-primary btn-sm" href="https://www.msd.k12.or.us/news/" target="_blank"><?php _e('More News'); ?> <i class="fa fa-chevron-right text-xs ml-1"></i></a>
 			
 							</div>
-							
-							<div>
-								
-								<a class="btn btn-secondary btn-sm" href="<?php echo home_url('/district-updates'); ?>"><?php _e('Parent Square Updates'); ?> <i class="fa fa-chevron-right text-xs ml-1"></i></a>
-
-							</div>
-							
+														
 						</div>
 							
 					</div>
