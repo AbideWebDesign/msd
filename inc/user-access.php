@@ -121,10 +121,31 @@ function msd_user_access( $query ) {
 add_action( 'admin_menu', 'msd_menu_render', 99999 );
 
 function msd_menu_render() {
+
+	global $submenu;
 	
 	$user = wp_get_current_user();
 	
 	$roles = ( array ) $user->roles;
+	
+	if ( isset( $submenu['themes.php'] ) ) {
+	
+		foreach ( $submenu['themes.php'] as $index => $menu_item ) {
+	    
+	    	foreach ( $menu_item as $value ) {
+	        
+	        	if ( strpos( $value,'customize' ) !== false ) {
+	            
+	            	unset( $submenu['themes.php'][$index] );
+	        	
+	        	}
+	    	
+	    	}
+	
+		}
+	
+	}
+
 	
 	if ( $user->user_login != 'abide_admin' ) {
 		
@@ -163,6 +184,10 @@ function msd_menu_render() {
 		remove_menu_page( 'itsec-dashboard' );
 		
  		remove_menu_page( 'postman' );
+ 		
+ 		remove_menu_page( 'searchwp-forms' );
+ 		
+		remove_submenu_page( 'themes.php', 'site-editor.php?path=/patterns' );  
 		
 		remove_menu_page( 'edit.php?post_type=acf-field-group' );
 		
