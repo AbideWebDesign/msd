@@ -148,11 +148,7 @@ function msd_menu_render() {
 
 	
 	if ( $user->user_login != 'abide_admin' ) {
-		
-		remove_menu_page( 'appearance' );
-		
-		remove_menu_page( 'tools.php' );
-		
+						
 		remove_menu_page( 'plugins.php' );
 
 		remove_menu_page( 'options-general.php' );
@@ -198,14 +194,6 @@ function msd_menu_render() {
 		remove_menu_page( 'wpseo_workouts' );
 				
 		remove_submenu_page( 'gf_edit_forms', 'gf_export' );
-		
-		remove_submenu_page( 'gf_edit_forms', 'gf_help' );
-		
-		remove_submenu_page( 'gf_edit_forms', 'gf_settings' );
-		
-		remove_submenu_page( 'gf_edit_forms', 'gf_addons' );
-		
-		remove_submenu_page( 'gf_edit_forms', 'gf_system_status' );
 		
 	}
 	
