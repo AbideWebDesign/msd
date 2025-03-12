@@ -52,6 +52,22 @@ function modify_embed_defaults() {
 
 }
 
+add_filter( 'intermediate_image_sizes_advanced', 'disable_upload_sizes', 10, 2 ); 
+
+function disable_upload_sizes( $sizes, $metadata ) {
+
+	$filetype = wp_check_filetype( $metadata['file'] );
+	
+	if ( $filetype['type'] == 'image/gif' ) {
+	    
+		$sizes = array();
+	    
+	}
+	
+	return $sizes;
+    
+}
+
 add_filter( 'wp_link_query_args', 'msd_wp_link_query_args' ); 
  
 function msd_wp_link_query_args( $query ) {
