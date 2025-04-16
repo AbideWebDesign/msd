@@ -346,6 +346,48 @@
             "maxlength": ""
         },
         {
+            "key": "field_6800064ac14be",
+            "label": "Next Year 2 Label",
+            "name": "calendar_next_year_2_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_68000657c14bf",
+            "label": "Next Year 3 Label",
+            "name": "calendar_next_year_3_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_61042b576716c",
             "label": "Calendar Download - Next Year",
             "name": "calendar_download_next",
@@ -367,6 +409,48 @@
             "mime_types": ""
         },
         {
+            "key": "field_68000514a31ce",
+            "label": "Calendar Download - Next Year 2",
+            "name": "calendar_download_next_2",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 1
+        },
+        {
+            "key": "field_68000528a31cf",
+            "label": "Calendar Download - Next Year 3",
+            "name": "calendar_download_next_3",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 1
+        },
+        {
             "key": "field_61042b936716e",
             "label": "Calendar Download - Next Year SP",
             "name": "calendar_download_next_sp",
@@ -380,12 +464,54 @@
                 "class": "",
                 "id": ""
             },
-            "show_in_rest": 0,
-            "return_format": "array",
+            "return_format": "url",
             "library": "all",
             "min_size": "",
             "max_size": "",
-            "mime_types": ""
+            "mime_types": "",
+            "allow_in_bindings": 1
+        },
+        {
+            "key": "field_68000535a31d0",
+            "label": "Calendar Download - Next Year 2 SP",
+            "name": "calendar_download_next_2_sp",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 1
+        },
+        {
+            "key": "field_68000547a31d1",
+            "label": "Calendar Download - Next Year 3 SP",
+            "name": "calendar_download_next_3_sp",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 1
         },
         {
             "key": "field_61a7cba496572",
@@ -427,5 +553,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1723140439
+    "modified": 1744832206
 }

@@ -33,7 +33,7 @@
 			
 			<?php if ( have_rows('calendar_dates', 'options') ): ?>
 			
-				<div class="col-lg-7 col-xl-9">
+				<div class="col-lg-7 col-xl-8">
 
 					<h2 class="text-dark"><?php _e('Important Dates'); ?></h2>
 				
@@ -51,28 +51,32 @@
 				
 			<?php endif; ?>
 				
-			<div class="col-lg-5 col-xl-3 mt-2 mt-lg-0">
+			<div class="col-lg-5 col-xl-4 mt-2 mt-lg-0">
 				
 				<h2 class="text-dark"><?php _e('Calendar Downloads'); ?></h2>
 				
 				<ul class="fa-ul mb-0 text-lg">
 					
-					<li class="mb-1"><span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span><a title="Download calendar" href="<?php the_field('calendar_download_current', 'options'); ?>" target="_blank"><?php the_field('calendar_current_year_label', 'options'); ?> <?php _e('Calendar'); ?></a>
-					
-					<li class="mb-1"><span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span><a title="Download calendar" href="<?php the_field('calendar_download_current_sp', 'options'); ?>" target="_blank"><?php the_field('calendar_current_year_label', 'options'); ?> <?php _e('Calendar (SP)'); ?></a>
-					
+					<li class="mb-1"><span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span><a title="Download calendar" href="<?php the_field('calendar_download_current', 'options'); ?>" target="_blank"><?php the_field('calendar_current_year_label', 'options'); ?> <?php _e('Calendar'); ?></a> <a href="<?php the_field('calendar_download_current_sp', 'options'); ?>" target="_blank"><?php _e('(Spanish)'); ?></a></li>
+										
 					<?php if ( get_field('calendar_download_next', 'options') ): ?>
 					
-						<li class="mb-1"><span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span><a title="Download calendar" href="<?php the_field('calendar_download_next', 'options'); ?>" target="_blank"><?php the_field('calendar_next_year_label', 'options'); ?> <?php _e('Calendar'); ?></a>
+						<li class="mb-1"><span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span><a title="Download calendar" href="<?php the_field('calendar_download_next', 'options'); ?>" target="_blank"><?php the_field('calendar_next_year_label', 'options'); ?> <?php _e('Calendar'); ?></a> <a href="<?php the_field('calendar_download_next_sp', 'options'); ?>" target="_blank"><?php _e('(Spanish)'); ?></a></li>
 					
 					<?php endif; ?>
 					
-					<?php if ( get_field('calendar_download_next_sp', 'options') ): ?>
+					<?php if ( get_field('calendar_download_next_2', 'options') ): ?>
 					
-						<li class="mb-1"><span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span><a title="Download calendar" href="<?php the_field('calendar_download_next_sp', 'options'); ?>" target="_blank"><?php the_field('calendar_next_year_label', 'options'); ?> <?php _e('Calendar (SP)'); ?></a>
+						<li class="mb-1"><span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span><a title="Download calendar" href="<?php the_field('calendar_download_next_2', 'options'); ?>" target="_blank"><?php the_field('calendar_next_year_2_label', 'options'); ?> <?php _e('Calendar'); ?></a> <a href="<?php the_field('calendar_download_next_2_sp', 'options'); ?>" target="_blank"><?php _e('(Spanish)'); ?></a></li>
 					
 					<?php endif; ?>
+
+					<?php if ( get_field('calendar_download_next_3', 'options') ): ?>
 					
+						<li class="mb-1"><span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span><a title="Download calendar" href="<?php the_field('calendar_download_next_3', 'options'); ?>" target="_blank"><?php the_field('calendar_next_year_3_label', 'options'); ?> <?php _e('Calendar'); ?></a> <a href="<?php the_field('calendar_download_next_3_sp', 'options'); ?>" target="_blank"><?php _e('(Spanish)'); ?></a></li>
+					
+					<?php endif; ?>
+										
 					<?php if ( get_field('calendar_download_pre_k', 'options') ): ?>
 
 						<li class="mb-1"><span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span><a title="Download calendar" href="<?php the_field('calendar_download_pre_k', 'options'); ?>" target="_blank"><?php the_field('calendar_current_year_label', 'options'); ?> <?php _e('Pre-K Calendar'); ?></a>
