@@ -172,8 +172,8 @@ global $post;
 						
 						<?php foreach ( $blocks as $block ): ?>
 						
-							<?php if ( ( $x != 0 || $x == 0 && 'acf/gallery' != $block['blockName'] ) && 'acf/cta' != $block['blockName'] ): ?>
-													
+							<?php if ( ( $x != 0 || $x == 0 && 'acf/gallery' != $block['blockName'] ) ): ?>
+							
 								<?php echo render_block( $block ); ?>
 								
 							<?php endif; ?>
@@ -209,19 +209,5 @@ global $post;
 	<?php endif; ?>
 
 </div>
-
-<?php if ( has_block('acf/cta') && get_field('include_sidebar', $post) ): ?>
-
-	<?php foreach ( $blocks as $block ): ?>
-	
-		<?php if ( 'acf/cta' == $block['blockName'] ): ?>
-		
-			<?php echo render_block( $block ); ?>
-		
-		<?php endif; ?>
-	
-	<?php endforeach; ?>
-
-<?php endif; ?>
 
 <?php get_footer();

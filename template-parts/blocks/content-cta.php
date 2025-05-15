@@ -1,10 +1,12 @@
+<?php global $post; ?>
+
 <?php $img_src = wp_get_attachment_image_src( get_field('cta_image'), 'full', false ); ?>
 
 <?php $button = get_field('cta_button'); ?>
 
 <?php if ( $img_src ): ?>
 
-	<section class="bg-img wrapper-lg" style="background-image: url('<?php echo $img_src[0]; ?>');">
+	<section class="bg-img wrapper-lg<?php echo get_field('include_sidebar', $post) ? ' mb-4' : '' ?>" style="background-image: url('<?php echo $img_src[0]; ?>');">
 	
 		<div class="container">
 			
