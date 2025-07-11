@@ -223,6 +223,8 @@ function remove_dashboard_widgets() {
 	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity']);
 	unset($wp_meta_boxes['dashboard']['normal']['high']['dashboard_rediscache']);
 	remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
+	remove_meta_box( 'example_dashboard_widget', 'dashboard', 'normal' );
+	remove_meta_box( 'post_smtp_reports_widget_lite', 'dashboard', 'normal' );
 
 }
 
