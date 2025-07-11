@@ -208,7 +208,7 @@ function admin_bar_render() {
 /*
  * Remove unused dashboard widgets
  */
-add_action('wp_dashboard_setup', 'remove_dashboard_widgets' );
+add_action( 'wp_dashboard_setup', 'remove_dashboard_widgets', 999 );
 
 function remove_dashboard_widgets() {
 	
