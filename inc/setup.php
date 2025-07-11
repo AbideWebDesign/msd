@@ -225,7 +225,16 @@ function remove_dashboard_widgets() {
 	remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
 	remove_meta_box( 'example_dashboard_widget', 'dashboard', 'normal' );
 	remove_meta_box( 'post_smtp_reports_widget_lite', 'dashboard', 'normal' );
+	$wp_meta_boxes['dashboard']['normal']['core']['searchwp_statistics']['title'] = 'Search Summary';
 
+}
+
+add_filter( 'gform_dashboard_title', 'change_gravity_meta_box' );
+
+function change_gravity_meta_box() {
+
+    return "Forms Summary";
+    
 }
 
 /*
