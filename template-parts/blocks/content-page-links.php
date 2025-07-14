@@ -14,7 +14,7 @@
 											
 					<?php foreach ($post_objects as $post): ?>
 						
-						<h2><?php echo get_the_title( $post->ID ); ?></h2>
+						<h1><?php echo get_the_title( $post->ID ); ?></h1>
 						
 						<ul class="page-links <?php echo ( $depth == 1 ? 'page-depth-1' : 'page-depth-2' ); ?>">
 							
@@ -24,7 +24,7 @@
 								'title_li' => '',
 								'depth' => $depth,
 								'child_of' => $post->ID,
-								'sort_column' => 'post_title',
+								'sort_column' => 'menu_order',
 							));
 							
 							?>
