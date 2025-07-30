@@ -311,6 +311,16 @@ function render_list_view_district() {
  				],
  				
  				duration: { days: 60 },
+ 				
+ 				eventSourceSuccess: function( events ) {
+
+		            if ( events.length > 4 ) {
+		
+		                events.splice( 4 ); 		            
+		            
+		            }
+		
+		        }
 
 			} );
 			
