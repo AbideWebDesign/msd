@@ -310,7 +310,7 @@ function render_list_view_district() {
 										
  				],
  				
- 				duration: { days: 14 },
+ 				duration: { days: 60 },
 
 			} );
 			
