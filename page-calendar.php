@@ -64,6 +64,12 @@
 						<li class="mb-1"><span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span><a title="Download calendar" href="<?php the_field('calendar_download_next', 'options'); ?>" target="_blank"><?php the_field('calendar_next_year_label', 'options'); ?> <?php _e('Calendar'); ?></a> <a href="<?php the_field('calendar_download_next_sp', 'options'); ?>" target="_blank"><?php _e('(Spanish)'); ?></a></li>
 					
 					<?php endif; ?>
+
+					<?php if ( get_field('calendar_download_pre_k', 'options') ): ?>
+
+						<li class="mb-1"><span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span><a title="Download calendar" href="<?php the_field('calendar_download_pre_k', 'options'); ?>" target="_blank"><?php the_field('calendar_current_year_label', 'options'); ?> <?php _e('Pre-K Calendar'); ?></a> <a href="<?php the_field('calendar_download_pre_k_sp', 'options'); ?>" target="_blank"><?php _e('(Spanish)'); ?></a></li>
+
+					<?php endif; ?>
 					
 					<?php if ( get_field('calendar_download_next_2', 'options') ): ?>
 					
@@ -76,13 +82,7 @@
 						<li class="mb-1"><span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span><a title="Download calendar" href="<?php the_field('calendar_download_next_3', 'options'); ?>" target="_blank"><?php the_field('calendar_next_year_3_label', 'options'); ?> <?php _e('Calendar'); ?></a> <a href="<?php the_field('calendar_download_next_3_sp', 'options'); ?>" target="_blank"><?php _e('(Spanish)'); ?></a></li>
 					
 					<?php endif; ?>
-										
-					<?php if ( get_field('calendar_download_pre_k', 'options') ): ?>
-
-						<li class="mb-1"><span class="fa-li"><i class="fas fa-chevron-right text-primary"></i></span><a title="Download calendar" href="<?php the_field('calendar_download_pre_k', 'options'); ?>" target="_blank"><?php the_field('calendar_current_year_label', 'options'); ?> <?php _e('Pre-K Calendar'); ?></a> <a href="<?php the_field('calendar_download_pre_k_sp', 'options'); ?>" target="_blank"><?php _e('(Spanish)'); ?></a></li>
-
-					<?php endif; ?>
-				
+														
 				</ul>
 									
 			</div>
