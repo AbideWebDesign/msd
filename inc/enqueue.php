@@ -38,24 +38,15 @@ if ( ! function_exists( 'msd_scripts' ) ) {
 		
 		wp_enqueue_script( 'msd-scripts', get_template_directory_uri() . '/js/msd-scripts-min.js', array(), $js_version, true );
 		
-		if ( is_page( 'home' ) ) {
-			
-			wp_enqueue_style( 'fullcalendar.min.css', 'https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.css' ); 
-						
-			wp_enqueue_script( 'full-calendar.min.js', 'https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js', 'jquery', '', true );
-					
-		}
+		if ( is_page( 'home' ) || is_page( 'calendar' ) ) {
 		
-		if ( is_page( 'calendar' ) ) {
+			wp_enqueue_script( 'msd-calendar', 'https://cdn.jsdelivr.net/npm/fullcalendar@6.1.18/index.global.min.js', false, null );
 			
-			wp_enqueue_style( 'fullcalendar.min.css', 'https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css' ); 
+			wp_enqueue_script( 'msd-calendar-google', 'https://cdn.jsdelivr.net/npm/@fullcalendar/google-calendar@6.1.18/index.global.min.js', false, null );
 			
- 			wp_enqueue_script( 'moment.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js', 'jquery', '', true );
-			
-			wp_enqueue_script( 'full-calendar.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js', 'jquery', '', true );
-			
- 			wp_enqueue_script( 'gcal.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/gcal.min.js', 'jquery', '', true );
-			
+			wp_enqueue_script( 'msd-moment', 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js', false, null );
+	
+			wp_enqueue_script( 'msd-calendar-moment', 'https://cdn.jsdelivr.net/npm/@fullcalendar/moment@6.1.18/index.global.min.js', false, null );
 			
 		}
 		

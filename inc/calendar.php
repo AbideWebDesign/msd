@@ -91,7 +91,9 @@ function render_calendar() {
 				return check;
 	
 			};
-	    
+			
+			var calendarEl = document.getElementById( 'calendar' );
+			
 			var initialEventSources = [];
 	
 			var allEventSources = [];
@@ -153,11 +155,70 @@ function render_calendar() {
 				<?php endwhile; ?>
 				
 			<?php endif; ?>
+		
+			var calendar = new FullCalendar.Calendar( calendarEl, {
 					
+				initialView: window.mobilecheck() ? "listMonth" : "dayGridMonth",
+				
+				themeSystem: 'bootstrap5',
+				
+				displayEventTime: true,
+				
+				googleCalendarApiKey: 'AIzaSyCtn4VYI0llZ2sEGiMgezxWyBDTVuKaHds',
+					
+				eventSources: initialEventSources,
+				
+				timezone: 'UTC-7',
+	
+				eventClick: function ( info ) {
+					
+					info.jsEvent.preventDefault(); 
+					
+					if (info.event.url) {
+					
+						window.open( info.event.url, '_blank', 'width=700,height=600' );
+    				
+    				}					
+				},
+				
+			} );
+			
+			calendar.render();
+			
+			$( '#prev' ).on( 'click', function() {
+			    
+			    calendar.prev();
+			    
+			    var date = calendar.getDate();
+				
+				let str = calendar.formatDate( date, {
+					month: 'long',
+					year: 'numeric',
+				} );
+
+			    $( '#month' ).html( str );
+			
+			} );
+	
+			$( '#next' ).on( 'click', function() {
+				
+				calendar.next();
+				
+				var date = calendar.getDate();
+				
+				let str = calendar.formatDate( date, {
+					month: 'long',
+					year: 'numeric',
+				} );
+
+			    $( '#month' ).html( str );
+			
+			} );
+			
 			// Toggle function for calendars
 			$( '.dropdown-menu li' ).on( 'click', function( event ) {
 		       
-		    	var $checkbox = $(this).find('.checkbox');
+		    	var $checkbox = $( this ).find('.checkbox');
 		        
 		        if ( ! $checkbox.length ) {
 		           
@@ -167,103 +228,25 @@ function render_calendar() {
 		        
 		        var $input = $checkbox.find( 'input' );
 		        
+				var eventSource = calendar.getEventSourceById( allEventSources[$input.val()]['id'] );
+		        
 		        if ( $input.is( ':checked' ) ) {
 			        
 		            $input.prop( 'checked', false );
 		            
-		            $( '#calendar' ).fullCalendar( 'removeEventSource', allEventSources[$input.val()] );
+		            eventSource.remove();
 		       
 		        } else {
 		       
 		            $input.prop( 'checked', true );
 		       
-		            $( '#calendar' ).fullCalendar( 'addEventSource', allEventSources[$input.val()] );
+		            calendar.addEventSource( allEventSources[$input.val()] );
 		       
-		        }
-		        
-		        $( '#calendar' ).fullCalendar( 'rerenderEvents' );
+		        }						        
 		        
 		        return false;
 		        
 	    	} ); 
-			
-			$( '#calendar-dropdown-view' ).on( 'click', function( event ) { // Only close dropdown when clicking outside
-			   
-			    var events = $._data(document, 'events') || {};
-			   
-			    events = events.click || [];
-			   
-			    for ( var i = 0; i < events.length; i++ ) {
-			   
-			        if ( events[i].selector ) {
-			            
-			            if( $( event.target ).is( events[i].selector ) ) { //Check if the clicked element matches the event selector
-			                
-			                events[i].handler.call( event.target, event );
-			            
-			            }
-			
-			            // Check if any of the clicked element parents matches the 
-			            // delegated event selector (Emulating propagation)
-			            $( event.target ).parents( events[i].selector ).each( function() {
-			               
-			                events[i].handler.call(this, event);
-			            
-			            } );
-			            
-			        }
-			        
-			    }
-			    
-			    event.stopPropagation(); //Always stop propagation
-			    
-			} );
-		
-			$( '#calendar' ).fullCalendar( {
-	
-				header: false,
-				
-				defaultView: window.mobilecheck() ? "listMonth" : "month",
-				
-				displayEventTime: true, // show the time column in list view
-				
-				googleCalendarApiKey: 'AIzaSyCtn4VYI0llZ2sEGiMgezxWyBDTVuKaHds',
-					
-				eventSources: initialEventSources,
-				
-				timezone: 'America/Los_Angeles',
-	
-				eventClick: function ( event ) {
-					
-					// opens events in a popup window
-					
-					window.open( event.url, '_blank', 'width=700,height=600' );
-					
-					return false;
-				
-				},
-				
-			} );
-			
-			$( '#prev' ).on( 'click', function() {
-			    
-			    $( '#calendar' ).fullCalendar( 'prev' ); // call method
-			    
-			    var moment = $( '#calendar' ).fullCalendar( 'getDate' );
-			    
-			    $( '#month' ).html( moment.format( 'MMMM YYYY' ) );
-			
-			} );
-	
-			$( '#next' ).on( 'click', function() {
-				
-				$( '#calendar' ).fullCalendar( 'next' ); // call method
-				
-				var moment = $( '#calendar' ).fullCalendar( 'getDate' );
-				
-				$( '#month' ).html( moment.format( 'MMMM YYYY' ) );
-			
-			} );
 			
 		} );
 		
@@ -281,19 +264,21 @@ function render_list_view_district() {
 	
 	<script>
 					
-		document.addEventListener('DOMContentLoaded', function() {
+		document.addEventListener( 'DOMContentLoaded', function() {
 		
 			let calendarEl = document.getElementById( 'calendar-list-district' );
+			
+			let renderedCount = 0;
 		
 			let calendar = new FullCalendar.Calendar( calendarEl, {
+				
+				initialView: 'list',
 								
 				googleCalendarApiKey: 'AIzaSyCtn4VYI0llZ2sEGiMgezxWyBDTVuKaHds',
 				
-				initialView: 'list',
+				timeZone: 'UTC-7',
 				
-				timeZone: 'local',
-				
-				themeSystem: 'bootstrap',
+				themeSystem: 'bootstrap5',
 				
 				eventSources: [
 					
@@ -308,19 +293,33 @@ function render_list_view_district() {
 
 					}
 										
- 				],
- 				
- 				duration: { days: 60 },
- 				
- 				eventSourceSuccess: function( events ) {
+				],
 
-		            if ( events.length > 4 ) {
-		
-		                events.splice( 4 ); 		            
-		            
-		            }
-		
-		        }
+				duration: { days: 60 },
+
+				eventDidMount: function( info ) {
+				
+					renderedCount++;
+					
+					if ( renderedCount > 6 ) {
+						
+						info.event.remove();
+						
+					}
+					
+				},	
+				
+				eventClick: function ( info ) {
+					
+					info.jsEvent.preventDefault(); 
+					
+					if (info.event.url) {
+					
+						window.open( info.event.url, '_blank', 'width=700,height=600' );
+    				
+    				}					
+														
+				},
 
 			} );
 			
