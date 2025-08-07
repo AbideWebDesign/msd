@@ -16,7 +16,7 @@
 						
 						<?php if ( ! get_field('hide_title') ): ?>
 						
-							<h2><?php echo get_field('title') ? get_field('title') ? get_the_title( $post->ID ); ?></h2>
+							<h2><?php echo get_field('title') ? get_field('title') : get_the_title( $post->ID ); ?></h2>
 							
 						<?php endif; ?>
 						
