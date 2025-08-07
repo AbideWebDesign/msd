@@ -332,6 +332,11 @@ h1#month {
 		color: white !important;
 	}
 }
+#calendar-list-district {
+	&.fc .fc-toolbar.fc-header-toolbar, .fc-daygrid-event-dot {
+		display: none !important;
+	}	
+}
 #calendar-dropdown-view {
 	margin-left: .4em;
 }
