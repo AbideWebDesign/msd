@@ -12,9 +12,13 @@
 				
 				<div class="col-12">
 											
-					<?php foreach ($post_objects as $post): ?>
+					<?php foreach ( $post_objects as $post ): ?>
 						
-						<h1><?php echo get_the_title( $post->ID ); ?></h1>
+						<?php if ( ! get_field('hide_title') ): ?>
+						
+							<h2><?php echo get_field('title') ? get_field('title') ? get_the_title( $post->ID ); ?></h2>
+							
+						<?php endif; ?>
 						
 						<ul class="page-links <?php echo ( $depth == 1 ? 'page-depth-1' : 'page-depth-2' ); ?>">
 							
@@ -25,16 +29,14 @@
 								'depth' => $depth,
 								'child_of' => $post->ID,
 								'sort_column' => 'menu_order',
-							));
+							) );
 							
 							?>
 							
 						</ul>
 					
 					<?php endforeach; ?>
-					
-					
-					
+										
 				</div>
 				
 			</div>
