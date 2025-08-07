@@ -65,7 +65,7 @@
             "name": "title",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "Parent page title will be used by default.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -120,5 +120,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1754585866
+    "modified": 1754586146
 }
