@@ -207,7 +207,7 @@
 
 // Text
 .wrapper-text {
-	a:not(.btn):not(.instagram-gallery__actions) {
+	a:not(.btn):not(.instagram-gallery__button--follow) {
 		color: $primary;
 		text-decoration: underline;
 		
