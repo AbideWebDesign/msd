@@ -214,17 +214,19 @@ function remove_dashboard_widgets() {
 	
 	global $wp_meta_boxes;
 
-	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
-	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
-	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
-	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
-	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']); 
-	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
-	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity']);
-	unset($wp_meta_boxes['dashboard']['normal']['high']['dashboard_rediscache']);
-	remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
+	unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press'] );
+	unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links'] );
+	unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins'] );
+	unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_primary'] );
+	unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary'] ); 
+	unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now'] );
+	unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity'] );
+	unset( $wp_meta_boxes['dashboard']['normal']['high']['dashboard_rediscache'] );
+	remove_meta_box( 'dashboard_site_health', 'dashboard', 'normal' );
 	remove_meta_box( 'example_dashboard_widget', 'dashboard', 'normal' );
 	remove_meta_box( 'post_smtp_reports_widget_lite', 'dashboard', 'normal' );
+	remove_meta_box( 'wp-dashboard-widget-news', 'dashboard', 'normal' );
+	
 	$wp_meta_boxes['dashboard']['normal']['core']['searchwp_statistics']['title'] = 'Search Summary';
 
 }
