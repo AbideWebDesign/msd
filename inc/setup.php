@@ -186,7 +186,7 @@ function msd_archive_titles( $title ) {
 /*
  * Admin bar customizations
  */
-add_action( 'wp_before_admin_bar_render', 'admin_bar_render' );
+add_action( 'wp_before_admin_bar_render', 'admin_bar_render', 999 );
 
 function admin_bar_render() {
 	
