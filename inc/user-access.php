@@ -182,7 +182,7 @@ function msd_menu_render() {
  		
  		remove_menu_page( 'searchwp-forms' );
  		
-		remove_submenu_page( 'themes.php', 'site-editor.php?path=/patterns' );  
+		remove_submenu_page( 'themes.php', 'site-editor.php?p=/patterns' );  
 		
 		remove_menu_page( 'edit.php?post_type=acf-field-group' );
 		
