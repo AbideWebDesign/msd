@@ -192,6 +192,10 @@ function msd_menu_render() {
 		remove_submenu_page( 'options-general.php', 'codepress-admin-columns' );
 		
 		remove_menu_page( 'wpseo_workouts' );
+		
+		remove_menu_page( 'qligg_backend' );
+		
+		remove_menu_page( 'sucuriscan' );
 				
 		remove_submenu_page( 'gf_edit_forms', 'gf_export' );
 		
