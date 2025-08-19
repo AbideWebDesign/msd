@@ -378,6 +378,9 @@ function admin_bar_style_override() {
 			.acf-escaped-html-notice, .gswpts-ratting-banner, .gswpts-influencer-banner, .gswpts-upgrade-banner, #sb_dashboard_widget {
 				display: none !important;
 			}
+			#dflip_post_meta_box_support_us, .dflip-support-box, #dflip_post_meta_box_video {
+				display: none !important;
+			}
 
 	<?php
 		

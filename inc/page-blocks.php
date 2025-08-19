@@ -144,6 +144,16 @@ function msd_acf_init() {
 			'icon'				=> 'welcome-write-blog',
 			'mode'				=> 'edit',
 		) );
+		
+		acf_register_block( array (
+			'name'				=> 'shortcode',
+			'title'				=> __('Shortcode'),
+			'description'		=> __(''),
+			'render_callback'	=> 'msd_acf_block_render_callback',
+			'category'			=> 'formatting',
+			'icon'				=> 'shortcode',
+			'mode'				=> 'edit',
+		) );
 				
 	}
 }
@@ -178,6 +188,7 @@ function msd_allowed_block_types( $allowed_blocks, $editor_context ) {
 		'acf/google-doc',
 		'acf/page-links',
 		'acf/form',
+		'acf/shortcode',
 	);
  
 }
