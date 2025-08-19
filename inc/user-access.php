@@ -145,7 +145,6 @@ function msd_menu_render() {
 		}
 	
 	}
-
 	
 	if ( $user->user_login != 'abide_admin' ) {
 						
