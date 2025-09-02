@@ -381,7 +381,9 @@ function admin_bar_style_override() {
 			#dflip_post_meta_box_support_us, .dflip-support-box, #dflip_post_meta_box_video, .df-upgrade-menu {
 				display: none !important;
 			}
-
+			.quadlayers_insta-gallery_notice_delay {
+				display: none !important;
+			}
 	<?php
 		
 	}
