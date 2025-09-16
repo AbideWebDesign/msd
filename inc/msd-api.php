@@ -1,4 +1,14 @@
 <?php
+	
+add_action( 'acf/save_post', 'purge_quid_cdn_via_api', 20 );
+
+function purge_quid_cdn_via_api( $post_id ) {
+
+	if ( $post_id !== 'options' ) return;
+
+	do_action( 'litespeed_purge_all' );
+
+}
 
 add_action( 'acf/options_page/save', 'sync_calendar_field_from_options', 10, 2 );
 
