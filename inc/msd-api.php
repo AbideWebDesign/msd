@@ -395,6 +395,12 @@ function sync_news_on_acf_save( $post_id ) {
 	
 	$index = 0;
 	
+	$tz = new DateTimeZone( 'America/Los_Angeles' );
+	
+	$date_now = new DateTime();
+	
+	$date_now->setTimezone( $tz );	
+    
     foreach ( $schools as $school ) {
             
         $category_ids = array(
@@ -402,13 +408,46 @@ function sync_news_on_acf_save( $post_id ) {
             get_cat_ID( $school_names[$index] )
         );
 
-        $args = array(
-            'posts_per_page' => 3,
-            'cat' => $category_ids,
-            'post_status' => 'publish',
-            'orderby' => 'date',
-            'order' => 'DESC',
-        );
+		$args = array(
+			'posts_per_page' => 3,
+			'cat' => $category_ids,
+			'post_status' => 'publish',
+			'orderby' => 'date',
+			'order' => 'DESC',
+			'meta_query' => array (
+		        'relation' => 'AND',
+		        array ( 
+		            'key' => 'hide_on_home', 
+		            'value' => '0', 
+		            'compare' => 'NOT' 
+		        ),
+		        array( 
+		           'relation' => 'OR',
+					array(
+						'relation' => 'AND',
+						array(
+							'key'	=> 'remove_from_home',
+							'compare'	=> 'EXISTS',
+						),
+						array(
+							'key'		=> 'remove_from_home',
+					        'compare'	=> '>=',
+					        'value'		=> $date_now->format( 'Y-m-d H:i:s' ),
+					        'type'		=> 'DATETIME'	
+						)
+					),
+					array(
+						'key'		=> 'remove_from_home',
+				        'compare'	=> 'NOT EXISTS',
+					), 
+					array(
+						'key'		=> 'remove_from_home', // For dates set and then removed
+						'compare'	=> '=',
+						'value'		=> '',
+					)        
+				)
+		    ) 
+		);
 
         $school_posts = get_posts( $args );
         

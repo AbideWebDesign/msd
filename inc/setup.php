@@ -72,9 +72,9 @@ add_filter( 'wp_link_query_args', 'msd_wp_link_query_args' );
  
 function msd_wp_link_query_args( $query ) {
 
-	$query['post_status'] = array( 'publish','inherit' );
+	$query['post_status'] = array( 'publish', 'inherit' );
 	
-	$query['post_type'] = array( 'post', 'page', 'attachment' ); 
+	$query['post_type'] = array( 'post', 'page', 'attachment'); 
 	
 	return $query;
 
