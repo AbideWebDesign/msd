@@ -168,7 +168,7 @@ function render_calendar() {
 					
 				eventSources: initialEventSources,
 				
-				timezone: 'UTC-7',
+				timeZone: 'America/Los_Angeles',
 	
 				eventClick: function ( info ) {
 					
@@ -276,7 +276,7 @@ function render_list_view_district() {
 								
 				googleCalendarApiKey: 'AIzaSyCtn4VYI0llZ2sEGiMgezxWyBDTVuKaHds',
 				
-				timeZone: 'UTC-7',
+				timeZone: 'America/Los_Angeles',
 				
 				themeSystem: 'bootstrap5',
 				
