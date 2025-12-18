@@ -24,7 +24,7 @@
 			
 			<div class="col-12">
 				
-				<p>To send an email, use first name initial and full last name before @msd.k12.or.us</p>
+				<p>To send an email, use first name initial and full last name before @msd.k12.or.us. <a href="https://www.msd.k12.or.us/bilingual-staff-directory/">Bilinigual staff directory</a></p>
 				
 				<?php echo do_shortcode('[gswpts_table id=2]'); ?>
 				
