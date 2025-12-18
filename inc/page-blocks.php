@@ -104,7 +104,15 @@ function msd_acf_init() {
 			'icon'				=> 'admin-users',
 			'mode'				=> 'edit',
 		) );
-		
+		acf_register_block( array (
+			'name'				=> 'bilingual-staff',
+			'title'				=> __('Bilingual Staff'),
+			'description'		=> __(''),
+			'render_callback'	=> 'msd_acf_block_render_callback',
+			'category'			=> 'formatting',
+			'icon'				=> 'admin-users',
+			'mode'				=> 'edit',
+		) );		
 		acf_register_block( array (
 			'name'				=> 'posts',
 			'title'				=> __('Posts'),
@@ -184,6 +192,7 @@ function msd_allowed_block_types( $allowed_blocks, $editor_context ) {
 		'acf/gallery-small',
 		'acf/text',
 		'acf/staff',
+		'acf/bilingual-staff',
 		'acf/posts',
 		'acf/google-doc',
 		'acf/page-links',
