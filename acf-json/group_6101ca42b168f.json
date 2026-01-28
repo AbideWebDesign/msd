@@ -3,9 +3,31 @@
     "title": "Block - Staff",
     "fields": [
         {
-            "key": "field_62589949b2710",
+            "key": "field_697a7688566ad",
             "label": "Message",
+            "name": "message",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_62589949b2710",
+            "label": "Note",
             "name": "",
+            "aria-label": "",
             "type": "message",
             "instructions": "",
             "required": 0,
@@ -15,8 +37,7 @@
                 "class": "",
                 "id": ""
             },
-            "show_in_rest": 0,
-            "message": "Content for this block is generated dynamically.",
+            "message": "The data in the table is managed via Google Sheets.",
             "new_lines": "wpautop",
             "esc_html": 0
         }
@@ -38,5 +59,7 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1649973598
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1769633460
 }
