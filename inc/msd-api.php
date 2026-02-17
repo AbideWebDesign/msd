@@ -241,100 +241,54 @@ add_action( 'acf/options_page/save', 'sync_slides_field_from_options', 10, 2 );
 
 function sync_slides_field_from_options( $post_id, $menu_slug ) {
 	
-	 if ( 'acf-options-carousel-slides' !== $menu_slug ) {
-        
-        return;     
-    
-    }
+	if ( 'acf-options-carousel-slides' !== $menu_slug ) {
+		
+		return;
+	
+	}
 
-    $slides = get_field( 'slides', 'option' );
+	$slides = get_field( 'slides', 'option' );
 
-    if ( ! empty( $slides ) ) {
+	if ( empty( $slides ) ) {
+		
+		return;
+	
+	}
 
-        $response = wp_remote_post( 'https://mhs.msd.k12.or.us/wp-json/custom/v1/update-slides', array(
-            'body' => json_encode( array(
-                'slides' => $slides,
-            ) ),
-            'headers' => array(
-                'Content-Type' => 'application/json',
-            ),
-        ) );
+	$slide_sync_urls = array(
+		'https://mhs.msd.k12.or.us/wp-json/custom/v1/update-slides',
+		'https://duniway.msd.k12.or.us/wp-json/custom/v1/update-slides',
+		'https://patton.msd.k12.or.us/wp-json/custom/v1/update-slides',
+		'https://buel.msd.k12.or.us/wp-json/custom/v1/update-slides',
+		'https://grandhaven.msd.k12.or.us/wp-json/custom/v1/update-slides',
+		'https://memorial.msd.k12.or.us/wp-json/custom/v1/update-slides',
+		'https://newby.msd.k12.or.us/wp-json/custom/v1/update-slides',
+		'https://wascher.msd.k12.or.us/wp-json/custom/v1/update-slides',
+		'https://willamette.msd.k12.or.us/wp-json/custom/v1/update-slides',
+	);
 
-        $response = wp_remote_post( 'https://duniway.msd.k12.or.us/wp-json/custom/v1/update-slides', array(
-            'body' => json_encode( array(
-                'slides' => $slides,
-            ) ),
-            'headers' => array(
-                'Content-Type' => 'application/json',
-            ),
-        ) );
+	$request_args = array(
+		'body' => wp_json_encode( array(
+			'slides' => $slides,
+		) ),
+		'headers' => array(
+			'Content-Type' => 'application/json',
+		),
+		'blocking' => false,
+		'timeout' => 1,
+	);
 
-        $response = wp_remote_post( 'https://patton.msd.k12.or.us/wp-json/custom/v1/update-slides', array(
-            'body' => json_encode( array(
-                'slides' => $slides,
-            ) ),
-            'headers' => array(
-                'Content-Type' => 'application/json',
-            ),
-        ) );
+	foreach ( $slide_sync_urls as $slide_sync_url ) {
 
-        $response = wp_remote_post( 'https://buel.msd.k12.or.us/wp-json/custom/v1/update-slides', array(
-            'body' => json_encode( array(
-                'slides' => $slides,
-            ) ),
-            'headers' => array(
-                'Content-Type' => 'application/json',
-            ),
-        ) );
+		$response = wp_remote_post( $slide_sync_url, $request_args );
 
-        $response = wp_remote_post( 'https://grandhaven.msd.k12.or.us/wp-json/custom/v1/update-slides', array(
-            'body' => json_encode( array(
-                'slides' => $slides,
-            ) ),
-            'headers' => array(
-                'Content-Type' => 'application/json',
-            ),
-        ) );
+		if ( is_wp_error( $response ) ) {
 
-        $response = wp_remote_post( 'https://memorial.msd.k12.or.us/wp-json/custom/v1/update-slides', array(
-            'body' => json_encode( array(
-                'slides' => $slides,
-            ) ),
-            'headers' => array(
-                'Content-Type' => 'application/json',
-            ),
-        ) );
+			error_log( 'Slides sync error for ' . $slide_sync_url . ': ' . $response->get_error_message() );
 
-        $response = wp_remote_post( 'https://newby.msd.k12.or.us/wp-json/custom/v1/update-slides', array(
-            'body' => json_encode( array(
-                'slides' => $slides,
-            ) ),
-            'headers' => array(
-                'Content-Type' => 'application/json',
-            ),
-        ) );
+		}
 
-        $response = wp_remote_post( 'https://wascher.msd.k12.or.us/wp-json/custom/v1/update-slides', array(
-            'body' => json_encode( array(
-                'slides' => $slides,
-            ) ),
-            'headers' => array(
-                'Content-Type' => 'application/json',
-            ),
-        ) );
-
-        $response = wp_remote_post( 'https://willamette.msd.k12.or.us/wp-json/custom/v1/update-slides', array(
-            'body' => json_encode( array(
-                'slides' => $slides,
-            ) ),
-            'headers' => array(
-                'Content-Type' => 'application/json',
-            ),
-        ) );
-      
-        error_log( 'Sync response: ' . print_r( $response, true ) );
-
-    }
+	}
 
 }
 if ( ! function_exists('write_log')) {
