@@ -1,4 +1,4 @@
-<?php $includes = get_field('text_settings'); ?>
+<?php $includes = get_field('text_settings') ?: array(); ?>
 
 <div class="wrapper-text <?php echo ( in_array('lead', $includes) && ! get_field('text_content') ? '' : 'pb-3'); ?>">
 	
