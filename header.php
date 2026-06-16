@@ -73,11 +73,17 @@ defined( 'ABSPATH' ) || exit;
 				</div>
 				
 			</div>
-			
+
 			<div class="col-auto align-self-center my-1 my-md-0">
+
+				<div class="d-flex">
+
+					<a href="https://www.msd.k12.or.us/calendar" class="text-sm mr-1"><i class="fa fa-calendar text-xs"></i> <?php _e('Calendar'); ?></a>
 				
-				<a href="https://www.msd.k12.or.us/departments/human-resources/employment-opportunities/" class="text-sm"><i class="fa fa-bullhorn text-xs"></i> <?php _e('Employment'); ?></a>
+					<a href="https://www.msd.k12.or.us/departments/human-resources/employment-opportunities/" class="text-sm"><i class="fa fa-bullhorn text-xs"></i> <?php _e('Employment'); ?></a>
 				
+				</div>
+
 			</div>
 			
 		</div>
