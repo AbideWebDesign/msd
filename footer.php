@@ -36,7 +36,7 @@ defined( 'ABSPATH' ) || exit;
 
 									</div>
 									
-									<div class="text-lg-sm text-white mt-2">
+									<div class="text-sm text-white mt-2">
 										
 										<div class="mb-2">
 											
