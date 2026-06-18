@@ -16,9 +16,8 @@ function msd_block_editor_styles() {
 	$css_dependencies = array();
 
 	// Enqueue the editor styles.
-	wp_enqueue_style( 'msd-block-editor-styles', get_theme_file_uri( '/css/custom-editor-style.min.css' ), $css_dependencies, wp_get_theme()->get( 'Version' ), 'all' );
+	wp_enqueue_style( 'msd-block-editor-styles', get_theme_file_uri( '/css/custom-editor-style.min.css' ), array(), filemtime( get_theme_file_path( '/css/custom-editor-style.min.css' ) ) );
 	wp_style_add_data( 'msd-block-editor-styles', 'rtl', 'replace' );
-
 }
 
 add_action( 'enqueue_block_editor_assets', 'msd_block_editor_styles', 1, 1 );
