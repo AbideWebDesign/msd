@@ -13,7 +13,9 @@ function msd_acf_init() {
 			'render_callback'	=> 'msd_acf_block_render_callback',
 			'category'			=> 'formatting',
 			'icon'				=> 'align-full-width',
-			'mode'				=> 'edit',
+			'mode'				=> 'auto',
+			'supports' 			=> ['align' => false],
+			'acf_block_version' => 3,
 		) );
 		
 		acf_register_block( array (
@@ -23,6 +25,9 @@ function msd_acf_init() {
 			'render_callback'	=> 'msd_acf_block_render_callback',
 			'category'			=> 'formatting',
 			'icon'				=> 'admin-links',
+			'mode'				=> 'auto',
+			'supports' 			=> ['align' => false],
+			'acf_block_version' => 3,
 		) );
 		
 		acf_register_block( array (
@@ -32,7 +37,9 @@ function msd_acf_init() {
 			'render_callback'	=> 'msd_acf_block_render_callback',
 			'category'			=> 'formatting',
 			'icon'				=> 'megaphone',
-			'mode'				=> 'edit',
+			'mode'				=> 'auto',
+			'supports' 			=> ['align' => false],
+			'acf_block_version' => 3,
 		) );
 		
 		acf_register_block( array (
@@ -42,7 +49,9 @@ function msd_acf_init() {
 			'render_callback'	=> 'msd_acf_block_render_callback',
 			'category'			=> 'formatting',
 			'icon'				=> 'plus-alt',
-			'mode'				=> 'edit',
+			'mode'				=> 'auto',
+			'supports' 			=> ['align' => false],
+			'acf_block_version' => 3,
 		) );		
 		
 		acf_register_block( array (
@@ -52,7 +61,9 @@ function msd_acf_init() {
 			'render_callback'	=> 'msd_acf_block_render_callback',
 			'category'			=> 'formatting',
 			'icon'				=> 'columns',
-			'mode'				=> 'edit',
+			'mode'				=> 'auto',
+			'supports' 			=> ['align' => false],
+			'acf_block_version' => 3,
 		) );	
 		
 		acf_register_block( array (
@@ -62,7 +73,9 @@ function msd_acf_init() {
 			'render_callback'	=> 'msd_acf_block_render_callback',
 			'category'			=> 'formatting',
 			'icon'				=> 'awards',
-			'mode'				=> 'edit',
+			'mode'				=> 'auto',
+			'supports' 			=> ['align' => false],
+			'acf_block_version' => 3,
 		) );
 
 		acf_register_block( array (
@@ -72,7 +85,9 @@ function msd_acf_init() {
 			'render_callback'	=> 'msd_acf_block_render_callback',
 			'category'			=> 'formatting',
 			'icon'				=> 'format-gallery',
-			'mode'				=> 'edit',
+			'mode'				=> 'auto',
+			'supports' 			=> ['align' => false],
+			'acf_block_version' => 3,
 		) );	
 		
 		acf_register_block( array (
@@ -82,7 +97,9 @@ function msd_acf_init() {
 			'render_callback'	=> 'msd_acf_block_render_callback',
 			'category'			=> 'formatting',
 			'icon'				=> 'format-gallery',
-			'mode'				=> 'edit',
+			'mode'				=> 'auto',
+			'supports' 			=> ['align' => false],
+			'acf_block_version' => 3,
 		) );	
 	
 		acf_register_block( array (
@@ -92,7 +109,9 @@ function msd_acf_init() {
 			'render_callback'	=> 'msd_acf_block_render_callback',
 			'category'			=> 'formatting',
 			'icon'				=> 'welcome-write-blog',
-			'mode'				=> 'edit',
+			'mode'				=> 'auto',
+			'supports' 			=> ['align' => false],
+			'acf_block_version' => 3,
 		) );
 		
 		acf_register_block( array (
@@ -102,7 +121,9 @@ function msd_acf_init() {
 			'render_callback'	=> 'msd_acf_block_render_callback',
 			'category'			=> 'formatting',
 			'icon'				=> 'admin-users',
-			'mode'				=> 'edit',
+			'mode'				=> 'auto',
+			'supports' 			=> ['align' => false],
+			'acf_block_version' => 3,
 		) );
 		acf_register_block( array (
 			'name'				=> 'bilingual-staff',
@@ -111,7 +132,9 @@ function msd_acf_init() {
 			'render_callback'	=> 'msd_acf_block_render_callback',
 			'category'			=> 'formatting',
 			'icon'				=> 'admin-users',
-			'mode'				=> 'edit',
+			'mode'				=> 'auto',
+			'supports' 			=> ['align' => false],
+			'acf_block_version' => 3,
 		) );		
 		acf_register_block( array (
 			'name'				=> 'posts',
@@ -120,7 +143,9 @@ function msd_acf_init() {
 			'render_callback'	=> 'msd_acf_block_render_callback',
 			'category'			=> 'formatting',
 			'icon'				=> 'category',
-			'mode'				=> 'edit',
+			'mode'				=> 'auto',
+			'supports' 			=> ['align' => false],
+			'acf_block_version' => 3,
 		) );
 		
 		acf_register_block( array (
@@ -131,7 +156,8 @@ function msd_acf_init() {
 			'category'			=> 'formatting',
 			'icon'				=> 'google',
 			'mode'				=> 'edit',
-			'supports'			=> array( 'mode'=>false ),
+			'supports'			=> ['mode'=>false, 'align' => false],
+			'acf_block_version' => 3,
 		) );
 		
 		acf_register_block( array (
@@ -141,7 +167,9 @@ function msd_acf_init() {
 			'render_callback'	=> 'msd_acf_block_render_callback',
 			'category'			=> 'formatting',
 			'icon'				=> 'editor-ul',
-			'mode'				=> 'edit',
+			'mode'				=> 'auto',
+			'supports' 			=> ['align' => false],
+			'acf_block_version' => 3,
 		) );
 		acf_register_block( array (
 			'name'				=> 'form',
@@ -151,6 +179,8 @@ function msd_acf_init() {
 			'category'			=> 'formatting',
 			'icon'				=> 'welcome-write-blog',
 			'mode'				=> 'edit',
+			'supports' 			=> ['align' => false],
+			'acf_block_version' => 3,
 		) );
 		
 		acf_register_block( array (
@@ -161,6 +191,8 @@ function msd_acf_init() {
 			'category'			=> 'formatting',
 			'icon'				=> 'shortcode',
 			'mode'				=> 'edit',
+			'supports' 			=> ['align' => false],
+			'acf_block_version' => 3,
 		) );
 				
 	}
