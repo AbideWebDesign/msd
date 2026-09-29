@@ -268,8 +268,59 @@ function render_list_view_district() {
 		
 			let calendarEl = document.getElementById( 'calendar-list-district' );
 			
-			let renderedCount = 0;
-		
+			let trimTimer = null;
+
+			// Show the first 6 unique events. Hide rows instead of removing events, since removing re-renders the list and cascades.
+			function trimList() {
+
+				let shown = 0;
+
+				let seen = {};
+
+				calendarEl.querySelectorAll( '.fc-list-event' ).forEach( function( row ) {
+
+					let key = row.textContent.trim();
+
+					if ( row.classList.contains( 'msd-continued' ) || seen[key] || shown >= 6 ) {
+
+						row.style.display = 'none';
+
+					} else {
+
+						seen[key] = true;
+
+						shown++;
+
+						row.style.display = '';
+
+					}
+
+				} );
+
+				calendarEl.querySelectorAll( '.fc-list-day' ).forEach( function( day ) {
+
+					let next = day.nextElementSibling;
+
+					let visible = false;
+
+					while ( next && ! next.classList.contains( 'fc-list-day' ) ) {
+
+						if ( next.style.display !== 'none' ) {
+
+							visible = true;
+
+						}
+
+						next = next.nextElementSibling;
+
+					}
+
+					day.style.display = visible ? '' : 'none';
+
+				} );
+
+			}
+
 			let calendar = new FullCalendar.Calendar( calendarEl, {
 				
 				initialView: 'list',
@@ -297,17 +348,19 @@ function render_list_view_district() {
 
 				duration: { days: 60 },
 
+				eventClassNames: function( info ) { // Multi-day events only show on their first day
+
+					return info.isStart ? [] : [ 'msd-continued' ];
+
+				},
+
 				eventDidMount: function( info ) {
-				
-					renderedCount++;
-					
-					if ( renderedCount > 6 ) {
-						
-						info.event.remove();
-						
-					}
-					
-				},	
+
+					clearTimeout( trimTimer );
+
+					trimTimer = setTimeout( trimList, 0 );
+
+				},
 				
 				eventClick: function ( info ) {
 					
